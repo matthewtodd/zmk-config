@@ -137,13 +137,13 @@
             &none      &none      &none      &none      &none          &bt BT_CLR &none      &none      &none      &none
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │          │          │          │          │   │          │          │          │          │          │
-            &kp LCTL   &kp LALT   &kp LGUI   &kp LSHFT  &none          &none      &kp C_PREV &kp C_VOL_UP &kp C_VOL_DN &kp C_NEXT
+            &kp LCTL   &kp LALT   &kp LGUI   &kp LSHFT  &none          &none      &kp C_PREV &kp C_VOL_DN &kp C_VOL_UP &kp C_NEXT
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │          │          │          │          │   │          │          │          │          │          │
             &none      &none      &none      &none      &none          &none      &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
         //                                 |          |          |   |          |          |
-                                             &none      &none          &kp C_STOP &kp C_PP
+                                             &none      &none          &kp C_MUTE &kp C_PP
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
