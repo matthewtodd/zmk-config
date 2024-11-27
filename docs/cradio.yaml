@@ -1,0 +1,289 @@
+layout: {qmk_keyboard: ferris_rotated}
+layers:
+  colemak_dh:
+  - Q
+  - W
+  - F
+  - P
+  - B
+  - J
+  - L
+  - U
+  - Y
+  - ''''
+  - {t: A, h: LCTRL}
+  - {t: R, h: LALT}
+  - {t: S, h: LGUI}
+  - {t: T, h: LSHFT}
+  - G
+  - M
+  - {t: N, h: RSHFT}
+  - {t: E, h: RGUI}
+  - {t: I, h: RALT}
+  - {t: O, h: RCTRL}
+  - Z
+  - X
+  - C
+  - D
+  - V
+  - K
+  - H
+  - ','
+  - .
+  - /
+  - {t: SPACE, h: nav}
+  - {t: TAB, h: media}
+  - {t: ENTER, h: symbol}
+  - {t: BSPC, h: number}
+  sturdy:
+  - V
+  - M
+  - L
+  - C
+  - P
+  - X
+  - F
+  - O
+  - U
+  - J
+  - {t: S, h: LCTRL}
+  - {t: T, h: LALT}
+  - {t: R, h: LGUI}
+  - {t: D, h: LSHFT}
+  - Y
+  - .
+  - {t: N, h: RSHFT}
+  - {t: A, h: RGUI}
+  - {t: E, h: RALT}
+  - {t: I, h: RCTRL}
+  - Z
+  - K
+  - Q
+  - G
+  - W
+  - B
+  - H
+  - ''''
+  - ;
+  - ','
+  - {t: SPACE, h: nav}
+  - {t: TAB, h: media}
+  - {t: ENTER, h: symbol}
+  - {t: BSPC, h: number}
+  nav:
+  - {t: sturdy, h: toggle}
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - Gui+ V
+  - Gui+ C
+  - Gui+ X
+  - Gui+ Z
+  - LCTRL
+  - LALT
+  - LGUI
+  - LSHFT
+  - ''
+  - '&caps_word'
+  - LEFT
+  - DOWN
+  - UP
+  - RIGHT
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - HOME
+  - PG DN
+  - PG UP
+  - END
+  - {type: held}
+  - ''
+  - ENTER
+  - BSPC
+  media:
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - BT CLR
+  - ''
+  - ''
+  - ''
+  - ''
+  - LCTRL
+  - LALT
+  - LGUI
+  - LSHFT
+  - ''
+  - ''
+  - PREV
+  - VOL DN
+  - VOL UP
+  - NEXT
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - {t: BT, h: '0'}
+  - {t: BT, h: '1'}
+  - {t: BT, h: '2'}
+  - {t: BT, h: '3'}
+  - ''
+  - {type: held}
+  - MUTE
+  - PP
+  number:
+  - '['
+  - '7'
+  - '8'
+  - '9'
+  - ']'
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ;
+  - '4'
+  - '5'
+  - '6'
+  - '='
+  - ''
+  - RSHFT
+  - RGUI
+  - RALT
+  - RCTRL
+  - '`'
+  - '1'
+  - '2'
+  - '3'
+  - \
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - '0'
+  - '-'
+  - ''
+  - {type: held}
+  symbol:
+  - '{'
+  - '&'
+  - '*'
+  - (
+  - '}'
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ':'
+  - $
+  - '%'
+  - ^
+  - +
+  - ''
+  - RSHFT
+  - RGUI
+  - RALT
+  - RCTRL
+  - '~'
+  - '!'
+  - '@'
+  - '#'
+  - '|'
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - )
+  - _
+  - {type: held}
+  - ''
+  sturdy_number:
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - /
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {type: held}
+  sturdy_symbol:
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - '?'
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {type: held}
+  - {t: ▽, type: trans}
+combos:
+- p: [30, 31]
+  k: ESC
+  l: [colemak_dh, sturdy]
+- p: [32, 33]
+  k: DEL
+  l: [colemak_dh, sturdy]
