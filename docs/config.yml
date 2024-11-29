@@ -47,12 +47,12 @@ parse_config:
     RGUI: "Cmd"
     RSHFT: "Shift"
 
-    ESC: "Esc"
-    SPACE: "Spc"
-    TAB: "Tab"
-    ENTER: "⏎"
-    BSPC: "⌫"
-    DEL: "⌦"
+    ESC: $$mdi:keyboard-esc$$
+    SPACE: $$mdi:keyboard-space$$
+    TAB: $$mdi:keyboard-tab$$
+    ENTER: $$mdi:keyboard-return$$
+    BSPC: $$mdi:backspace$$
+    DEL: $$mdi:backspace-reverse-outline$$
 
     LEFT: "⏴"
     DOWN: "⏷"
