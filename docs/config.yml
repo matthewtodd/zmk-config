@@ -1,2 +1,71 @@
 draw_config:
   dark_mode: auto
+
+parse_config:
+  raw_binding_map:
+    "&caps_word": "Caps Word"
+
+  zmk_keycode_map:
+    EXCL: "!"
+    AT: "@"
+    HASH: "#"
+    DLLR: "$"
+    PRCNT: "%"
+    AMPS: "&"
+    ASTRK: "*"
+    LPAR: "("
+    RPAR: ")"
+    EQUAL: "="
+    PLUS: "+"
+    MINUS: "-"
+    UNDER: "_"
+    FSLH: "/"
+    QMARK: "?"
+    BSLH: "\\"
+    PIPE: "|"
+    SEMI: ";"
+    COLON: ":"
+    SQT: "'"
+    DQT: '"'
+    COMMA: ","
+    LESS_THAN: "<"
+    DOT: "."
+    LBKT: "["
+    LBRC: "{"
+    RBKT: "]"
+    RBRC: "}"
+    GRAVE: "`"
+    TILDE: "~"
+
+    LCTRL: "Ctrl"
+    LALT: "Opt"
+    LGUI: "Cmd"
+    LSHFT: "Shift"
+
+    RCTRL: "Ctrl"
+    RALT: "Opt"
+    RGUI: "Cmd"
+    RSHFT: "Shift"
+
+    ESC: "Esc"
+    SPACE: "Spc"
+    TAB: "Tab"
+    ENTER: "⏎"
+    BSPC: "⌫"
+    DEL: "⌦"
+
+    LEFT: "⏴"
+    DOWN: "⏷"
+    UP: "⏶"
+    RIGHT: "⏵"
+
+    HOME: "Home"
+    PG_DN: "Page Down"
+    PG_UP: "Page Up"
+    END: "End"
+
+    "LG(V)": "Paste"
+    "LG(C)": "Copy"
+    "LG(X)": "Cut"
+    "LG(Z)": "Undo"
+
