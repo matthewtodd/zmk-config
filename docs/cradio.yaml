@@ -11,16 +11,16 @@ layers:
   - U
   - Y
   - ''''
-  - {t: A, h: Ctrl}
-  - {t: R, h: Opt}
-  - {t: S, h: Cmd}
-  - {t: T, h: Shift}
+  - {t: A, h: '$$mdi:apple-keyboard-control$$'}
+  - {t: R, h: '$$mdi:apple-keyboard-option$$'}
+  - {t: S, h: '$$mdi:apple-keyboard-command$$'}
+  - {t: T, h: '$$mdi:apple-keyboard-shift$$'}
   - G
   - M
-  - {t: N, h: Shift}
-  - {t: E, h: Cmd}
-  - {t: I, h: Opt}
-  - {t: O, h: Ctrl}
+  - {t: N, h: '$$mdi:apple-keyboard-shift$$'}
+  - {t: E, h: '$$mdi:apple-keyboard-command$$'}
+  - {t: I, h: '$$mdi:apple-keyboard-option$$'}
+  - {t: O, h: '$$mdi:apple-keyboard-control$$'}
   - Z
   - X
   - C
@@ -46,16 +46,16 @@ layers:
   - O
   - U
   - J
-  - {t: S, h: Ctrl}
-  - {t: T, h: Opt}
-  - {t: R, h: Cmd}
-  - {t: D, h: Shift}
+  - {t: S, h: '$$mdi:apple-keyboard-control$$'}
+  - {t: T, h: '$$mdi:apple-keyboard-option$$'}
+  - {t: R, h: '$$mdi:apple-keyboard-command$$'}
+  - {t: D, h: '$$mdi:apple-keyboard-shift$$'}
   - Y
   - .
-  - {t: N, h: Shift}
-  - {t: A, h: Cmd}
-  - {t: E, h: Opt}
-  - {t: I, h: Ctrl}
+  - {t: N, h: '$$mdi:apple-keyboard-shift$$'}
+  - {t: A, h: '$$mdi:apple-keyboard-command$$'}
+  - {t: E, h: '$$mdi:apple-keyboard-option$$'}
+  - {t: I, h: '$$mdi:apple-keyboard-control$$'}
   - Z
   - K
   - Q
@@ -81,10 +81,10 @@ layers:
   - Copy
   - Cut
   - Undo
-  - Ctrl
-  - Opt
-  - Cmd
-  - Shift
+  - $$mdi:apple-keyboard-control$$
+  - $$mdi:apple-keyboard-option$$
+  - $$mdi:apple-keyboard-command$$
+  - $$mdi:apple-keyboard-shift$$
   - ''
   - Caps Word
   - ⏴
@@ -116,10 +116,10 @@ layers:
   - ''
   - ''
   - ''
-  - Ctrl
-  - Opt
-  - Cmd
-  - Shift
+  - $$mdi:apple-keyboard-control$$
+  - $$mdi:apple-keyboard-option$$
+  - $$mdi:apple-keyboard-command$$
+  - $$mdi:apple-keyboard-shift$$
   - ''
   - ''
   - $$mdi:skip-previous$$
@@ -157,10 +157,10 @@ layers:
   - '6'
   - '='
   - ''
-  - Shift
-  - Cmd
-  - Opt
-  - Ctrl
+  - $$mdi:apple-keyboard-shift$$
+  - $$mdi:apple-keyboard-command$$
+  - $$mdi:apple-keyboard-option$$
+  - $$mdi:apple-keyboard-control$$
   - '`'
   - '1'
   - '2'
@@ -192,10 +192,10 @@ layers:
   - ^
   - +
   - ''
-  - Shift
-  - Cmd
-  - Opt
-  - Ctrl
+  - $$mdi:apple-keyboard-shift$$
+  - $$mdi:apple-keyboard-command$$
+  - $$mdi:apple-keyboard-option$$
+  - $$mdi:apple-keyboard-control$$
   - '~'
   - '!'
   - '@'
@@ -227,10 +227,10 @@ layers:
   - F6
   - ''
   - ''
-  - Shift
-  - Cmd
-  - Opt
-  - Ctrl
+  - $$mdi:apple-keyboard-shift$$
+  - $$mdi:apple-keyboard-command$$
+  - $$mdi:apple-keyboard-option$$
+  - $$mdi:apple-keyboard-control$$
   - F10
   - F1
   - F2
