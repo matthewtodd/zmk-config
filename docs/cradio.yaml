@@ -111,7 +111,7 @@ layers:
   - ''
   - ''
   - ''
-  - BT CLR
+  - $$mdi:bluetooth-off$$
   - ''
   - ''
   - ''
@@ -122,24 +122,24 @@ layers:
   - Shift
   - ''
   - ''
-  - PREV
-  - VOL DN
-  - VOL UP
-  - NEXT
+  - $$mdi:skip-previous$$
+  - $$mdi:volume-low$$
+  - $$mdi:volume-high$$
+  - $$mdi:skip-next$$
   - ''
   - ''
   - ''
   - ''
   - ''
   - ''
-  - {t: BT, h: '0'}
-  - {t: BT, h: '1'}
-  - {t: BT, h: '2'}
-  - {t: BT, h: '3'}
+  - {t: '$$mdi:bluetooth-connect$$', h: '0'}
+  - {t: '$$mdi:bluetooth-connect$$', h: '1'}
+  - {t: '$$mdi:bluetooth-connect$$', h: '2'}
+  - {t: '$$mdi:bluetooth-connect$$', h: '3'}
   - ''
   - {type: held}
-  - MUTE
-  - PP
+  - $$mdi:volume-off$$
+  - $$mdi:play-pause$$
   number:
   - '['
   - '7'
@@ -189,7 +189,7 @@ layers:
   - ':'
   - $
   - '%'
-  - CARET
+  - ^
   - +
   - ''
   - Shift
