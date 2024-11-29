@@ -210,6 +210,41 @@ layers:
   - _
   - {type: held}
   - ''
+  function:
+  - F12
+  - F7
+  - F8
+  - F9
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - F11
+  - F4
+  - F5
+  - F6
+  - ''
+  - ''
+  - RSHFT
+  - RGUI
+  - RALT
+  - RCTRL
+  - F10
+  - F1
+  - F2
+  - F3
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - )
+  - _
+  - {type: held}
+  - {type: held}
   sturdy_number:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -285,5 +320,5 @@ combos:
   k: ESC
   l: [colemak_dh, sturdy]
 - p: [32, 33]
-  k: DEL
+  k: {t: DEL, h: function}
   l: [colemak_dh, sturdy]
