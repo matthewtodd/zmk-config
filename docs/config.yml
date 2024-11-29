@@ -2,6 +2,17 @@ draw_config:
   dark_mode: auto
 
 parse_config:
+  layer_legend_map:
+    colemak_dh: "Colemak-DH"
+    sturdy: "Sturdy"
+    nav: "Nav"
+    media: "Media"
+    number: "Num"
+    symbol: "Sym"
+    function: "Func"
+    sturdy_number: "Sturdy Number Overrides"
+    sturdy_symbol: "Sturdy Symbol Overrides"
+
   raw_binding_map:
     "&caps_word": "Caps Word"
 
