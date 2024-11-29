@@ -12,8 +12,9 @@
 #define MEDIA 3
 #define NUM 4
 #define SYM 5
-#define STURDY_NUM 6
-#define STURDY_SYM 7
+#define FUN 6
+#define STURDY_NUM 7
+#define STURDY_SYM 8
 
 // Home row mods macro
 #define HRML(k1,k2,k3,k4) &htl LCTRL k1  &htl LALT k2  &htl LGUI k3  &htl LSHFT k4
@@ -57,7 +58,7 @@
         thumbs_default_right {
             layers = <COLEMAK STURDY>;
             key-positions = <32 33>;
-            bindings = <&kp DEL>;
+            bindings = <&lt FUN DEL>;
             timeout-ms = <50>;
         };
     };
@@ -177,6 +178,24 @@
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │          │          │          │          │   │          │          │          │          │          │
             &kp TILDE  &kp EXCL   &kp AT     &kp HASH   &kp PIPE       &none      &none      &none      &none      &none
+        //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
+        //                                 |          |          |   |          |          |
+                                             &kp RPAR   &kp UNDER      &none      &none
+        //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
+            >;
+        };
+
+        function_layer {
+            bindings = <
+        //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
+        //│          │          │          │          │          │   │          │          │          │          │          │
+            &kp F12    &kp F7     &kp F8     &kp F9     &none          &none      &none      &none      &none      &none
+        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
+        //│          │          │          │          │          │   │          │          │          │          │          │
+            &kp F11    &kp F4     &kp F5     &kp F6     &none          &none      &kp RSHFT  &kp RGUI   &kp RALT   &kp RCTRL
+        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
+        //│          │          │          │          │          │   │          │          │          │          │          │
+            &kp F10    &kp F1     &kp F2     &kp F3     &none          &none      &none      &none      &none      &none
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
         //                                 |          |          |   |          |          |
                                              &kp RPAR   &kp UNDER      &none      &none
