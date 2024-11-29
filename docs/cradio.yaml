@@ -71,10 +71,10 @@ layers:
   - {t: ENTER, h: symbol}
   - {t: BSPC, h: number}
   nav:
+  - ''
+  - ''
+  - ''
   - {t: sturdy, h: toggle}
-  - ''
-  - ''
-  - ''
   - ''
   - ''
   - Gui+ V
