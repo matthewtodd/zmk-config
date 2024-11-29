@@ -37,15 +37,15 @@ parse_config:
     GRAVE: "`"
     TILDE: "~"
 
-    LCTRL: "Ctrl"
-    LALT: "Opt"
-    LGUI: "Cmd"
-    LSHFT: "Shift"
+    LCTRL: $$mdi:apple-keyboard-control$$
+    LALT: $$mdi:apple-keyboard-option$$
+    LGUI: $$mdi:apple-keyboard-command$$
+    LSHFT: $$mdi:apple-keyboard-shift$$
 
-    RCTRL: "Ctrl"
-    RALT: "Opt"
-    RGUI: "Cmd"
-    RSHFT: "Shift"
+    RCTRL: $$mdi:apple-keyboard-control$$
+    RALT: $$mdi:apple-keyboard-option$$
+    RGUI: $$mdi:apple-keyboard-command$$
+    RSHFT: $$mdi:apple-keyboard-shift$$
 
     ESC: $$mdi:keyboard-esc$$
     SPACE: $$mdi:keyboard-space$$
