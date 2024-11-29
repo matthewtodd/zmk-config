@@ -11,16 +11,16 @@ layers:
   - U
   - Y
   - ''''
-  - {t: A, h: LCTRL}
-  - {t: R, h: LALT}
-  - {t: S, h: LGUI}
-  - {t: T, h: LSHFT}
+  - {t: A, h: Ctrl}
+  - {t: R, h: Opt}
+  - {t: S, h: Cmd}
+  - {t: T, h: Shift}
   - G
   - M
-  - {t: N, h: RSHFT}
-  - {t: E, h: RGUI}
-  - {t: I, h: RALT}
-  - {t: O, h: RCTRL}
+  - {t: N, h: Shift}
+  - {t: E, h: Cmd}
+  - {t: I, h: Opt}
+  - {t: O, h: Ctrl}
   - Z
   - X
   - C
@@ -31,10 +31,10 @@ layers:
   - ','
   - .
   - /
-  - {t: SPACE, h: nav}
-  - {t: TAB, h: media}
-  - {t: ENTER, h: symbol}
-  - {t: BSPC, h: number}
+  - {t: Spc, h: nav}
+  - {t: Tab, h: media}
+  - {t: ⏎, h: symbol}
+  - {t: ⌫, h: number}
   sturdy:
   - V
   - M
@@ -46,16 +46,16 @@ layers:
   - O
   - U
   - J
-  - {t: S, h: LCTRL}
-  - {t: T, h: LALT}
-  - {t: R, h: LGUI}
-  - {t: D, h: LSHFT}
+  - {t: S, h: Ctrl}
+  - {t: T, h: Opt}
+  - {t: R, h: Cmd}
+  - {t: D, h: Shift}
   - Y
   - .
-  - {t: N, h: RSHFT}
-  - {t: A, h: RGUI}
-  - {t: E, h: RALT}
-  - {t: I, h: RCTRL}
+  - {t: N, h: Shift}
+  - {t: A, h: Cmd}
+  - {t: E, h: Opt}
+  - {t: I, h: Ctrl}
   - Z
   - K
   - Q
@@ -66,10 +66,10 @@ layers:
   - ''''
   - ;
   - ','
-  - {t: SPACE, h: nav}
-  - {t: TAB, h: media}
-  - {t: ENTER, h: symbol}
-  - {t: BSPC, h: number}
+  - {t: Spc, h: nav}
+  - {t: Tab, h: media}
+  - {t: ⏎, h: symbol}
+  - {t: ⌫, h: number}
   nav:
   - ''
   - ''
@@ -77,34 +77,34 @@ layers:
   - {t: sturdy, h: toggle}
   - ''
   - ''
-  - Gui+ V
-  - Gui+ C
-  - Gui+ X
-  - Gui+ Z
-  - LCTRL
-  - LALT
-  - LGUI
-  - LSHFT
+  - Paste
+  - Copy
+  - Cut
+  - Undo
+  - Ctrl
+  - Opt
+  - Cmd
+  - Shift
   - ''
-  - '&caps_word'
-  - LEFT
-  - DOWN
-  - UP
-  - RIGHT
-  - ''
-  - ''
+  - Caps Word
+  - ⏴
+  - ⏷
+  - ⏶
+  - ⏵
   - ''
   - ''
   - ''
   - ''
-  - HOME
-  - PG DN
-  - PG UP
-  - END
+  - ''
+  - ''
+  - Home
+  - Page Down
+  - Page Up
+  - End
   - {type: held}
   - ''
-  - ENTER
-  - BSPC
+  - ⏎
+  - ⌫
   media:
   - ''
   - ''
@@ -116,10 +116,10 @@ layers:
   - ''
   - ''
   - ''
-  - LCTRL
-  - LALT
-  - LGUI
-  - LSHFT
+  - Ctrl
+  - Opt
+  - Cmd
+  - Shift
   - ''
   - ''
   - PREV
@@ -157,10 +157,10 @@ layers:
   - '6'
   - '='
   - ''
-  - RSHFT
-  - RGUI
-  - RALT
-  - RCTRL
+  - Shift
+  - Cmd
+  - Opt
+  - Ctrl
   - '`'
   - '1'
   - '2'
@@ -189,13 +189,13 @@ layers:
   - ':'
   - $
   - '%'
-  - ^
+  - CARET
   - +
   - ''
-  - RSHFT
-  - RGUI
-  - RALT
-  - RCTRL
+  - Shift
+  - Cmd
+  - Opt
+  - Ctrl
   - '~'
   - '!'
   - '@'
@@ -227,10 +227,10 @@ layers:
   - F6
   - ''
   - ''
-  - RSHFT
-  - RGUI
-  - RALT
-  - RCTRL
+  - Shift
+  - Cmd
+  - Opt
+  - Ctrl
   - F10
   - F1
   - F2
@@ -317,8 +317,8 @@ layers:
   - {t: ▽, type: trans}
 combos:
 - p: [30, 31]
-  k: ESC
+  k: Esc
   l: [colemak_dh, sturdy]
 - p: [32, 33]
-  k: {t: DEL, h: function}
+  k: {t: ⌦, h: function}
   l: [colemak_dh, sturdy]
