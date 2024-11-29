@@ -31,10 +31,10 @@ layers:
   - ','
   - .
   - /
-  - {t: Spc, h: nav}
-  - {t: Tab, h: media}
-  - {t: ⏎, h: symbol}
-  - {t: ⌫, h: number}
+  - {t: '$$mdi:keyboard-space$$', h: nav}
+  - {t: '$$mdi:keyboard-tab$$', h: media}
+  - {t: '$$mdi:keyboard-return$$', h: symbol}
+  - {t: '$$mdi:backspace$$', h: number}
   sturdy:
   - V
   - M
@@ -66,10 +66,10 @@ layers:
   - ''''
   - ;
   - ','
-  - {t: Spc, h: nav}
-  - {t: Tab, h: media}
-  - {t: ⏎, h: symbol}
-  - {t: ⌫, h: number}
+  - {t: '$$mdi:keyboard-space$$', h: nav}
+  - {t: '$$mdi:keyboard-tab$$', h: media}
+  - {t: '$$mdi:keyboard-return$$', h: symbol}
+  - {t: '$$mdi:backspace$$', h: number}
   nav:
   - ''
   - ''
@@ -103,8 +103,8 @@ layers:
   - End
   - {type: held}
   - ''
-  - ⏎
-  - ⌫
+  - $$mdi:keyboard-return$$
+  - $$mdi:backspace$$
   media:
   - ''
   - ''
@@ -317,8 +317,8 @@ layers:
   - {t: ▽, type: trans}
 combos:
 - p: [30, 31]
-  k: Esc
+  k: $$mdi:keyboard-esc$$
   l: [colemak_dh, sturdy]
 - p: [32, 33]
-  k: {t: ⌦, h: function}
+  k: {t: '$$mdi:backspace-reverse-outline$$', h: function}
   l: [colemak_dh, sturdy]
