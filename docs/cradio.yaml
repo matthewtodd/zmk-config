@@ -31,10 +31,10 @@ layers:
   - ','
   - .
   - /
-  - {t: '$$mdi:keyboard-space$$', h: nav}
-  - {t: '$$mdi:keyboard-tab$$', h: media}
-  - {t: '$$mdi:keyboard-return$$', h: symbol}
-  - {t: '$$mdi:backspace$$', h: number}
+  - {t: '$$mdi:keyboard-space$$', h: Nav}
+  - {t: '$$mdi:keyboard-tab$$', h: Media}
+  - {t: '$$mdi:keyboard-return$$', h: Sym}
+  - {t: '$$mdi:backspace$$', h: Num}
   sturdy:
   - V
   - M
@@ -66,15 +66,15 @@ layers:
   - ''''
   - ;
   - ','
-  - {t: '$$mdi:keyboard-space$$', h: nav}
-  - {t: '$$mdi:keyboard-tab$$', h: media}
-  - {t: '$$mdi:keyboard-return$$', h: symbol}
-  - {t: '$$mdi:backspace$$', h: number}
+  - {t: '$$mdi:keyboard-space$$', h: Nav}
+  - {t: '$$mdi:keyboard-tab$$', h: Media}
+  - {t: '$$mdi:keyboard-return$$', h: Sym}
+  - {t: '$$mdi:backspace$$', h: Num}
   nav:
   - ''
   - ''
   - ''
-  - {t: sturdy, h: toggle}
+  - {t: Sturdy, h: toggle}
   - ''
   - ''
   - Paste
@@ -320,5 +320,5 @@ combos:
   k: $$mdi:keyboard-esc$$
   l: [colemak_dh, sturdy]
 - p: [32, 33]
-  k: {t: '$$mdi:backspace-reverse-outline$$', h: function}
+  k: {t: '$$mdi:backspace-reverse-outline$$', h: Func}
   l: [colemak_dh, sturdy]
