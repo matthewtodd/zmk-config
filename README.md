@@ -5,6 +5,8 @@ I've been using a [wireless][nice-nano] [Ferris Sweep][ferris-sweep] from
 Legend‡][mbk-legend] keycaps since Summer 2024. (I didn't mean to fall down
 this rabbit hole, but what a delightful trip it's been!)
 
+![keyboard][keyboard]
+
 This repository holds its firmware configuration.
 
 I didn't start here, though; I first [tweaked][tweaked] the thoughtful
@@ -37,6 +39,7 @@ can tinker a little more freely.
 [boardsource]: https://www.boardsource.xyz/products/crab-broom
 [nocturnal]: https://lowprokb.ca/collections/switches/products/ambients-silent-choc-switches?variant=44873446391972
 [mbk-legend]: https://fkcaps.com/keycaps/mbk/legend-40s
+[keyboard]: docs/keyboard.jpeg
 [tweaked]: https://github.com/manna-harbour/miryoku_zmk/compare/master...matthewtodd:miryoku_zmk:matthewtodd
 [miryoku]: https://github.com/manna-harbour/miryoku
 [sturdy]: https://oxey.dev/sturdy
