@@ -1,7 +1,7 @@
 # ⌨️ ZMK Config
 
-I've been using a wireless [Ferris Sweep][sweep] from
-[Boardsource][boardsource] with [Ambients switches][ambients] since Spring
+I've been using a [wireless][nice-nano] [Ferris Sweep][ferris-sweep] from
+[Boardsource][boardsource] with [Nocturnal keyswitches][nocturnal] since Spring
 2024. I love it!
 
 This repository holds its firmware configuration. I had initially
@@ -11,8 +11,8 @@ with.
 
 ## Changes from Miryoku
 
-- Removed the mouse layer, for now. I'm watching zmk#2477, which seems like
-  it's close!
+- Removed the mouse layer, for now. I'm watching zmkfirmware/zmk#2477, which
+  seems like it's close!
 - Removed the button layer, since I wasn't really using it.
 - Removed additional features (boot, base, tap, extra, opposite, current).
 - Removed keys I didn't use (insert, RGB, power & output toggles, scroll lock).
@@ -29,9 +29,10 @@ with.
 
 ![keymap][keymap]
 
-[sweep]: https://github.com/davidphilipbarr/Sweep
+[nice-nano]: https://nicekeyboards.com/nice-nano
+[ferris-sweep]: https://github.com/davidphilipbarr/Sweep
 [boardsource]: https://www.boardsource.xyz/products/crab-broom
-[ambients]: https://lowprokb.ca/collections/switches/products/ambients-silent-choc-switches?variant=44873446391972
+[nocturnal]: https://lowprokb.ca/collections/switches/products/ambients-silent-choc-switches?variant=44873446391972
 [tweaked]: https://github.com/manna-harbour/miryoku_zmk/compare/master...matthewtodd:miryoku_zmk:matthewtodd
 [miryoku]: https://github.com/manna-harbour/miryoku
 [sturdy]: https://oxey.dev/sturdy
