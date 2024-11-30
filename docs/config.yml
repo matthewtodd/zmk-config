@@ -63,7 +63,7 @@ parse_config:
     SPACE: $$mdi:keyboard-space$$
     TAB: $$mdi:keyboard-tab$$
     ENTER: $$mdi:keyboard-return$$
-    BSPC: $$mdi:backspace$$
+    BSPC: $$mdi:backspace-outline$$
     DEL: $$mdi:backspace-reverse-outline$$
 
     LEFT: "⏴"
