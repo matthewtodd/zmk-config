@@ -9,14 +9,23 @@ This repository holds its firmware configuration. I had initially
 happily. Now I am inlining it all here so it'll be easier for me to tinker
 with.
 
-I have primarily removed some Miryoku features I wasn't using and
-experimentally added the [Sturdy][sturdy] keyboard layout as an alternate
-layer, to see what I think of it. Future work may include a QWERTY alternate
-layer so I can let friends test-drive the keyboard more easily, as well as
-exploration of non-momentary layer changes, since my thumbs get a little
-fatigued holding layer switches down.
+## Changes from Miryoku
 
-## Layout
+- Removed the mouse layer, for now. I'm watching zmk#2477, which seems like
+  it's close!
+- Removed the button layer, since I wasn't really using it.
+- Removed additional features (boot, base, tap, extra, opposite, current).
+- Removed keys I didn't use (insert, RGB, power & output toggles, scroll lock).
+- Added a [Sturdy][sturdy] layer so I can play around with it! I may add other
+  experimental layouts like this from time to time.
+
+## TODO, Maybe
+
+- Add a QWERTY layer so I can let friends test-drive the keyboard more easily.
+- Explore non-momentary layer switching, since my thumbs get a little fatigued
+  holding layer switches down.
+
+## Layers
 
 ![keymap][keymap]
 
