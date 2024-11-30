@@ -1,9 +1,8 @@
 # ⌨️ ZMK Config
 
-I've been using a [wireless][nice-nano] [Ferris Sweep][ferris-sweep] from
-[Boardsource][boardsource] with [Nocturnal][nocturnal] keyswitches and [MBK
-Legend‡][mbk-legend] keycaps since Summer 2024. (I didn't mean to fall down
-this rabbit hole, but what a delightful trip it's been!)
+I've been using this [Ferris Sweep][ferris-sweep] keyboard daily since Summer
+2024. I didn't intend to fall down the keyboard rabbit hole, but it's been a
+surprisingly delightful experience!
 
 ![keyboard][keyboard]
 
@@ -23,8 +22,9 @@ can tinker a little more freely.
 - Removed [additional features][miryoku-additional-features] (boot, base, tap,
   extra, opposite, current).
 - Removed keys I didn't use (insert, RGB, power & output toggles, scroll lock).
-- Added a [Sturdy][sturdy] layer so I can play around with it! I may add other
-  experimental layouts like this from time to time.
+- Added a layer for the [Sturdy][sturdy] keyboard layout! Colemak-DH is a very
+  sensible default, but I'm curious what I might learn from other experimental
+  layouts like this.
 
 ## Things I might try someday
 
@@ -37,11 +37,7 @@ can tinker a little more freely.
 
 ![keymap][keymap]
 
-[nice-nano]: https://nicekeyboards.com/nice-nano
 [ferris-sweep]: https://github.com/davidphilipbarr/Sweep
-[boardsource]: https://www.boardsource.xyz/products/crab-broom
-[nocturnal]: https://lowprokb.ca/collections/switches/products/ambients-silent-choc-switches?variant=44873446391972
-[mbk-legend]: https://fkcaps.com/keycaps/mbk/legend-40s
 [keyboard]: docs/keyboard.jpeg
 [tweaked]: https://github.com/manna-harbour/miryoku_zmk/compare/master...matthewtodd:miryoku_zmk:matthewtodd
 [miryoku]: https://github.com/manna-harbour/miryoku
