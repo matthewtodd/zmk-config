@@ -20,7 +20,7 @@ can tinker a little more freely.
   zmkfirmware/zmk#2477, which seems like it's close!
 - Removed the [button layer][miryoku-button-layer], since I wasn't really using
   it.
-- Removed [additional features][miryoku-additonal-features] (boot, base, tap,
+- Removed [additional features][miryoku-additional-features] (boot, base, tap,
   extra, opposite, current).
 - Removed keys I didn't use (insert, RGB, power & output toggles, scroll lock).
 - Added a [Sturdy][sturdy] layer so I can play around with it! I may add other
