@@ -1,4 +1,5 @@
 draw_config:
+  append_colon_to_layer_header: false
   dark_mode: auto
 
 parse_config:
@@ -9,7 +10,7 @@ parse_config:
     media: "Media"
     number: "Num"
     symbol: "Sym"
-    function: "Func"
+    function: "Fun"
     sturdy_number: "Sturdy Number Overrides"
     sturdy_symbol: "Sturdy Symbol Overrides"
 
