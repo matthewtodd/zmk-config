@@ -15,7 +15,7 @@ parse_config:
     sturdy_symbol: "Sturdy Symbol Overrides"
 
   raw_binding_map:
-    "&caps_word": "Caps Word"
+    "&caps_word": "Caps"
 
   zmk_keycode_map:
     EXCL: "!"
