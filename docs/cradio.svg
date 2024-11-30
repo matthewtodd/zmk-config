@@ -184,7 +184,7 @@ path.combo { stroke: #7f7f7f; }
 
 }</style>
 <g transform="translate(30, 0)" class="layer-colemak_dh">
-<text x="0" y="28" class="label" id="colemak_dh">colemak_dh:</text>
+<text x="0" y="28" class="label" id="colemak_dh">colemak_dh</text>
 <g transform="translate(0, 56)">
 <g transform="translate(28, 81)" class="key keypos-0">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
@@ -341,12 +341,12 @@ path.combo { stroke: #7f7f7f; }
 <g class="combo combopos-1">
 <rect rx="6" ry="6" x="408" y="220" width="28" height="26" class="combo"/>
 <use href="#mdi:backspace-reverse-outline" xlink:href="#mdi:backspace-reverse-outline" x="415" y="226" height="14" width="14.0" class="combo tap glyph mdi:backspace-reverse-outline"/>
-<text x="422" y="244" class="combo hold">Func</text>
+<text x="422" y="244" class="combo hold">Fun</text>
 </g>
 </g>
 </g>
 <g transform="translate(30, 339)" class="layer-sturdy">
-<text x="0" y="28" class="label" id="sturdy">sturdy:</text>
+<text x="0" y="28" class="label" id="sturdy">sturdy</text>
 <g transform="translate(0, 56)">
 <g transform="translate(28, 81)" class="key keypos-0">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
@@ -503,12 +503,12 @@ path.combo { stroke: #7f7f7f; }
 <g class="combo combopos-1">
 <rect rx="6" ry="6" x="408" y="220" width="28" height="26" class="combo"/>
 <use href="#mdi:backspace-reverse-outline" xlink:href="#mdi:backspace-reverse-outline" x="415" y="226" height="14" width="14.0" class="combo tap glyph mdi:backspace-reverse-outline"/>
-<text x="422" y="244" class="combo hold">Func</text>
+<text x="422" y="244" class="combo hold">Fun</text>
 </g>
 </g>
 </g>
 <g transform="translate(30, 678)" class="layer-nav">
-<text x="0" y="28" class="label" id="nav">nav:</text>
+<text x="0" y="28" class="label" id="nav">nav</text>
 <g transform="translate(0, 56)">
 <g transform="translate(28, 81)" class="key keypos-0">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
@@ -642,7 +642,7 @@ path.combo { stroke: #7f7f7f; }
 </g>
 </g>
 <g transform="translate(30, 1016)" class="layer-media">
-<text x="0" y="28" class="label" id="media">media:</text>
+<text x="0" y="28" class="label" id="media">media</text>
 <g transform="translate(0, 56)">
 <g transform="translate(28, 81)" class="key keypos-0">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
@@ -768,7 +768,7 @@ path.combo { stroke: #7f7f7f; }
 </g>
 </g>
 <g transform="translate(30, 1355)" class="layer-number">
-<text x="0" y="28" class="label" id="number">number:</text>
+<text x="0" y="28" class="label" id="number">number</text>
 <g transform="translate(0, 56)">
 <g transform="translate(28, 81)" class="key keypos-0">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
@@ -896,7 +896,7 @@ path.combo { stroke: #7f7f7f; }
 </g>
 </g>
 <g transform="translate(30, 1694)" class="layer-symbol">
-<text x="0" y="28" class="label" id="symbol">symbol:</text>
+<text x="0" y="28" class="label" id="symbol">symbol</text>
 <g transform="translate(0, 56)">
 <g transform="translate(28, 81)" class="key keypos-0">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
@@ -1024,7 +1024,7 @@ path.combo { stroke: #7f7f7f; }
 </g>
 </g>
 <g transform="translate(30, 2033)" class="layer-function">
-<text x="0" y="28" class="label" id="function">function:</text>
+<text x="0" y="28" class="label" id="function">function</text>
 <g transform="translate(0, 56)">
 <g transform="translate(28, 81)" class="key keypos-0">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
@@ -1149,7 +1149,7 @@ path.combo { stroke: #7f7f7f; }
 </g>
 </g>
 <g transform="translate(30, 2372)" class="layer-sturdy_number">
-<text x="0" y="28" class="label" id="sturdy_number">sturdy_number:</text>
+<text x="0" y="28" class="label" id="sturdy_number">sturdy_number</text>
 <g transform="translate(0, 56)">
 <g transform="translate(28, 81)" class="key trans keypos-0">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key trans"/>
@@ -1289,7 +1289,7 @@ path.combo { stroke: #7f7f7f; }
 </g>
 </g>
 <g transform="translate(30, 2710)" class="layer-sturdy_symbol">
-<text x="0" y="28" class="label" id="sturdy_symbol">sturdy_symbol:</text>
+<text x="0" y="28" class="label" id="sturdy_symbol">sturdy_symbol</text>
 <g transform="translate(0, 56)">
 <g transform="translate(28, 81)" class="key trans keypos-0">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key trans"/>

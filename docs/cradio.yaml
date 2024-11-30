@@ -320,5 +320,5 @@ combos:
   k: $$mdi:keyboard-esc$$
   l: [colemak_dh, sturdy]
 - p: [32, 33]
-  k: {t: '$$mdi:backspace-reverse-outline$$', h: Func}
+  k: {t: '$$mdi:backspace-reverse-outline$$', h: Fun}
   l: [colemak_dh, sturdy]
