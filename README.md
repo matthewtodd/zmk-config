@@ -1,9 +1,9 @@
 # ⌨️ ZMK Config
 
 I've been using a [wireless][nice-nano] [Ferris Sweep][ferris-sweep] from
-[Boardsource][boardsource] with [Nocturnal keyswitches][nocturnal] since Spring
-2024. (I didn't mean to fall down this rabbit hole, but what a delightful trip
-it's been!)
+[Boardsource][boardsource] with [Nocturnal][nocturnal] keyswitches and [MBK
+Legend‡][mbk-legend] keycaps since Summer 2024. (I didn't mean to fall down
+this rabbit hole, but what a delightful trip it's been!)
 
 This repository holds its firmware configuration.
 
@@ -36,6 +36,7 @@ can tinker a little more freely.
 [ferris-sweep]: https://github.com/davidphilipbarr/Sweep
 [boardsource]: https://www.boardsource.xyz/products/crab-broom
 [nocturnal]: https://lowprokb.ca/collections/switches/products/ambients-silent-choc-switches?variant=44873446391972
+[mbk-legend]: https://fkcaps.com/keycaps/mbk/legend-40s
 [tweaked]: https://github.com/manna-harbour/miryoku_zmk/compare/master...matthewtodd:miryoku_zmk:matthewtodd
 [miryoku]: https://github.com/manna-harbour/miryoku
 [sturdy]: https://oxey.dev/sturdy
