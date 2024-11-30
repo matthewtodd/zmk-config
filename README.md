@@ -26,9 +26,10 @@ can tinker a little more freely.
 
 ## Things I might try someday
 
-- Add a QWERTY layer so I can let friends test-drive the keyboard more easily.
-- Explore non-momentary layer switching, since my thumbs get a little fatigued
-  holding layer switches down.
+- Adding a QWERTY layer so I can let friends test-drive the keyboard more
+  easily.
+- Exploring non-momentary layer switching, since my thumbs get a little
+  fatigued holding layer switches down.
 
 ## What the layers look like
 
