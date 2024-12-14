@@ -108,7 +108,7 @@ layers:
   nav:
   - ''
   - ''
-  - {t: qwerty, h: toggle}
+  - {t: QWERTY, h: toggle}
   - {t: Sturdy, h: toggle}
   - ''
   - ''
@@ -353,7 +353,7 @@ layers:
 combos:
 - p: [30, 31]
   k: $$mdi:keyboard-esc$$
-  l: [colemak_dh, sturdy]
+  l: [colemak_dh, sturdy, qwerty]
 - p: [32, 33]
   k: {t: '$$mdi:backspace-reverse-outline$$', h: Fun}
-  l: [colemak_dh, sturdy]
+  l: [colemak_dh, sturdy, qwerty]
