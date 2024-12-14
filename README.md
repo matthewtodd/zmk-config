@@ -25,11 +25,10 @@ can tinker a little more freely.
 - Added a layer for the [Sturdy][sturdy] keyboard layout! Colemak-DH is a very
   sensible default, but I'm curious what I might learn from other experimental
   layouts like this.
+- Added a QWERTY layer so friends can test-drive the keyboard more easily.
 
 ## Things I might try someday
 
-- Adding a QWERTY layer so I can let friends test-drive the keyboard more
-  easily.
 - Exploring non-momentary layer switching, since my thumbs get a little
   fatigued holding layer switches down.
 
