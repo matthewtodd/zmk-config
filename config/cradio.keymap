@@ -51,13 +51,13 @@
     combos {
         compatible = "zmk,combos";
         thumbs_default_left {
-            layers = <COLEMAK STURDY>;
+            layers = <COLEMAK STURDY QWERTY>;
             key-positions = <30 31>;
             bindings = <&kp ESC>;
             timeout-ms = <50>;
         };
         thumbs_default_right {
-            layers = <COLEMAK STURDY>;
+            layers = <COLEMAK STURDY QWERTY>;
             key-positions = <32 33>;
             bindings = <&lt FUN DEL>;
             timeout-ms = <50>;

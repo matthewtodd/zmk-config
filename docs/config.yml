@@ -6,6 +6,7 @@ parse_config:
   layer_legend_map:
     colemak_dh: "Colemak-DH"
     sturdy: "Sturdy"
+    qwerty: "QWERTY"
     nav: "Nav"
     media: "Media"
     number: "Num"
