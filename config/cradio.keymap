@@ -8,16 +8,16 @@
 
 // Layer names
 #define COLEMAK 0
-#define STURDY 1
-#define QWERTY 2
+#define QWERTY 1
+#define STURDY 2
 #define NAV 3
 #define MOUSE 4
 #define MEDIA 5
 #define NUM 6
 #define SYM 7
 #define FUN 8
-#define STURDY_NUM 9
-#define STURDY_SYM 10
+#define SLASH_NUM 9
+#define SLASH_SYM 10
 
 // Home row mods macro
 #define HRML(k1,k2,k3,k4) &htl LCTRL k1  &htl LALT k2  &htl LGUI k3  &htl LSHFT k4
@@ -70,11 +70,11 @@
         compatible = "zmk,conditional-layers";
         sturdy_num_adjustments_layer {
             if-layers = <STURDY NUM>;
-            then-layer = <STURDY_NUM>;
+            then-layer = <SLASH_NUM>;
         };
         sturdy_sym_adjustments_layer {
             if-layers = <STURDY SYM>;
-            then-layer = <STURDY_SYM>;
+            then-layer = <SLASH_SYM>;
         };
     };
 
@@ -91,24 +91,6 @@
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │          │          │          │          │   │          │          │          │          │          │
             &kp Z      &kp X      &kp C      &kp D      &kp V          &kp K      &kp H      &kp COMMA  &kp DOT    &kp FSLH
-        //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-        //                                 |          |          |   |          |          |
-                                            &lt NAV SPACE &lt MOUSE TAB &lt SYM ENTER &lt NUM BSPC
-        //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
-            >;
-        };
-
-        sturdy_layer {
-            bindings = <
-        //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│          │          │          │          │          │   │          │          │          │          │          │
-            &kp V      &kp M      &kp L      &kp C      &kp P          &kp X      &kp F      &kp O      &kp U      &kp J
-        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│          │          │          │          │          │   │          │          │          │          │          │
-            HRML(S,        T,         R,         D)     &kp Y          &kp DOT    HRMR(N,        A,         E,         I)
-        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│          │          │          │          │          │   │          │          │          │          │          │
-            &kp Z      &kp K      &kp Q      &kp G      &kp W          &kp B      &kp H      &kp SQT    &kp SEMI   &kp COMMA
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
         //                                 |          |          |   |          |          |
                                             &lt NAV SPACE &lt MOUSE TAB &lt SYM ENTER &lt NUM BSPC
@@ -134,11 +116,29 @@
             >;
         };
 
+        sturdy_layer {
+            bindings = <
+        //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
+        //│          │          │          │          │          │   │          │          │          │          │          │
+            &kp V      &kp M      &kp L      &kp C      &kp P          &kp X      &kp F      &kp O      &kp U      &kp J
+        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
+        //│          │          │          │          │          │   │          │          │          │          │          │
+            HRML(S,        T,         R,         D)     &kp Y          &kp DOT    HRMR(N,        A,         E,         I)
+        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
+        //│          │          │          │          │          │   │          │          │          │          │          │
+            &kp Z      &kp K      &kp Q      &kp G      &kp W          &kp B      &kp H      &kp SQT    &kp SEMI   &kp COMMA
+        //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
+        //                                 |          |          |   |          |          |
+                                            &lt NAV SPACE &lt MEDIA TAB &lt SYM ENTER &lt NUM BSPC
+        //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
+            >;
+        };
+
         nav_layer {
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
         //│          │          │          │          │          │   │          │          │          │          │          │
-            &none      &none     &tog QWERTY &tog STURDY &none         &none      &kp LG(V)  &kp LG(C)  &kp LG(X)  &kp LG(Z)
+            &none      &none     &none       &tog STURDY &tog QWERTY   &none      &kp LG(V)  &kp LG(C)  &kp LG(X)  &kp LG(Z)
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │          │          │          │          │   │          │          │          │          │          │
             &kp LCTRL  &kp LALT   &kp LGUI   &kp LSHFT  &none          &caps_word &kp LEFT   &kp DOWN   &kp UP     &kp RIGHT
@@ -242,7 +242,7 @@
             >;
         };
 
-        sturdy_number_layer {
+        slash_number_layer {
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
         //│          │          │          │          │          │   │          │          │          │          │          │
@@ -260,7 +260,7 @@
             >;
         };
 
-        sturdy_symbol_layer {
+        slash_symbol_layer {
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
         //│          │          │          │          │          │   │          │          │          │          │          │
