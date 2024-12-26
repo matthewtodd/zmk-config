@@ -10,14 +10,17 @@
 #define COLEMAK 0
 #define QWERTY 1
 #define STURDY 2
-#define NAV 3
-#define MOUSE 4
-#define MEDIA 5
-#define NUM 6
-#define SYM 7
-#define FUN 8
-#define SLASH_NUM 9
-#define SLASH_SYM 10
+#define CANARY 3
+#define GALLIUM 4
+#define FOCAL 5
+#define NAV 6
+#define MOUSE 7
+#define MEDIA 8
+#define NUM 9
+#define SYM 10
+#define FUN 11
+#define SLASH_NUM 12
+#define SLASH_SYM 13
 
 // Home row mods macro
 #define HRML(k1,k2,k3,k4) &htl LCTRL k1  &htl LALT k2  &htl LGUI k3  &htl LSHFT k4
@@ -53,13 +56,13 @@
     combos {
         compatible = "zmk,combos";
         thumbs_default_left {
-            layers = <COLEMAK STURDY QWERTY>;
+            layers = <COLEMAK QWERTY STURDY CANARY GALLIUM FOCAL>;
             key-positions = <30 31>;
             bindings = <&lt MEDIA ESC>;
             timeout-ms = <50>;
         };
         thumbs_default_right {
-            layers = <COLEMAK STURDY QWERTY>;
+            layers = <COLEMAK QWERTY STURDY CANARY GALLIUM FOCAL>;
             key-positions = <32 33>;
             bindings = <&lt FUN DEL>;
             timeout-ms = <50>;
@@ -74,6 +77,22 @@
         };
         sturdy_sym_adjustments_layer {
             if-layers = <STURDY SYM>;
+            then-layer = <SLASH_SYM>;
+        };
+        gallium_num_adjustments_layer {
+            if-layers = <GALLIUM NUM>;
+            then-layer = <SLASH_NUM>;
+        };
+        gallium_sym_adjustments_layer {
+            if-layers = <GALLIUM SYM>;
+            then-layer = <SLASH_SYM>;
+        };
+        focal_num_adjustments_layer {
+            if-layers = <FOCAL NUM>;
+            then-layer = <SLASH_NUM>;
+        };
+        focal_sym_adjustments_layer {
+            if-layers = <FOCAL SYM>;
             then-layer = <SLASH_SYM>;
         };
     };
@@ -134,11 +153,65 @@
             >;
         };
 
+        canary_layer {
+            bindings = <
+        //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
+        //│          │          │          │          │          │   │          │          │          │          │          │
+            &kp W      &kp L      &kp Y      &kp P      &kp B          &kp Z      &kp F      &kp O      &kp U      &kp SQT
+        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
+        //│          │          │          │          │          │   │          │          │          │          │          │
+            HRML(C,        R,         S,         T)     &kp G          &kp M      HRMR(N,        E,         I,         A)
+        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
+        //│          │          │          │          │          │   │          │          │          │          │          │
+            &kp Q      &kp J      &kp V      &kp D      &kp K          &kp X      &kp H      &kp FSLH   &kp COMMA  &kp DOT
+        //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
+        //                                 |          |          |   |          |          |
+                                            &lt NAV SPACE &lt MOUSE TAB &lt SYM ENTER &lt NUM BSPC
+        //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
+            >;
+        };
+
+        gallium_layer {
+            bindings = <
+        //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
+        //│          │          │          │          │          │   │          │          │          │          │          │
+            &kp B      &kp L      &kp D      &kp C      &kp V          &kp J      &kp Y      &kp O      &kp U      &kp COMMA
+        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
+        //│          │          │          │          │          │   │          │          │          │          │          │
+            HRML(N,        R,         T,         S)     &kp G          &kp P      HRMR(H,        A,         E,         I)
+        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
+        //│          │          │          │          │          │   │          │          │          │          │          │
+            &kp X      &kp Q      &kp M      &kp W      &kp Z          &kp K      &kp F      &kp SQT    &kp SEMI   &kp DOT
+        //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
+        //                                 |          |          |   |          |          |
+                                            &lt NAV SPACE &lt MOUSE TAB &lt SYM ENTER &lt NUM BSPC
+        //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
+            >;
+        };
+
+        focal_layer {
+            bindings = <
+        //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
+        //│          │          │          │          │          │   │          │          │          │          │          │
+            &kp V      &kp L      &kp H      &kp G      &kp K          &kp Q      &kp F      &kp O      &kp U      &kp J
+        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
+        //│          │          │          │          │          │   │          │          │          │          │          │
+            HRML(S,        R,         N,         T)     &kp B          &kp Y      HRMR(C,        A,         E,         I)
+        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
+        //│          │          │          │          │          │   │          │          │          │          │          │
+            &kp Z      &kp X      &kp M      &kp D      &kp P          &kp SQT    &kp W      &kp DOT    &kp SEMI   &kp COMMA
+        //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
+        //                                 |          |          |   |          |          |
+                                            &lt NAV SPACE &lt MOUSE TAB &lt SYM ENTER &lt NUM BSPC
+        //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
+            >;
+        };
+
         nav_layer {
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
         //│          │          │          │          │          │   │          │          │          │          │          │
-            &none      &none     &none       &tog STURDY &tog QWERTY   &none      &kp LG(V)  &kp LG(C)  &kp LG(X)  &kp LG(Z)
+            &tog FOCAL &tog GALLIUM &tog CANARY &tog STURDY &tog QWERTY &none     &kp LG(V)  &kp LG(C)  &kp LG(X)  &kp LG(Z)
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │          │          │          │          │   │          │          │          │          │          │
             &kp LCTRL  &kp LALT   &kp LGUI   &kp LSHFT  &none          &caps_word &kp LEFT   &kp DOWN   &kp UP     &kp RIGHT
