@@ -4,18 +4,20 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/pointing.h>
 
 // Layer names
 #define COLEMAK 0
 #define STURDY 1
 #define QWERTY 2
 #define NAV 3
-#define MEDIA 4
-#define NUM 5
-#define SYM 6
-#define FUN 7
-#define STURDY_NUM 8
-#define STURDY_SYM 9
+#define MOUSE 4
+#define MEDIA 5
+#define NUM 6
+#define SYM 7
+#define FUN 8
+#define STURDY_NUM 9
+#define STURDY_SYM 10
 
 // Home row mods macro
 #define HRML(k1,k2,k3,k4) &htl LCTRL k1  &htl LALT k2  &htl LGUI k3  &htl LSHFT k4
@@ -53,7 +55,7 @@
         thumbs_default_left {
             layers = <COLEMAK STURDY QWERTY>;
             key-positions = <30 31>;
-            bindings = <&kp ESC>;
+            bindings = <&lt MEDIA ESC>;
             timeout-ms = <50>;
         };
         thumbs_default_right {
@@ -91,7 +93,7 @@
             &kp Z      &kp X      &kp C      &kp D      &kp V          &kp K      &kp H      &kp COMMA  &kp DOT    &kp FSLH
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
         //                                 |          |          |   |          |          |
-                                            &lt NAV SPACE &lt MEDIA TAB &lt SYM ENTER &lt NUM BSPC
+                                            &lt NAV SPACE &lt MOUSE TAB &lt SYM ENTER &lt NUM BSPC
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
@@ -109,7 +111,7 @@
             &kp Z      &kp K      &kp Q      &kp G      &kp W          &kp B      &kp H      &kp SQT    &kp SEMI   &kp COMMA
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
         //                                 |          |          |   |          |          |
-                                            &lt NAV SPACE &lt MEDIA TAB &lt SYM ENTER &lt NUM BSPC
+                                            &lt NAV SPACE &lt MOUSE TAB &lt SYM ENTER &lt NUM BSPC
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
@@ -146,6 +148,24 @@
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
         //                                 |          |          |   |          |          |
                                              &none      &none          &kp ENTER  &kp BSPC
+        //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
+            >;
+        };
+
+        mouse_layer {
+            bindings = <
+        //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
+        //│          │          │          │          │          │   │          │          │          │          │          │
+            &none      &none      &none      &none      &none          &none      &none      &none      &none      &none
+        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
+        //│          │          │          │          │          │   │          │          │          │          │          │
+            &kp LCTRL  &kp LALT   &kp LGUI   &kp LSHFT  &none          &none      &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_UP &mmv MOVE_RIGHT
+        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
+        //│          │          │          │          │          │   │          │          │          │          │          │
+            &none      &none      &none      &none      &none          &none      &msc SCRL_RIGHT &msc SCRL_UP &msc SCRL_DOWN &msc SCRL_LEFT
+        //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
+        //                                 |          |          |   |          |          |
+                                             &none      &none          &mkp RCLK  &mkp LCLK
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };

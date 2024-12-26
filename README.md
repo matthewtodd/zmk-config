@@ -15,8 +15,6 @@ can tinker a little more freely.
 
 ## Changes from Miryoku
 
-- Removed the [mouse layer][miryoku-mouse-layer], for now. I'm watching
-  zmkfirmware/zmk#2477, which seems like it's close!
 - Removed the [button layer][miryoku-button-layer], since I wasn't really using
   it.
 - Removed [additional features][miryoku-additional-features] (boot, base, tap,
