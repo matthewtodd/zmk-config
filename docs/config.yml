@@ -4,10 +4,8 @@ draw_config:
 
 parse_config:
   layer_legend_map:
-    colemak_dh: "Colemak-DH"
-    sturdy: "Sturdy"
-    qwerty: "QWERTY"
     nav: "Nav"
+    mouse: "Mouse"
     media: "Media"
     number: "Num"
     symbol: "Sym"
@@ -17,6 +15,17 @@ parse_config:
 
   raw_binding_map:
     "&caps_word": "Caps"
+    "&mmv MOVE_LEFT": $$mdi:arrow-left-thick$$
+    "&mmv MOVE_DOWN": $$mdi:arrow-down-thick$$
+    "&mmv MOVE_UP": $$mdi:arrow-up-thick$$
+    "&mmv MOVE_RIGHT": $$mdi:arrow-right-thick$$
+    "&msc SCRL_LEFT": $$mdi:arrow-right-bold-outline$$
+    "&msc SCRL_DOWN": $$mdi:arrow-up-bold-outline$$
+    "&msc SCRL_UP": $$mdi:arrow-down-bold-outline$$
+    "&msc SCRL_RIGHT": $$mdi:arrow-left-bold-outline$$
+    "&mkp LCLK": Left
+    "&mkp RCLK": Right
+
 
   zmk_keycode_map:
     EXCL: "!"

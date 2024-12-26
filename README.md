@@ -20,10 +20,11 @@ can tinker a little more freely.
 - Removed [additional features][miryoku-additional-features] (boot, base, tap,
   extra, opposite, current).
 - Removed keys I didn't use (insert, RGB, power & output toggles, scroll lock).
-- Added a layer for the [Sturdy][sturdy] keyboard layout! Colemak-DH is a very
-  sensible default, but I'm curious what I might learn from other experimental
-  layouts like this.
-- Added a QWERTY layer so friends can test-drive the keyboard more easily.
+- Added a Qwerty layer so friends can test-drive the keyboard more easily.
+- Added [Sturdy][sturdy], [Canary][canary], [Gallium][gallium], and
+  [Focal][focal] layers. Colemak-DH is a very sensible default, but after
+  scanning [Pascal Getreuer's guide][which-alt], I'm feeling curious and hoping
+  I might find an alternative layout I like well enough to switch.
 
 ## Things I might try someday
 
@@ -31,6 +32,8 @@ can tinker a little more freely.
   fatigued holding layer switches down.
 
 ## What the layers look like
+
+Thanks to [caksoylar/keymap-drawer][keymap-drawer].
 
 ![keymap][keymap]
 
@@ -42,4 +45,9 @@ can tinker a little more freely.
 [miryoku-button-layer]: https://github.com/manna-harbour/miryoku/tree/master/docs/reference#button
 [miryoku-additional-features]: https://github.com/manna-harbour/miryoku/tree/master/docs/reference#additional-features
 [sturdy]: https://oxey.dev/sturdy
+[canary]: https://github.com/Apsu/Canary
+[gallium]: https://github.com/GalileoBlues/Gallium
+[focal]: https://github.com/Keyhabit/Focal-keyboard-layout/
+[which-alt]: https://getreuer.info/posts/keyboards/alt-layouts/index.html#which-alt-keyboard-layout-should-i-learn
+[keymap-drawer]: https://github.com/caksoylar/keymap-drawer
 [keymap]: docs/cradio.svg
