@@ -25,7 +25,6 @@
 // Home row mods macro
 #define HRML(k1,k2,k3,k4) &htl LCTRL k1  &htl LALT k2  &htl LGUI k3  &htl LSHFT k4
 #define HRMR(k1,k2,k3,k4) &htr RSHFT k1  &htr RGUI k2  &htr RALT k3  &htr RCTRL k4
-#define THMB(k1,k2,k3,k4) &lt NAV k1 &lt MOUSE k2 &lt SYM k3 &lt NUM k4
 
 / {
     behaviors {
@@ -113,7 +112,7 @@
             &kp Z      &kp X      &kp C      &kp D      &kp V          &kp K      &kp H      &kp COMMA  &kp DOT    &kp FSLH
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
         //                                 |          |          |   |          |          |
-                                            THMB(SPACE,   TAB,           ENTER,     BSPC)
+                                          &lt NAV SPACE &lt MOUSE TAB  &lt SYM ENTER &lt NUM BSPC
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
@@ -131,7 +130,7 @@
             &kp Z      &kp X      &kp C      &kp V      &kp B          &kp N      &kp M      &kp COMMA  &kp DOT    &kp FSLH
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
         //                                 |          |          |   |          |          |
-                                            THMB(SPACE,   TAB,           ENTER,     BSPC)
+                                             &trans     &trans         &trans     &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
@@ -149,7 +148,7 @@
             &kp Z      &kp K      &kp Q      &kp G      &kp W          &kp B      &kp H      &kp SQT    &kp SEMI   &kp COMMA
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
         //                                 |          |          |   |          |          |
-                                            THMB(SPACE,   TAB,           ENTER,     BSPC)
+                                             &trans     &trans         &trans     &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
@@ -167,7 +166,7 @@
             &kp Q      &kp J      &kp V      &kp D      &kp K          &kp X      &kp H      &kp FSLH   &kp COMMA  &kp DOT
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
         //                                 |          |          |   |          |          |
-                                            THMB(SPACE,   TAB,           ENTER,     BSPC)
+                                             &trans     &trans         &trans     &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
@@ -185,7 +184,7 @@
             &kp X      &kp Q      &kp M      &kp W      &kp Z          &kp K      &kp F      &kp SQT    &kp SEMI   &kp DOT
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
         //                                 |          |          |   |          |          |
-                                            THMB(SPACE,   TAB,           ENTER,     BSPC)
+                                             &trans     &trans         &trans     &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
@@ -203,7 +202,7 @@
             &kp Z      &kp X      &kp M      &kp D      &kp P          &kp SQT    &kp W      &kp DOT    &kp SEMI   &kp COMMA
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
         //                                 |          |          |   |          |          |
-                                            THMB(SPACE,   TAB,           ENTER,     BSPC)
+                                             &trans     &trans         &trans     &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
