@@ -235,7 +235,7 @@
             &kp LCTRL  &kp LALT   &kp LGUI   &kp LSHFT  &none          &none      &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_UP &mmv MOVE_RIGHT
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │          │          │          │          │   │          │          │          │          │          │
-            &none      &none      &none      &none      &none          &none      &msc SCRL_RIGHT &msc SCRL_UP &msc SCRL_DOWN &msc SCRL_LEFT
+            &none      &none      &none      &none      &none          &none      &msc MOVE_RIGHT &msc MOVE_UP &msc MOVE_DOWN &msc MOVE_LEFT
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
         //                                 |          |          |   |          |          |
                                              &none      &none          &mkp RCLK  &mkp LCLK

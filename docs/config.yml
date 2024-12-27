@@ -19,6 +19,10 @@ parse_config:
     "&mmv MOVE_DOWN": $$mdi:arrow-down-thick$$
     "&mmv MOVE_UP": $$mdi:arrow-up-thick$$
     "&mmv MOVE_RIGHT": $$mdi:arrow-right-thick$$
+    "&msc MOVE_LEFT": $$mdi:arrow-right-bold-outline$$
+    "&msc MOVE_DOWN": $$mdi:arrow-up-bold-outline$$
+    "&msc MOVE_UP": $$mdi:arrow-down-bold-outline$$
+    "&msc MOVE_RIGHT": $$mdi:arrow-left-bold-outline$$
     "&msc SCRL_LEFT": $$mdi:arrow-right-bold-outline$$
     "&msc SCRL_DOWN": $$mdi:arrow-up-bold-outline$$
     "&msc SCRL_UP": $$mdi:arrow-down-bold-outline$$
