@@ -8,4 +8,4 @@ on:
 
 jobs:
   build:
-    uses: matthewtodd/zmk/.github/workflows/build-user-config.yml@caps-word-deactivate-by-numeric-with-modifiers
+    uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@main
