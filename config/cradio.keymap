@@ -212,10 +212,10 @@
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
         //│          │          │          │          │          │   │          │          │          │          │          │
-            &tog FOCAL &tog GALLIUM &tog CANARY &tog STURDY &tog QWERTY &none     &kp LG(V)  &kp LG(C)  &kp LG(X)  &kp LG(Z)
+            &to FOCAL &to GALLIUM &to CANARY &to STURDY &to QWERTY     &none      &kp LG(V)  &kp LG(C)  &kp LG(X)  &kp LG(Z)
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │          │          │          │          │   │          │          │          │          │          │
-            &kp LCTRL  &kp LALT   &kp LGUI   &kp LSHFT  &none          &caps_word &kp LEFT   &kp DOWN   &kp UP     &kp RIGHT
+            &kp LCTRL  &kp LALT   &kp LGUI   &kp LSHFT  &to COLEMAK    &caps_word &kp LEFT   &kp DOWN   &kp UP     &kp RIGHT
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │          │          │          │          │   │          │          │          │          │          │
             &none      &none      &none      &none      &none          &none      &kp HOME   &kp PG_DN  &kp PG_UP  &kp END
