@@ -32,42 +32,7 @@ layers:
   - .
   - /
   - {t: '$$mdi:keyboard-space$$', h: Nav}
-  - {t: '$$mdi:keyboard-tab$$', h: Media}
-  - {t: '$$mdi:keyboard-return$$', h: Sym}
-  - {t: '$$mdi:backspace-outline$$', h: Num}
-  sturdy:
-  - V
-  - M
-  - L
-  - C
-  - P
-  - X
-  - F
-  - O
-  - U
-  - J
-  - {t: S, h: '$$mdi:apple-keyboard-control$$'}
-  - {t: T, h: '$$mdi:apple-keyboard-option$$'}
-  - {t: R, h: '$$mdi:apple-keyboard-command$$'}
-  - {t: D, h: '$$mdi:apple-keyboard-shift$$'}
-  - Y
-  - .
-  - {t: N, h: '$$mdi:apple-keyboard-shift$$'}
-  - {t: A, h: '$$mdi:apple-keyboard-command$$'}
-  - {t: E, h: '$$mdi:apple-keyboard-option$$'}
-  - {t: I, h: '$$mdi:apple-keyboard-control$$'}
-  - Z
-  - K
-  - Q
-  - G
-  - W
-  - B
-  - H
-  - ''''
-  - ;
-  - ','
-  - {t: '$$mdi:keyboard-space$$', h: Nav}
-  - {t: '$$mdi:keyboard-tab$$', h: Media}
+  - {t: '$$mdi:keyboard-tab$$', h: Mouse}
   - {t: '$$mdi:keyboard-return$$', h: Sym}
   - {t: '$$mdi:backspace-outline$$', h: Num}
   qwerty:
@@ -102,15 +67,155 @@ layers:
   - .
   - /
   - {t: '$$mdi:keyboard-space$$', h: Nav}
-  - {t: '$$mdi:keyboard-tab$$', h: Media}
+  - {t: '$$mdi:keyboard-tab$$', h: Mouse}
+  - {t: '$$mdi:keyboard-return$$', h: Sym}
+  - {t: '$$mdi:backspace-outline$$', h: Num}
+  sturdy:
+  - V
+  - M
+  - L
+  - C
+  - P
+  - X
+  - F
+  - O
+  - U
+  - J
+  - {t: S, h: '$$mdi:apple-keyboard-control$$'}
+  - {t: T, h: '$$mdi:apple-keyboard-option$$'}
+  - {t: R, h: '$$mdi:apple-keyboard-command$$'}
+  - {t: D, h: '$$mdi:apple-keyboard-shift$$'}
+  - Y
+  - .
+  - {t: N, h: '$$mdi:apple-keyboard-shift$$'}
+  - {t: A, h: '$$mdi:apple-keyboard-command$$'}
+  - {t: E, h: '$$mdi:apple-keyboard-option$$'}
+  - {t: I, h: '$$mdi:apple-keyboard-control$$'}
+  - Z
+  - K
+  - Q
+  - G
+  - W
+  - B
+  - H
+  - ''''
+  - ;
+  - ','
+  - {t: '$$mdi:keyboard-space$$', h: Nav}
+  - {t: '$$mdi:keyboard-tab$$', h: Mouse}
+  - {t: '$$mdi:keyboard-return$$', h: Sym}
+  - {t: '$$mdi:backspace-outline$$', h: Num}
+  canary:
+  - W
+  - L
+  - Y
+  - P
+  - B
+  - Z
+  - F
+  - O
+  - U
+  - ''''
+  - {t: C, h: '$$mdi:apple-keyboard-control$$'}
+  - {t: R, h: '$$mdi:apple-keyboard-option$$'}
+  - {t: S, h: '$$mdi:apple-keyboard-command$$'}
+  - {t: T, h: '$$mdi:apple-keyboard-shift$$'}
+  - G
+  - M
+  - {t: N, h: '$$mdi:apple-keyboard-shift$$'}
+  - {t: E, h: '$$mdi:apple-keyboard-command$$'}
+  - {t: I, h: '$$mdi:apple-keyboard-option$$'}
+  - {t: A, h: '$$mdi:apple-keyboard-control$$'}
+  - Q
+  - J
+  - V
+  - D
+  - K
+  - X
+  - H
+  - /
+  - ','
+  - .
+  - {t: '$$mdi:keyboard-space$$', h: Nav}
+  - {t: '$$mdi:keyboard-tab$$', h: Mouse}
+  - {t: '$$mdi:keyboard-return$$', h: Sym}
+  - {t: '$$mdi:backspace-outline$$', h: Num}
+  gallium:
+  - B
+  - L
+  - D
+  - C
+  - V
+  - J
+  - Y
+  - O
+  - U
+  - ','
+  - {t: N, h: '$$mdi:apple-keyboard-control$$'}
+  - {t: R, h: '$$mdi:apple-keyboard-option$$'}
+  - {t: T, h: '$$mdi:apple-keyboard-command$$'}
+  - {t: S, h: '$$mdi:apple-keyboard-shift$$'}
+  - G
+  - P
+  - {t: H, h: '$$mdi:apple-keyboard-shift$$'}
+  - {t: A, h: '$$mdi:apple-keyboard-command$$'}
+  - {t: E, h: '$$mdi:apple-keyboard-option$$'}
+  - {t: I, h: '$$mdi:apple-keyboard-control$$'}
+  - X
+  - Q
+  - M
+  - W
+  - Z
+  - K
+  - F
+  - ''''
+  - ;
+  - .
+  - {t: '$$mdi:keyboard-space$$', h: Nav}
+  - {t: '$$mdi:keyboard-tab$$', h: Mouse}
+  - {t: '$$mdi:keyboard-return$$', h: Sym}
+  - {t: '$$mdi:backspace-outline$$', h: Num}
+  focal:
+  - V
+  - L
+  - H
+  - G
+  - K
+  - Q
+  - F
+  - O
+  - U
+  - J
+  - {t: S, h: '$$mdi:apple-keyboard-control$$'}
+  - {t: R, h: '$$mdi:apple-keyboard-option$$'}
+  - {t: N, h: '$$mdi:apple-keyboard-command$$'}
+  - {t: T, h: '$$mdi:apple-keyboard-shift$$'}
+  - B
+  - Y
+  - {t: C, h: '$$mdi:apple-keyboard-shift$$'}
+  - {t: A, h: '$$mdi:apple-keyboard-command$$'}
+  - {t: E, h: '$$mdi:apple-keyboard-option$$'}
+  - {t: I, h: '$$mdi:apple-keyboard-control$$'}
+  - Z
+  - X
+  - M
+  - D
+  - P
+  - ''''
+  - W
+  - .
+  - ;
+  - ','
+  - {t: '$$mdi:keyboard-space$$', h: Nav}
+  - {t: '$$mdi:keyboard-tab$$', h: Mouse}
   - {t: '$$mdi:keyboard-return$$', h: Sym}
   - {t: '$$mdi:backspace-outline$$', h: Num}
   nav:
-  - ''
-  - ''
-  - {t: QWERTY, h: toggle}
-  - {t: Sturdy, h: toggle}
-  - ''
+  - {t: focal, h: toggle}
+  - {t: gallium, h: toggle}
+  - {t: canary, h: toggle}
+  - {t: sturdy, h: toggle}
+  - {t: qwerty, h: toggle}
   - ''
   - Paste
   - Copy
@@ -140,6 +245,41 @@ layers:
   - ''
   - $$mdi:keyboard-return$$
   - $$mdi:backspace-outline$$
+  mouse:
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - $$mdi:apple-keyboard-control$$
+  - $$mdi:apple-keyboard-option$$
+  - $$mdi:apple-keyboard-command$$
+  - $$mdi:apple-keyboard-shift$$
+  - ''
+  - ''
+  - $$mdi:arrow-left-thick$$
+  - $$mdi:arrow-down-thick$$
+  - $$mdi:arrow-up-thick$$
+  - $$mdi:arrow-right-thick$$
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - $$mdi:arrow-left-bold-outline$$
+  - $$mdi:arrow-down-bold-outline$$
+  - $$mdi:arrow-up-bold-outline$$
+  - $$mdi:arrow-right-bold-outline$$
+  - ''
+  - {type: held}
+  - Right
+  - Left
   media:
   - ''
   - ''
@@ -171,7 +311,7 @@ layers:
   - {t: '$$mdi:bluetooth-connect$$', h: '1'}
   - {t: '$$mdi:bluetooth-connect$$', h: '2'}
   - {t: '$$mdi:bluetooth-connect$$', h: '3'}
-  - ''
+  - {type: held}
   - {type: held}
   - $$mdi:volume-off$$
   - $$mdi:play-pause$$
@@ -280,7 +420,7 @@ layers:
   - ''
   - {type: held}
   - {type: held}
-  sturdy_number:
+  slash_number:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -315,7 +455,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {type: held}
-  sturdy_symbol:
+  slash_symbol:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -352,8 +492,8 @@ layers:
   - {t: ▽, type: trans}
 combos:
 - p: [30, 31]
-  k: $$mdi:keyboard-esc$$
-  l: [colemak_dh, sturdy, qwerty]
+  k: {t: '$$mdi:keyboard-esc$$', h: Media}
+  l: [colemak_dh, qwerty, sturdy, canary, gallium, focal]
 - p: [32, 33]
   k: {t: '$$mdi:backspace-reverse-outline$$', h: Fun}
-  l: [colemak_dh, sturdy, qwerty]
+  l: [colemak_dh, qwerty, sturdy, canary, gallium, focal]
