@@ -53,6 +53,22 @@
         };
     };
 
+    macros {
+        bt_sel: bluetooth_select_only {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <1>;
+            bindings
+                = <&macro_param_1to1>
+                , <&macro_tap &bt BT_SEL MACRO_PLACEHOLDER>
+                , <&macro_tap &bt BT_DISC 0>
+                , <&macro_tap &bt BT_DISC 1>
+                , <&macro_tap &bt BT_DISC 2>
+                , <&macro_tap &bt BT_DISC 3>
+                , <&macro_tap &bt BT_DISC 4>
+                ;
+        };
+    };
+
     combos {
         compatible = "zmk,combos";
         thumbs_default_left {
@@ -253,7 +269,7 @@
             &kp LCTRL  &kp LALT   &kp LGUI   &kp LSHFT  &none          &none      &kp C_PREV &kp C_VOL_DN &kp C_VOL_UP &kp C_NEXT
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │          │          │          │          │   │          │          │          │          │          │
-            &none      &none      &none      &none      &none          &none      &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3
+            &none      &none      &none      &none      &none          &none      &bt_sel 0  &bt_sel 1  &bt_sel 2  &bt_sel 3
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
         //                                 |          |          |   |          |          |
                                              &none      &none          &kp C_MUTE &kp C_PP
