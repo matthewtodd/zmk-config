@@ -307,10 +307,10 @@ layers:
   - ''
   - ''
   - ''
-  - {t: '$$mdi:bluetooth-connect$$', h: '0'}
-  - {t: '$$mdi:bluetooth-connect$$', h: '1'}
-  - {t: '$$mdi:bluetooth-connect$$', h: '2'}
-  - {t: '$$mdi:bluetooth-connect$$', h: '3'}
+  - '&bt_sel'
+  - '&bt_sel 1'
+  - '&bt_sel 2'
+  - '&bt_sel 3'
   - {type: held}
   - {type: held}
   - $$mdi:volume-off$$
