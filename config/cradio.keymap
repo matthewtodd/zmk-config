@@ -48,7 +48,7 @@
     };
 
     macros {
-        bt0: bluetooth_select_only {
+        bt0: bluetooth_select_only_0 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
@@ -59,7 +59,7 @@
                 ;
         };
 
-        bt1: bluetooth_select_only {
+        bt1: bluetooth_select_only_1 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
@@ -70,7 +70,7 @@
                 ;
         };
 
-        bt2: bluetooth_select_only {
+        bt2: bluetooth_select_only_2 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
@@ -81,7 +81,7 @@
                 ;
         };
 
-        bt3: bluetooth_select_only {
+        bt3: bluetooth_select_only_3 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
