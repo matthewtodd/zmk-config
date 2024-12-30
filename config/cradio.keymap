@@ -48,17 +48,47 @@
     };
 
     macros {
-        bt_sel: bluetooth_select_only {
-            compatible = "zmk,behavior-macro-one-param";
-            #binding-cells = <1>;
+        bt0: bluetooth_select_only {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
             bindings
-                = <&macro_param_1to1>
-                , <&macro_tap &bt BT_SEL MACRO_PLACEHOLDER>
-                , <&macro_tap &bt BT_DISC 0>
+                = <&macro_tap &bt BT_SEL 0>
                 , <&macro_tap &bt BT_DISC 1>
                 , <&macro_tap &bt BT_DISC 2>
                 , <&macro_tap &bt BT_DISC 3>
-                , <&macro_tap &bt BT_DISC 4>
+                ;
+        };
+
+        bt1: bluetooth_select_only {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_tap &bt BT_SEL 1>
+                , <&macro_tap &bt BT_DISC 0>
+                , <&macro_tap &bt BT_DISC 2>
+                , <&macro_tap &bt BT_DISC 3>
+                ;
+        };
+
+        bt2: bluetooth_select_only {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_tap &bt BT_SEL 2>
+                , <&macro_tap &bt BT_DISC 0>
+                , <&macro_tap &bt BT_DISC 1>
+                , <&macro_tap &bt BT_DISC 3>
+                ;
+        };
+
+        bt3: bluetooth_select_only {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_tap &bt BT_SEL 3>
+                , <&macro_tap &bt BT_DISC 0>
+                , <&macro_tap &bt BT_DISC 1>
+                , <&macro_tap &bt BT_DISC 2>
                 ;
         };
     };
@@ -163,7 +193,7 @@
             &kp LCTRL  &kp LALT   &kp LGUI   &kp LSHFT  &none          &none      &kp C_PREV &kp C_VOL_DN &kp C_VOL_UP &kp C_NEXT
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │          │          │          │          │   │          │          │          │          │          │
-            &none      &none      &none      &none      &none          &none      &bt_sel 0  &bt_sel 1  &bt_sel 2  &bt_sel 3
+            &none      &none      &none      &none      &none          &none      &bt0       &bt1       &bt2       &bt3
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
         //                                 |          |          |   |          |          |
                                              &none      &none          &kp C_MUTE &kp C_PP
