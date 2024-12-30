@@ -36,9 +36,9 @@ can tinker a little more freely.
 
 ## What the layers look like
 
-Thanks to [caksoylar/keymap-drawer][keymap-drawer].
-
 ![keymap][keymap]
+
+Thanks to [caksoylar/keymap-drawer][keymap-drawer].
 
 [ferris-sweep]: https://github.com/davidphilipbarr/Sweep
 [keyboard]: docs/keyboard.jpeg
@@ -52,5 +52,5 @@ Thanks to [caksoylar/keymap-drawer][keymap-drawer].
 [gallium]: https://github.com/GalileoBlues/Gallium
 [focal]: https://github.com/Keyhabit/Focal-keyboard-layout/
 [which-alt]: https://getreuer.info/posts/keyboards/alt-layouts/index.html#which-alt-keyboard-layout-should-i-learn
-[keymap-drawer]: https://github.com/caksoylar/keymap-drawer
 [keymap]: docs/cradio.svg
+[keymap-drawer]: https://github.com/caksoylar/keymap-drawer
