@@ -9,18 +9,12 @@
 // Layer names
 #define COLEMAK 0
 #define QWERTY 1
-#define STURDY 2
-#define CANARY 3
-#define GALLIUM 4
-#define FOCAL 5
-#define NAV 6
-#define MOUSE 7
-#define MEDIA 8
-#define NUM 9
-#define SYM 10
-#define FUN 11
-#define SLASH_NUM 12
-#define SLASH_SYM 13
+#define NAV 2
+#define MOUSE 3
+#define MEDIA 4
+#define NUM 5
+#define SYM 6
+#define FUN 7
 
 // Home row mods macro
 #define HRML(k1,k2,k3,k4) &htl LCTRL k1  &htl LALT k2  &htl LGUI k3  &htl LSHFT k4
@@ -72,44 +66,16 @@
     combos {
         compatible = "zmk,combos";
         thumbs_default_left {
-            layers = <COLEMAK QWERTY STURDY CANARY GALLIUM FOCAL>;
+            layers = <COLEMAK QWERTY>;
             key-positions = <30 31>;
             bindings = <&lt MEDIA ESC>;
             timeout-ms = <50>;
         };
         thumbs_default_right {
-            layers = <COLEMAK QWERTY STURDY CANARY GALLIUM FOCAL>;
+            layers = <COLEMAK QWERTY>;
             key-positions = <32 33>;
             bindings = <&lt FUN DEL>;
             timeout-ms = <50>;
-        };
-    };
-
-    conditional_layers {
-        compatible = "zmk,conditional-layers";
-        sturdy_num_adjustments_layer {
-            if-layers = <STURDY NUM>;
-            then-layer = <SLASH_NUM>;
-        };
-        sturdy_sym_adjustments_layer {
-            if-layers = <STURDY SYM>;
-            then-layer = <SLASH_SYM>;
-        };
-        gallium_num_adjustments_layer {
-            if-layers = <GALLIUM NUM>;
-            then-layer = <SLASH_NUM>;
-        };
-        gallium_sym_adjustments_layer {
-            if-layers = <GALLIUM SYM>;
-            then-layer = <SLASH_SYM>;
-        };
-        focal_num_adjustments_layer {
-            if-layers = <FOCAL NUM>;
-            then-layer = <SLASH_NUM>;
-        };
-        focal_sym_adjustments_layer {
-            if-layers = <FOCAL SYM>;
-            then-layer = <SLASH_SYM>;
         };
     };
 
@@ -151,83 +117,11 @@
             >;
         };
 
-        sturdy_layer {
-            bindings = <
-        //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│          │          │          │          │          │   │          │          │          │          │          │
-            &kp V      &kp M      &kp L      &kp C      &kp P          &kp X      &kp F      &kp O      &kp U      &kp J
-        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│          │          │          │          │          │   │          │          │          │          │          │
-            HRML(S,        T,         R,         D)     &kp Y          &kp DOT    HRMR(N,        A,         E,         I)
-        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│          │          │          │          │          │   │          │          │          │          │          │
-            &kp Z      &kp K      &kp Q      &kp G      &kp W          &kp B      &kp H      &kp SQT    &kp SEMI   &kp COMMA
-        //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-        //                                 |          |          |   |          |          |
-                                             &trans     &trans         &trans     &trans
-        //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
-            >;
-        };
-
-        canary_layer {
-            bindings = <
-        //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│          │          │          │          │          │   │          │          │          │          │          │
-            &kp W      &kp L      &kp Y      &kp P      &kp B          &kp Z      &kp F      &kp O      &kp U      &kp SQT
-        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│          │          │          │          │          │   │          │          │          │          │          │
-            HRML(C,        R,         S,         T)     &kp G          &kp M      HRMR(N,        E,         I,         A)
-        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│          │          │          │          │          │   │          │          │          │          │          │
-            &kp Q      &kp J      &kp V      &kp D      &kp K          &kp X      &kp H      &kp FSLH   &kp COMMA  &kp DOT
-        //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-        //                                 |          |          |   |          |          |
-                                             &trans     &trans         &trans     &trans
-        //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
-            >;
-        };
-
-        gallium_layer {
-            bindings = <
-        //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│          │          │          │          │          │   │          │          │          │          │          │
-            &kp B      &kp L      &kp D      &kp C      &kp V          &kp J      &kp Y      &kp O      &kp U      &kp COMMA
-        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│          │          │          │          │          │   │          │          │          │          │          │
-            HRML(N,        R,         T,         S)     &kp G          &kp P      HRMR(H,        A,         E,         I)
-        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│          │          │          │          │          │   │          │          │          │          │          │
-            &kp X      &kp Q      &kp M      &kp W      &kp Z          &kp K      &kp F      &kp SQT    &kp SEMI   &kp DOT
-        //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-        //                                 |          |          |   |          |          |
-                                             &trans     &trans         &trans     &trans
-        //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
-            >;
-        };
-
-        focal_layer {
-            bindings = <
-        //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│          │          │          │          │          │   │          │          │          │          │          │
-            &kp V      &kp L      &kp H      &kp G      &kp K          &kp Q      &kp F      &kp O      &kp U      &kp J
-        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│          │          │          │          │          │   │          │          │          │          │          │
-            HRML(S,        R,         N,         T)     &kp B          &kp Y      HRMR(C,        A,         E,         I)
-        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│          │          │          │          │          │   │          │          │          │          │          │
-            &kp Z      &kp X      &kp M      &kp D      &kp P          &kp SQT    &kp W      &kp DOT    &kp SEMI   &kp COMMA
-        //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-        //                                 |          |          |   |          |          |
-                                             &trans     &trans         &trans     &trans
-        //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
-            >;
-        };
-
         nav_layer {
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
         //│          │          │          │          │          │   │          │          │          │          │          │
-            &to FOCAL &to GALLIUM &to CANARY &to STURDY &to QWERTY     &none      &kp LG(V)  &kp LG(C)  &kp LG(X)  &kp LG(Z)
+            &none      &none      &none      &none      &to QWERTY     &none      &kp LG(V)  &kp LG(C)  &kp LG(X)  &kp LG(Z)
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │          │          │          │          │   │          │          │          │          │          │
             &kp LCTRL  &kp LALT   &kp LGUI   &kp LSHFT  &to COLEMAK    &caps_word &kp LEFT   &kp DOWN   &kp UP     &kp RIGHT
@@ -327,42 +221,6 @@
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
         //                                 |          |          |   |          |          |
                                              &none      &none          &none      &none
-        //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
-            >;
-        };
-
-        slash_number_layer {
-            bindings = <
-        //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│          │          │          │          │          │   │          │          │          │          │          │
-            &trans     &trans     &trans     &trans     &trans         &trans     &trans     &trans     &trans     &trans
-        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│          │          │          │          │          │   │          │          │          │          │          │
-            &kp FSLH   &trans     &trans     &trans     &trans         &trans     &trans     &trans     &trans     &trans
-        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│          │          │          │          │          │   │          │          │          │          │          │
-            &trans     &trans     &trans     &trans     &trans         &trans     &trans     &trans     &trans     &trans
-        //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-        //                                 |          |          |   |          |          |
-                                             &trans     &trans         &trans     &trans
-        //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
-            >;
-        };
-
-        slash_symbol_layer {
-            bindings = <
-        //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│          │          │          │          │          │   │          │          │          │          │          │
-            &trans     &trans     &trans     &trans     &trans         &trans     &trans     &trans     &trans     &trans
-        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│          │          │          │          │          │   │          │          │          │          │          │
-            &kp QMARK  &trans     &trans     &trans     &trans         &trans     &trans     &trans     &trans     &trans
-        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│          │          │          │          │          │   │          │          │          │          │          │
-            &trans     &trans     &trans     &trans     &trans         &trans     &trans     &trans     &trans     &trans
-        //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-        //                                 |          |          |   |          |          |
-                                             &trans     &trans         &trans     &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };

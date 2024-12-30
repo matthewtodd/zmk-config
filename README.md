@@ -21,15 +21,18 @@ can tinker a little more freely.
   extra, opposite, current).
 - Removed keys I didn't use (insert, RGB, power & output toggles, scroll lock).
 - Added a Qwerty layer so friends can test-drive the keyboard more easily.
-- Added [Sturdy][sturdy], [Canary][canary], [Gallium][gallium], and
-  [Focal][focal] layers. Colemak-DH is a very sensible default, but after
-  scanning [Pascal Getreuer's guide][which-alt], I'm feeling curious and hoping
-  I might find an alternative layout I like well enough to switch.
 
 ## Things I might try someday
 
 - Exploring non-momentary layer switching, since my thumbs get a little
   fatigued holding layer switches down.
+
+## Things I've tried
+
+- After reading [Pascal Getreuer's guide][which-alt], I added experimental
+  layers for the [Sturdy][sturdy], [Canary][canary], [Gallium][gallium], and
+  [Focal][focal] layouts, curious to see if I might like one better enough to
+  switch away from Colemak-DH. So far, no, but I may return someday.
 
 ## What the layers look like
 

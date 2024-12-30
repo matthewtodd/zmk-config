@@ -10,8 +10,6 @@ parse_config:
     number: "Num"
     symbol: "Sym"
     function: "Fun"
-    sturdy_number: "Sturdy Number Overrides"
-    sturdy_symbol: "Sturdy Symbol Overrides"
 
   raw_binding_map:
     "&caps_word": "Caps"
