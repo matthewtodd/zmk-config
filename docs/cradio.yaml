@@ -167,10 +167,10 @@ layers:
   - ''
   - ''
   - ''
-  - '&bt_sel'
-  - '&bt_sel 1'
-  - '&bt_sel 2'
-  - '&bt_sel 3'
+  - '&bt0'
+  - '&bt1'
+  - '&bt2'
+  - '&bt3'
   - {type: held}
   - {type: held}
   - $$mdi:volume-off$$
