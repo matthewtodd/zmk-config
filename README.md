@@ -20,7 +20,6 @@ can tinker a little more freely.
 - Removed [additional features][miryoku-additional-features] (boot, base, tap,
   extra, opposite, current).
 - Removed keys I didn't use (insert, RGB, power & output toggles, scroll lock).
-- Added a Qwerty layer so friends can test-drive the keyboard more easily.
 
 ## Things I might try someday
 
@@ -33,6 +32,9 @@ can tinker a little more freely.
   layers for the [Sturdy][sturdy], [Canary][canary], [Gallium][gallium], and
   [Focal][focal] layouts, curious to see if I might like one better enough to
   switch away from Colemak-DH. So far, no, but I may return someday.
+- Adding a Qwerty layer so friends could test-drive the keyboard more easily. I
+  tried to gather interest over Christmas, and I think this is just going to be
+  my own personal hobby, lol.
 
 ## What the layers look like
 
