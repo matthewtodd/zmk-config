@@ -8,18 +8,20 @@
 
 // Layer names
 #define COLEMAK 0
-#define NAV 1
-#define MOUSE 2
-#define MEDIA 3
-#define NUM 4
-#define SYM 5
-#define FUN 6
+#define STURDY 1
+#define CANARY 2
+#define NAV 3
+#define MOUSE 4
+#define MEDIA 5
+#define NUM 6
+#define SYM 7
+#define FUN 8
 
 // Home row mods macro
 #define HRML(k1,k2,k3,k4) &htl LCTRL k1  &htl LALT k2  &htl LGUI k3  &htl LSHFT k4
 #define HRMR(k1,k2,k3,k4) &htr RSHFT k1  &htr RGUI k2  &htr RALT k3  &htr RCTRL k4
 
-// Alphas
+// Alphas macro
 #define ALPHAS(k1,k2,k3,k4,k5,k6,k7,k8,k9,k10,k11,k12,k13,k14,k15,k16,k17,k18,k19,k20,k21,k22,k23,k24,k25,k26,k27,k28,k29,k30) \
             &kp k1     &kp k2     &kp k3     &kp k4     &kp k5         &kp k6     &kp k7     &kp k8     &kp k9     &kp k10     \
            HRML(k11,       k12,       k13,       k14)   &kp k15        &kp k16   HRMR(k17,       k18,       k19,       k20)    \
@@ -102,13 +104,13 @@
     combos {
         compatible = "zmk,combos";
         thumbs_default_left {
-            layers = <COLEMAK>;
+            layers = <COLEMAK STURDY CANARY>;
             key-positions = <30 31>;
             bindings = <&lt MEDIA ESC>;
             timeout-ms = <50>;
         };
         thumbs_default_right {
-            layers = <COLEMAK>;
+            layers = <COLEMAK STURDY CANARY>;
             key-positions = <32 33>;
             bindings = <&lt FUN DEL>;
             timeout-ms = <50>;
@@ -127,11 +129,31 @@
             >;
         };
 
+        sturdy_layer {
+            bindings = <
+                ALPHAS( \
+                  V, M, L, C, P,   X, F, O, U, J, \
+                  S, T, R, D, Y,   DOT, N, A, E, I, \
+                  Z, K, Q, G, W,   B, H, SQT, FSLH, COMMA \
+                )
+            >;
+        };
+
+        canary_layer {
+            bindings = <
+                ALPHAS( \
+                  W, L, Y, P, B,   Z, F, O, U, SQT, \
+                  C, R, S, T, G,   M, N, E, I, A, \
+                  Q, J, V, D, K,   X, H, FSLH, COMMA, DOT \
+                )
+            >;
+        };
+
         nav_layer {
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
         //│          │          │          │          │          │   │          │          │          │          │          │
-            &none      &none      &none      &none      &none          &none      &kp LG(V)  &kp LG(C)  &kp LG(X)  &kp LG(Z)
+            &none      &to CANARY &to STURDY &to COLEMAK &none         &none      &kp LG(V)  &kp LG(C)  &kp LG(X)  &kp LG(Z)
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │          │          │          │          │   │          │          │          │          │          │
             &kp LCTRL  &kp LALT   &kp LGUI   &kp LSHFT  &none          &caps_word &kp LEFT   &kp DOWN   &kp UP     &kp RIGHT
