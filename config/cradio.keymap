@@ -19,6 +19,13 @@
 #define HRML(k1,k2,k3,k4) &htl LCTRL k1  &htl LALT k2  &htl LGUI k3  &htl LSHFT k4
 #define HRMR(k1,k2,k3,k4) &htr RSHFT k1  &htr RGUI k2  &htr RALT k3  &htr RCTRL k4
 
+// Alphas
+#define ALPHAS(k1,k2,k3,k4,k5,k6,k7,k8,k9,k10,k11,k12,k13,k14,k15,k16,k17,k18,k19,k20,k21,k22,k23,k24,k25,k26,k27,k28,k29,k30) \
+            &kp k1     &kp k2     &kp k3     &kp k4     &kp k5         &kp k6     &kp k7     &kp k8     &kp k9     &kp k10     \
+           HRML(k11,       k12,       k13,       k14)   &kp k15        &kp k16   HRMR(k17,       k18,       k19,       k20)    \
+            &kp k21    &kp k22    &kp k23    &kp k24    &kp k25        &kp k26    &kp k27    &kp k28    &kp k29    &kp k30     \
+                                          &lt NAV SPACE &lt MOUSE TAB  &lt SYM ENTER &lt NUM BSPC
+
 / {
     behaviors {
         htl: hold_tap_left {
@@ -112,19 +119,11 @@
         compatible = "zmk,keymap";
         colemak_dh_layer {
             bindings = <
-        //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│          │          │          │          │          │   │          │          │          │          │          │
-            &kp Q      &kp W      &kp F      &kp P      &kp B          &kp J      &kp L      &kp U      &kp Y      &kp SQT
-        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│          │          │          │          │          │   │          │          │          │          │          │
-            HRML(A,        R,         S,         T)     &kp G          &kp M      HRMR(N,        E,         I,         O)
-        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│          │          │          │          │          │   │          │          │          │          │          │
-            &kp Z      &kp X      &kp C      &kp D      &kp V          &kp K      &kp H      &kp COMMA  &kp DOT    &kp FSLH
-        //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-        //                                 |          |          |   |          |          |
-                                          &lt NAV SPACE &lt MOUSE TAB  &lt SYM ENTER &lt NUM BSPC
-        //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
+                ALPHAS( \
+                  Q, W, F, P, B,   J, L, U, Y, SQT, \
+                  A, R, S, T, G,   M, N, E, I, O, \
+                  Z, X, C, D, V,   K, H, COMMA, DOT, FSLH \
+                )
             >;
         };
 
