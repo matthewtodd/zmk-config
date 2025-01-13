@@ -7,15 +7,13 @@
 #include <dt-bindings/zmk/pointing.h>
 
 // Layer names
-#define COLEMAK 0
-#define STURDY 1
-#define CANARY 2
-#define NAV 3
-#define MOUSE 4
-#define MEDIA 5
-#define NUM 6
-#define SYM 7
-#define FUN 8
+#define STURDY 0
+#define NAV 1
+#define MOUSE 2
+#define MEDIA 3
+#define NUM 4
+#define SYM 5
+#define FUN 6
 
 // Home row mods macro
 #define HRML(k1,k2,k3,k4) &htl LCTRL k1  &htl LALT k2  &htl LGUI k3  &htl LSHFT k4
@@ -104,13 +102,13 @@
     combos {
         compatible = "zmk,combos";
         thumbs_default_left {
-            layers = <COLEMAK STURDY CANARY>;
+            layers = <STURDY>;
             key-positions = <30 31>;
             bindings = <&lt MEDIA ESC>;
             timeout-ms = <50>;
         };
         thumbs_default_right {
-            layers = <COLEMAK STURDY CANARY>;
+            layers = <STURDY>;
             key-positions = <32 33>;
             bindings = <&lt FUN DEL>;
             timeout-ms = <50>;
@@ -119,16 +117,6 @@
 
     keymap {
         compatible = "zmk,keymap";
-        colemak_dh_layer {
-            bindings = <
-                ALPHAS( \
-                  Q, W, F, P, B,   J, L, U, Y, SQT, \
-                  A, R, S, T, G,   M, N, E, I, O, \
-                  Z, X, C, D, V,   K, H, COMMA, DOT, FSLH \
-                )
-            >;
-        };
-
         sturdy_layer {
             bindings = <
                 ALPHAS( \
@@ -139,21 +127,11 @@
             >;
         };
 
-        canary_layer {
-            bindings = <
-                ALPHAS( \
-                  W, L, Y, P, B,   Z, F, O, U, SQT, \
-                  C, R, S, T, G,   M, N, E, I, A, \
-                  Q, J, V, D, K,   X, H, FSLH, COMMA, DOT \
-                )
-            >;
-        };
-
         nav_layer {
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
         //│          │          │          │          │          │   │          │          │          │          │          │
-            &none      &to CANARY &to STURDY &to COLEMAK &none         &none      &kp LG(V)  &kp LG(C)  &kp LG(X)  &kp LG(Z)
+            &none      &none      &none      &none      &none          &none      &kp LG(V)  &kp LG(C)  &kp LG(X)  &kp LG(Z)
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │          │          │          │          │   │          │          │          │          │          │
             &kp LCTRL  &kp LALT   &kp LGUI   &kp LSHFT  &none          &caps_word &kp LEFT   &kp DOWN   &kp UP     &kp RIGHT

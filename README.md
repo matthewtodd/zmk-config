@@ -20,12 +20,8 @@ can tinker a little more freely.
 - Removed [additional features][miryoku-additional-features] (boot, base, tap,
   extra, opposite, current).
 - Removed keys I didn't use (insert, RGB, power & output toggles, scroll lock).
-- Added a [Sturdy][sturdy] layer. When I tried it before, I remember a vague
-  feeling of bouncing around the keyboard (maybe this is comes from heavier
-  ring finger usage?), and I want more time to quantify it.
-- Added a [Canary][canary] layer. This may be where I end up, if it has similar
-  metrics to Sturdy and shares many keys with Colemak. I note that the
-  [Vylet][vylet] author took this path.
+- Defaulted to [Sturdy][sturdy] for the base layer. This may be foolish (I was
+  pretty comfortable with Colemak-DH), but I'm curious to give it a proper try.
 
 ## Things I might try someday
 
@@ -48,6 +44,8 @@ Colemak-DH to take the muscle memory hit.
   for having the same feature. So I think this means I want low LSBs, which is
   funny, because both of those layouts do have low metrics there. Maybe it's
   just the NG that gets me.
+- Adding a [Canary][canary] layer. It may be worth returning here, but for now
+  I'm going to focus on Sturdy.
 - Adding a Qwerty layer so friends could test-drive the keyboard more easily. I
   tried to gather interest over Christmas, and I think this is just going to be
   my own personal hobby, lol.
