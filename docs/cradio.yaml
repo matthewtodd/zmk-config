@@ -1,40 +1,5 @@
 layout: {qmk_keyboard: ferris_rotated}
 layers:
-  colemak_dh:
-  - Q
-  - W
-  - F
-  - P
-  - B
-  - J
-  - L
-  - U
-  - Y
-  - ''''
-  - {t: A, h: '$$mdi:apple-keyboard-control$$'}
-  - {t: R, h: '$$mdi:apple-keyboard-option$$'}
-  - {t: S, h: '$$mdi:apple-keyboard-command$$'}
-  - {t: T, h: '$$mdi:apple-keyboard-shift$$'}
-  - G
-  - M
-  - {t: N, h: '$$mdi:apple-keyboard-shift$$'}
-  - {t: E, h: '$$mdi:apple-keyboard-command$$'}
-  - {t: I, h: '$$mdi:apple-keyboard-option$$'}
-  - {t: O, h: '$$mdi:apple-keyboard-control$$'}
-  - Z
-  - X
-  - C
-  - D
-  - V
-  - K
-  - H
-  - ','
-  - .
-  - /
-  - {t: '$$mdi:keyboard-space$$', h: Nav}
-  - {t: '$$mdi:keyboard-tab$$', h: Mouse}
-  - {t: '$$mdi:keyboard-return$$', h: Sym}
-  - {t: '$$mdi:backspace-outline$$', h: Num}
   sturdy:
   - V
   - M
@@ -70,46 +35,11 @@ layers:
   - {t: '$$mdi:keyboard-tab$$', h: Mouse}
   - {t: '$$mdi:keyboard-return$$', h: Sym}
   - {t: '$$mdi:backspace-outline$$', h: Num}
-  canary:
-  - W
-  - L
-  - Y
-  - P
-  - B
-  - Z
-  - F
-  - O
-  - U
-  - ''''
-  - {t: C, h: '$$mdi:apple-keyboard-control$$'}
-  - {t: R, h: '$$mdi:apple-keyboard-option$$'}
-  - {t: S, h: '$$mdi:apple-keyboard-command$$'}
-  - {t: T, h: '$$mdi:apple-keyboard-shift$$'}
-  - G
-  - M
-  - {t: N, h: '$$mdi:apple-keyboard-shift$$'}
-  - {t: E, h: '$$mdi:apple-keyboard-command$$'}
-  - {t: I, h: '$$mdi:apple-keyboard-option$$'}
-  - {t: A, h: '$$mdi:apple-keyboard-control$$'}
-  - Q
-  - J
-  - V
-  - D
-  - K
-  - X
-  - H
-  - /
-  - ','
-  - .
-  - {t: '$$mdi:keyboard-space$$', h: Nav}
-  - {t: '$$mdi:keyboard-tab$$', h: Mouse}
-  - {t: '$$mdi:keyboard-return$$', h: Sym}
-  - {t: '$$mdi:backspace-outline$$', h: Num}
   nav:
   - ''
-  - {t: canary, h: toggle}
-  - {t: sturdy, h: toggle}
-  - {t: colemak_dh, h: toggle}
+  - ''
+  - ''
+  - ''
   - ''
   - ''
   - Paste
@@ -318,7 +248,7 @@ layers:
 combos:
 - p: [30, 31]
   k: {t: '$$mdi:keyboard-esc$$', h: Media}
-  l: [colemak_dh, sturdy, canary]
+  l: [sturdy]
 - p: [32, 33]
   k: {t: '$$mdi:backspace-reverse-outline$$', h: Fun}
-  l: [colemak_dh, sturdy, canary]
+  l: [sturdy]
