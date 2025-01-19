@@ -20,8 +20,6 @@ can tinker a little more freely.
 - Removed [additional features][miryoku-additional-features] (boot, base, tap,
   extra, opposite, current).
 - Removed keys I didn't use (insert, RGB, power & output toggles, scroll lock).
-- Defaulted to [Sturdy][sturdy] for the base layer. This may be foolish (I was
-  pretty comfortable with Colemak-DH), but I'm curious to give it a proper try.
 
 ## Things I might try someday
 
@@ -35,6 +33,13 @@ by [Pascal Getreuer's guide][which-alt]. I continue to play with these in the
 background, curious to see if I'll find something I like better enough than
 Colemak-DH to take the muscle memory hit.
 
+- Adding a [Sturdy][sturdy] layer. I gave this an honest run, using it for work
+  for almost a week in January 2025, and while it did feel nice, it wasn't
+  enough better than Colemak-DH for me to suffer the muscle memory hit. I was
+  curious about Magic Sturdy, so maybe that's a project for a future day.
+- Adding a [Canary][canary] layer. I played with it for a little while but 
+  decided to concentrate on Sturdy instead. [Vylet][vylet] as a next step did
+  look interesting!
 - Adding a [Focal][focal] layer. I may have given up too soon (it has nice
   looking metrics!), but I had a lot of trouble with P on the inner index
   column, bottom row. Maybe this teaches me I want to deprioritize the inner
@@ -44,8 +49,6 @@ Colemak-DH to take the muscle memory hit.
   for having the same feature. So I think this means I want low LSBs, which is
   funny, because both of those layouts do have low metrics there. Maybe it's
   just the NG that gets me.
-- Adding a [Canary][canary] layer. It may be worth returning here, but for now
-  I'm going to focus on Sturdy.
 - Adding a Qwerty layer so friends could test-drive the keyboard more easily. I
   tried to gather interest over Christmas, and I think this is just going to be
   my own personal hobby, lol.

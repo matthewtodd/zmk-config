@@ -117,12 +117,12 @@
 
     keymap {
         compatible = "zmk,keymap";
-        sturdy_layer {
+        colemak_layer {
             bindings = <
                 ALPHAS( \
-                  V, M, L, C, P,   X, F, O, U, J, \
-                  S, T, R, D, Y,   DOT, N, A, E, I, \
-                  Z, K, Q, G, W,   B, H, SQT, FSLH, COMMA \
+                  Q, W, F, P, B,   J, L, U, Y, SQT, \
+                  A, R, S, T, G,   M, N, E, I, O, \
+                  Z, X, C, D, V,   K, H, COMMA, DOT, FSLH \
                 )
             >;
         };
