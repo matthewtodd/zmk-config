@@ -1,36 +1,36 @@
 layout: {qmk_keyboard: ferris_rotated}
 layers:
-  sturdy:
-  - V
-  - M
-  - L
-  - C
-  - P
-  - X
-  - F
-  - O
-  - U
-  - J
-  - {t: S, h: '$$mdi:apple-keyboard-control$$'}
-  - {t: T, h: '$$mdi:apple-keyboard-option$$'}
-  - {t: R, h: '$$mdi:apple-keyboard-command$$'}
-  - {t: D, h: '$$mdi:apple-keyboard-shift$$'}
-  - Y
-  - .
-  - {t: N, h: '$$mdi:apple-keyboard-shift$$'}
-  - {t: A, h: '$$mdi:apple-keyboard-command$$'}
-  - {t: E, h: '$$mdi:apple-keyboard-option$$'}
-  - {t: I, h: '$$mdi:apple-keyboard-control$$'}
-  - Z
-  - K
+  colemak:
   - Q
-  - G
   - W
+  - F
+  - P
   - B
-  - H
+  - J
+  - L
+  - U
+  - Y
   - ''''
-  - /
+  - {t: A, h: '$$mdi:apple-keyboard-control$$'}
+  - {t: R, h: '$$mdi:apple-keyboard-option$$'}
+  - {t: S, h: '$$mdi:apple-keyboard-command$$'}
+  - {t: T, h: '$$mdi:apple-keyboard-shift$$'}
+  - G
+  - M
+  - {t: N, h: '$$mdi:apple-keyboard-shift$$'}
+  - {t: E, h: '$$mdi:apple-keyboard-command$$'}
+  - {t: I, h: '$$mdi:apple-keyboard-option$$'}
+  - {t: O, h: '$$mdi:apple-keyboard-control$$'}
+  - Z
+  - X
+  - C
+  - D
+  - V
+  - K
+  - H
   - ','
+  - .
+  - /
   - {t: '$$mdi:keyboard-space$$', h: Nav}
   - {t: '$$mdi:keyboard-tab$$', h: Mouse}
   - {t: '$$mdi:keyboard-return$$', h: Sym}
@@ -132,10 +132,10 @@ layers:
   - ''
   - ''
   - ''
-  - '&bt0'
-  - '&bt1'
-  - '&bt2'
-  - '&bt3'
+  - {t: '$$mdi:bluetooth-connect$$', h: '0'}
+  - {t: '$$mdi:bluetooth-connect$$', h: '1'}
+  - {t: '$$mdi:bluetooth-connect$$', h: '2'}
+  - {t: '$$mdi:bluetooth-connect$$', h: '3'}
   - {type: held}
   - {type: held}
   - $$mdi:volume-off$$
@@ -248,7 +248,7 @@ layers:
 combos:
 - p: [30, 31]
   k: {t: '$$mdi:keyboard-esc$$', h: Media}
-  l: [sturdy]
+  l: [colemak]
 - p: [32, 33]
   k: {t: '$$mdi:backspace-reverse-outline$$', h: Fun}
-  l: [sturdy]
+  l: [colemak]
