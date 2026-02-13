@@ -1,79 +1,46 @@
 # ⌨️ ZMK Config
 
-I've been using this [Ferris Sweep][ferris-sweep] keyboard daily since Summer
-2024. I didn't intend to fall down the keyboard rabbit hole, but it's been a
-surprisingly delightful experience!
+I've been using this [Ferris Sweep][ferris-sweep] keyboard since Summer 2024. I love it!
+
+This is really my first foray into weird keyboards, and it was a little hard to
+get oriented at first, so here are some links in case you're curious yourself.
+
+- The board and case are from [Boardsource][boardsource].
+- The switches are [Ambients nocturnals][ambients].
+- The keycaps pictured here are [MBK Legend 40s][mbk-legend], though I've since
+  switched to [Chicago Stenographer][cs] (via [this fork][cs-fork]) and then
+  [KLP Lamé][klp-lame] keycaps 3D-printed at [jlc3dp][jlc3dp].
 
 ![keyboard][keyboard]
 
-This repository holds its firmware configuration.
+## Mostly Miryoku
 
-I didn't start here, though; I first [tweaked][tweaked] the thoughtful
-[Miryoku][miryoku] layout and used that quite happily for some time. Now that I
-understand it all a little better, I'm dropping down to this level so that I
-can tinker a little more freely.
+This layout is mostly [Miryoku][miryoku], which I started off
+[tweaking][tweaking] in place, then moved here.
 
-## Changes from Miryoku
+I've switched from [Colemak-DH][colemak-dh] to [Focal][focal], which I found in
+[Pascal Getreuer's guide][which-alt], and I'm liking it so far.
 
-- Removed the [button][miryoku-button-layer] layer, since I wasn't really
-  using it.
-- Removed [additional features][miryoku-additional-features] (boot, base, tap,
-  extra, opposite, current).
-- Removed keys I didn't use (insert, RGB, power & output toggles, scroll lock).
-- Added lots of combos inspired by [urob's zmk-config][urob-zmk-config]. I was
-  noticing soreness in my left thumb that I think was due to heavy usage with
-  space, nav, and escape all there. I am hoping moving nav and escape will
-  help.
-
-# Things I've tried
-
-Many of these are experimental layers for alternative layouts, largely inspired
-by [Pascal Getreuer's guide][which-alt]. I continue to play with these in the
-background, curious to see if I'll find something I like better enough than
-Colemak-DH to take the muscle memory hit.
-
-- Adding a [Focal][focal] layer. I gave this a quick test in late 2024, then
-  returned in May 2025, almost deciding to make the switch. When I'm ready for
-  the muscle-memory hit, I think this is the one.
-- Adding a [Sturdy][sturdy] layer. I gave this an honest run, using it for work
-  for almost a week in January 2025, and while it did feel nice, it wasn't
-  enough better than Colemak-DH for me to suffer the muscle memory hit. I was
-  curious about Magic Sturdy, so maybe that's a project for a future day.
-- Adding a [Canary][canary] layer. I played with it for a little while but 
-  decided to concentrate on Sturdy instead. [Vylet][vylet] as a next step did
-  look interesting!
-- Adding a [Gallium][gallium] layer. I didn't like the pinky to inner index
-  lateral stretch for NG much. I've preemptively ruled out [Graphite][graphite]
-  for having the same feature. So I think this means I want low LSBs, which is
-  funny, because both of those layouts do have low metrics there. Maybe it's
-  just the NG that gets me.
-- Adding a Qwerty layer so friends could test-drive the keyboard more easily. I
-  tried to gather interest over Christmas, and I think this is just going to be
-  my own personal hobby, lol.
-- Vertical symbol combos from [urob's zmk-config][urob-zmk-config]. I almost
-  got them, but they're harder to type, and I don't mind holding down the
-  symbol layer key.
-
-## What the layers look like
+I've also added some horizontal combos inspired by [urob's
+zmk-config][urob-zmk-config]. These give me left-handed copy-paste while I'm
+mousing, and, as a vim user, escape on the home row. They also make all the
+bracket pairs much easier to remember!
 
 ![keymap][keymap]
 
-Thanks to [caksoylar/keymap-drawer][keymap-drawer].
-
 [ferris-sweep]: https://github.com/davidphilipbarr/Sweep
+[boardsource]: https://boardsource.xyz/products/crab-broom-choc-ferris-sweep
+[ambients]: https://lowprokb.ca/products/ambients-silent-choc-switches?variant=44873446391972/
+[mbk-legend]: https://fkcaps.com/keycaps/mbk/legend-40s
+[cs]: https://github.com/pseudoku/PseudoMakeMeKeyCapProfiles
+[cs-fork]: https://github.com/infused-kim/kb_keycaps_chicago_stenographer
+[klp-lame]: https://github.com/braindefender/KLP-Lame-Keycaps
+[jlc3dp]: https://jlc3dp.com/
 [keyboard]: docs/keyboard.jpeg
-[tweaked]: https://github.com/manna-harbour/miryoku_zmk/compare/master...matthewtodd:miryoku_zmk:matthewtodd
 [miryoku]: https://github.com/manna-harbour/miryoku
-[miryoku-mouse-layer]: https://github.com/manna-harbour/miryoku/tree/master/docs/reference#mouse
-[miryoku-button-layer]: https://github.com/manna-harbour/miryoku/tree/master/docs/reference#button
-[miryoku-additional-features]: https://github.com/manna-harbour/miryoku/tree/master/docs/reference#additional-features
-[urob-zmk-config]: https://github.com/urob/zmk-config
-[sturdy]: https://oxey.dev/sturdy
-[canary]: https://github.com/Apsu/Canary
-[gallium]: https://github.com/GalileoBlues/Gallium
-[graphite]: https://github.com/rdavison/graphite-layout
+[tweaking]: https://github.com/manna-harbour/miryoku_zmk/compare/master...matthewtodd:miryoku_zmk:matthewtodd
+[colemak-dh]: https://colemakmods.github.io/mod-dh/
 [focal]: https://github.com/Keyhabit/Focal-keyboard-layout/
-[vylet]: https://github.com/MightyAcas/vylet
 [which-alt]: https://getreuer.info/posts/keyboards/alt-layouts/index.html#which-alt-keyboard-layout-should-i-learn
+[urob-zmk-config]: https://github.com/urob/zmk-config
 [keymap]: docs/cradio.svg
-[keymap-drawer]: https://github.com/caksoylar/keymap-drawer
