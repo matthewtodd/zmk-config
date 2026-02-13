@@ -1,41 +1,6 @@
 layout: {zmk_keyboard: cradio}
 layers:
   Base:
-  - Q
-  - W
-  - F
-  - P
-  - B
-  - J
-  - L
-  - U
-  - Y
-  - ''''
-  - {t: A, h: '$$mdi:apple-keyboard-control$$'}
-  - {t: R, h: '$$mdi:apple-keyboard-option$$'}
-  - {t: S, h: '$$mdi:apple-keyboard-command$$'}
-  - {t: T, h: '$$mdi:apple-keyboard-shift$$'}
-  - G
-  - M
-  - {t: N, h: '$$mdi:apple-keyboard-shift$$'}
-  - {t: E, h: '$$mdi:apple-keyboard-command$$'}
-  - {t: I, h: '$$mdi:apple-keyboard-option$$'}
-  - {t: O, h: '$$mdi:apple-keyboard-control$$'}
-  - Z
-  - X
-  - C
-  - D
-  - V
-  - K
-  - H
-  - ','
-  - .
-  - /
-  - {t: '$$mdi:keyboard-space$$', h: Nav}
-  - $$mdi:keyboard-tab$$
-  - {t: '$$mdi:keyboard-return$$', h: Sym}
-  - {t: '$$mdi:backspace-outline$$', h: Num}
-  Focal:
   - V
   - L
   - H
@@ -73,8 +38,8 @@ layers:
   Nav:
   - ''
   - ''
-  - {t: Focal, h: toggle}
-  - {t: Base, h: toggle}
+  - ''
+  - ''
   - ''
   - ''
   - ''
@@ -252,37 +217,37 @@ layers:
 combos:
 - p: [1, 2]
   k: {t: Mouse, h: toggle}
-  l: [Base, Focal, Mouse]
+  l: [Base, Mouse]
 - p: [2, 3]
   k: Media
-  l: [Base, Focal]
+  l: [Base]
 - p: [12, 13]
   k: $$mdi:keyboard-esc$$
-  l: [Base, Focal]
+  l: [Base]
 - p: [21, 22]
   k: Copy
-  l: [Base, Focal, Mouse]
+  l: [Base, Mouse]
 - p: [22, 23]
   k: Paste
-  l: [Base, Focal, Mouse]
+  l: [Base, Mouse]
 - p: [6, 7]
   k: $$mdi:backspace-outline$$
-  l: [Base, Focal]
+  l: [Base]
 - p: [7, 8]
   k: $$mdi:backspace-reverse-outline$$
-  l: [Base, Focal]
+  l: [Base]
 - p: [16, 17]
   k: (
-  l: [Base, Focal]
+  l: [Base]
 - p: [17, 18]
   k: )
-  l: [Base, Focal]
+  l: [Base]
 - p: [26, 27]
   k: '['
-  l: [Base, Focal]
+  l: [Base]
 - p: [27, 28]
   k: ']'
-  l: [Base, Focal]
+  l: [Base]
 - p: [32, 33]
   k: {t: '$$mdi:backspace-reverse-outline$$', h: Fun}
-  l: [Base, Focal]
+  l: [Base]
