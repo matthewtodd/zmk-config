@@ -7,9 +7,8 @@ get oriented at first, so here are some links in case you're curious yourself.
 
 - The board and case are from [Boardsource][boardsource].
 - The switches are [Ambients nocturnals][ambients].
-- The keycaps pictured here are [MBK Legend 40s][mbk-legend], though I've since
-  switched to [Chicago Stenographer][cs] (via [this fork][cs-fork]) and then
-  [KLP Lamé][klp-lame] keycaps 3D-printed at [jlc3dp][jlc3dp].
+- The keycaps are [Chicago Stenographer][cs] (via [this fork][cs-fork]),
+  3D-printed at [jlc3dp][jlc3dp].
 
 ![keyboard][keyboard]
 
@@ -31,10 +30,8 @@ bracket pairs much easier to remember!
 [ferris-sweep]: https://github.com/davidphilipbarr/Sweep
 [boardsource]: https://boardsource.xyz/products/crab-broom-choc-ferris-sweep
 [ambients]: https://lowprokb.ca/products/ambients-silent-choc-switches?variant=44873446391972/
-[mbk-legend]: https://fkcaps.com/keycaps/mbk/legend-40s
 [cs]: https://github.com/pseudoku/PseudoMakeMeKeyCapProfiles
 [cs-fork]: https://github.com/infused-kim/kb_keycaps_chicago_stenographer
-[klp-lame]: https://github.com/braindefender/KLP-Lame-Keycaps
 [jlc3dp]: https://jlc3dp.com/
 [keyboard]: docs/keyboard.jpeg
 [miryoku]: https://github.com/manna-harbour/miryoku
