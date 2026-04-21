@@ -1,6 +1,6 @@
 manifest:
   defaults:
-    revision: v0.3.0 # Also change .github/workflows/build.yml
+    revision: v0.3.0
 
   remotes:
     - name: urob

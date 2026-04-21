@@ -1,0 +1,47 @@
+#!/bin/sh
+
+set -euo pipefail
+
+function build() {
+  docker run \
+    --rm \
+    --mount type=bind,src=./config,dst=/workspaces/config,readonly \
+    --mount type=bind,src=./firmware,dst=/workspaces/firmware,bind-create-src \
+    --env BOARD=${1} \
+    --env SHIELD=${2} \
+    west-build
+}
+
+function draw() {
+  docker run \
+    --rm \
+    --mount type=bind,src=./config,dst=/workspaces/config,readonly \
+    --mount type=bind,src=./images,dst=/workspaces/images,bind-create-src \
+    --env CONFIG=config/keymap-drawer.yml \
+    --env KEYMAP=config/${1}.keymap \
+    --env OUTPUT=images/${1}.svg \
+    keymap
+}
+
+mode="b"
+
+while getopts "bd" opt; do
+  case ${opt} in
+    *) mode=${opt} ;;
+  esac
+done
+
+case ${mode} in
+  b)
+    docker build --tag west-build --file docker/west-build.dockerfile .
+    build nice_nano_v2 cradio_left
+    build nice_nano_v2 cradio_right
+    open firmware
+    ;;
+
+  d)
+    docker build --tag keymap --file docker/keymap.dockerfile .
+    draw cradio
+    open images/cradio.svg
+    ;;
+esac
