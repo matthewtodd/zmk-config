@@ -39,7 +39,26 @@ MAKE_HRM(hmr, &kp, &kp, KEYS_L THUMBS)
   ZMK_COMBO_6(NAME, &hm_combo_##NAME HOLD 0, POS, LAYERS, COMBO_MS, IDLE_MS)
 
 // Combos
-#include "combos.dtsi"
+#define COMBO_TERM_FAST 18
+#define COMBO_TERM_SLOW 30
+#define COMBO_IDLE_FAST 150
+#define COMBO_IDLE_SLOW 50
+
+// Horizontal combos - left hand
+ZMK_COMBO(mouse,     &tog MOUSE,          LT3 LT2, BASE MOUSE, COMBO_TERM_FAST, COMBO_IDLE_FAST)
+ZMK_COMBO(media,     &mo MEDIA,           LT2 LT1, BASE,       COMBO_TERM_FAST, COMBO_IDLE_FAST)
+ZMK_COMBO(esc,       &hml LG(LSHFT) ESC,  LM2 LM1, BASE,       COMBO_TERM_FAST, COMBO_IDLE_FAST)
+ZMK_COMBO(copy,      &kp LG(C),           LB3 LB2, BASE MOUSE, COMBO_TERM_FAST, COMBO_IDLE_FAST)
+ZMK_COMBO(paste,     &kp LG(V),           LB2 LB1, BASE MOUSE, COMBO_TERM_FAST, COMBO_IDLE_FAST)
+
+// Horizontal combos - right hand
+ZMK_COMBO(bspc,      &kp BSPC,            RT1 RT2, BASE, COMBO_TERM_FAST, COMBO_IDLE_FAST)
+ZMK_COMBO(del,       &kp DEL,             RT2 RT3, BASE, COMBO_TERM_FAST, COMBO_IDLE_FAST)
+ZMK_COMBO(lpar,      &lpar_morph,         RM1 RM2, BASE, COMBO_TERM_FAST, COMBO_IDLE_FAST, LG(LSHFT), KEYS_L)
+ZMK_COMBO(rpar,      &rpar_morph,         RM2 RM3, BASE, COMBO_TERM_FAST, COMBO_IDLE_FAST, LG(LALT), KEYS_L)
+ZMK_COMBO(lbkt,      &kp LBKT,            RB1 RB2, BASE, COMBO_TERM_FAST, COMBO_IDLE_FAST)
+ZMK_COMBO(rbkt,      &kp RBKT,            RB2 RB3, BASE, COMBO_TERM_FAST, COMBO_IDLE_FAST)
+ZMK_COMBO(fun_del,   &lt FUN DEL,         RH0 RH1, BASE, COMBO_TERM_FAST, COMBO_IDLE_FAST)
 
 // Morphs
 ZMK_MOD_MORPH(lpar_morph, mods = <MOD_LSFT>; bindings = <&kp LPAR>, <&kp LT>;)
