@@ -31,10 +31,9 @@ bracket pairs much easier to remember!
 
 While I'm forever grateful for ZMK's out-of-the-box support for Github Actions,
 I've moved to an entirely local workflow, with this [shell script][build] using
-Docker images for [building the firmware][dockerfile-zmk] and [drawing the
-keymap][dockerfile-keymap-drawer]. The hope is that this will make for a much
-faster feedback loop when I get into a tinkering frenzy &mdash; I can now have
-new firmware in 15 seconds!
+a [Docker image][dockerfile] for building the firmware and drawing the keymap.
+The hope is that this will make for a much faster feedback loop when I get into
+a tinkering frenzy &mdash; I can now have new firmware in 15 seconds!
 
 [ferris-sweep]: https://github.com/davidphilipbarr/Sweep
 [boardsource]: https://boardsource.xyz/products/crab-broom-choc-ferris-sweep
@@ -50,6 +49,5 @@ new firmware in 15 seconds!
 [which-alt]: https://getreuer.info/posts/keyboards/alt-layouts/index.html#which-alt-keyboard-layout-should-i-learn
 [urob-zmk-config]: https://github.com/urob/zmk-config
 [keymap]: images/cradio.svg
-[dockerfile-zmk]: docker/west-build.dockerfile
-[dockerfile-keymap-drawer]: docker/keymap.dockerfile
+[dockerfile]: Dockerfile
 [build]: build

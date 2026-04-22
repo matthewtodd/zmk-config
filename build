@@ -2,41 +2,36 @@
 
 set -euo pipefail
 
-function build() {
+function docker_run() {
   docker run \
     --rm \
     --mount type=bind,src=./config,dst=/workspaces/config,readonly \
     --mount type=bind,src=./firmware,dst=/workspaces/firmware,bind-create-src \
-    west-build -b ${1} -s ${2}
+    --mount type=bind,src=./images,dst=/workspaces/images \
+    zmk-config "$@"
 }
 
-function draw() {
-  docker run \
-    --rm \
-    --mount type=bind,src=./config,dst=/workspaces/config,readonly \
-    --mount type=bind,src=./images,dst=/workspaces/images,bind-create-src \
-    keymap -k ${1}
-}
+mode="f"
 
-mode="b"
-
-while getopts "bd" opt; do
+while getopts "dfi" opt; do
   case ${opt} in
     *) mode=${opt} ;;
   esac
 done
 
 case ${mode} in
-  b)
-    docker build --tag west-build --file docker/west-build.dockerfile .
-    build nice_nano_v2 cradio_left
-    build nice_nano_v2 cradio_right
+  d)
+    docker_run draw -k cradio
+    open images/cradio.svg
+    ;;
+
+  f)
+    docker_run build -b nice_nano_v2 -s cradio_left
+    docker_run build -b nice_nano_v2 -s cradio_right
     open firmware
     ;;
 
-  d)
-    docker build --tag keymap --file docker/keymap.dockerfile .
-    draw cradio
-    open images/cradio.svg
+  i)
+    docker build --tag zmk-config .
     ;;
 esac
