@@ -2,8 +2,7 @@
 
 set -euo pipefail
 
-DOCKER_OPTS=(
-  --rm
+DOCKER_MOUNTS=(
   --mount type=bind,src=./config,dst=/workspaces/config,readonly
   --mount type=bind,src=./firmware,dst=/workspaces/out/firmware,bind-create-src
   --mount type=bind,src=./img,dst=/workspaces/out/img
@@ -19,13 +18,13 @@ done
 
 case ${mode} in
   d)
-    docker run "${DOCKER_OPTS[@]}" zmk-config draw -k cradio
+    docker run --rm "${DOCKER_MOUNTS[@]}" zmk-config draw -k cradio
     open img/cradio.svg
     ;;
 
   f)
-    docker run "${DOCKER_OPTS[@]}" zmk-config build -b nice_nano_v2 -s cradio_left
-    docker run "${DOCKER_OPTS[@]}" zmk-config build -b nice_nano_v2 -s cradio_right
+    docker run --rm "${DOCKER_MOUNTS[@]}" zmk-config build -b nice_nano_v2 -s cradio_left
+    docker run --rm "${DOCKER_MOUNTS[@]}" zmk-config build -b nice_nano_v2 -s cradio_right
     open firmware
     ;;
 

@@ -35,6 +35,10 @@ RUN \
   && apt-get clean \
   && rm -rf /var/lib/apt/lists/*
 
+# I'm somewhat taken with this idea of being able to call the Dockerfile like a
+# script. Indeed, I think I'd use
+# https://github.com/JakeWharton/dockerfile-shebang if I didn't have to specify
+# all these bind mounts.
 COPY --chmod=755 <<-"END" entrypoint
   subcommand=$1
   shift
