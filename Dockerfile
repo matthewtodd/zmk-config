@@ -57,7 +57,7 @@ COPY --chmod=755 <<-"END" entrypoint
         -DSHIELD=${shield}
 
       cp /workspaces/build/zephyr/zmk.uf2 \
-         /workspaces/firmware/${shield}-${board}.uf2
+         /workspaces/out/firmware/${shield}-${board}.uf2
       ;;
 
     draw)
@@ -65,7 +65,7 @@ COPY --chmod=755 <<-"END" entrypoint
         case ${opt} in
           k)
             input=config/${OPTARG}.keymap
-            output=images/${OPTARG}.svg
+            output=out/img/${OPTARG}.svg
             ;;
         esac
       done

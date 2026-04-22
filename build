@@ -5,8 +5,8 @@ set -euo pipefail
 DOCKER_OPTS=(
   --rm
   --mount type=bind,src=./config,dst=/workspaces/config,readonly
-  --mount type=bind,src=./firmware,dst=/workspaces/firmware,bind-create-src
-  --mount type=bind,src=./images,dst=/workspaces/images
+  --mount type=bind,src=./firmware,dst=/workspaces/out/firmware,bind-create-src
+  --mount type=bind,src=./img,dst=/workspaces/out/img
 )
 
 mode="f"
@@ -20,7 +20,7 @@ done
 case ${mode} in
   d)
     docker run "${DOCKER_OPTS[@]}" zmk-config draw -k cradio
-    open images/cradio.svg
+    open img/cradio.svg
     ;;
 
   f)

@@ -41,13 +41,13 @@ a tinkering frenzy &mdash; I can now have new firmware in 15 seconds!
 [cs]: https://github.com/pseudoku/PseudoMakeMeKeyCapProfiles
 [cs-fork]: https://github.com/infused-kim/kb_keycaps_chicago_stenographer
 [jlc3dp]: https://jlc3dp.com/
-[keyboard]: images/keyboard.jpeg
+[keyboard]: img/keyboard.jpeg
 [miryoku]: https://github.com/manna-harbour/miryoku
 [tweaking]: https://github.com/manna-harbour/miryoku_zmk/compare/master...matthewtodd:miryoku_zmk:matthewtodd
 [colemak-dh]: https://colemakmods.github.io/mod-dh/
 [focal]: https://github.com/Keyhabit/Focal-keyboard-layout/
 [which-alt]: https://getreuer.info/posts/keyboards/alt-layouts/index.html#which-alt-keyboard-layout-should-i-learn
 [urob-zmk-config]: https://github.com/urob/zmk-config
-[keymap]: images/cradio.svg
+[keymap]: img/cradio.svg
 [dockerfile]: Dockerfile
 [build]: build
