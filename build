@@ -3,9 +3,9 @@
 set -euo pipefail
 
 DOCKER_MOUNTS=(
-  --mount type=bind,src=./config,dst=/workspaces/config,readonly
-  --mount type=bind,src=./firmware,dst=/workspaces/out/firmware,bind-create-src
-  --mount type=bind,src=./img,dst=/workspaces/out/img
+  --mount type=bind,src=./config,dst=/app/config,readonly
+  --mount type=bind,src=./firmware,dst=/app/out/firmware,bind-create-src
+  --mount type=bind,src=./img,dst=/app/out/img
 )
 
 mode="f"

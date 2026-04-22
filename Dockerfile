@@ -1,11 +1,15 @@
 FROM docker.io/zmkfirmware/zmk-build-arm:stable
 
-WORKDIR /workspaces
+# Install keymap-drawer, too!
+RUN <<-END
+  apt-get -y update
+  apt-get -y install python3-pip
+  pip install keymap-drawer --break-system-packages
+END
+
+WORKDIR /app
 
 # Cache all our dependencies!
-# I like not having them spread out over my local filesystem, and I appreciate
-# the controlled predictability of having them in a read-only image like this.
-#
 # Initial run takes about 6 minutes, but subsequent runs can use Docker's layer
 # cache, so long as config/west.yml hasn't changed. I expect I won't be adding
 # modules (i.e. changing config/west.yml) nearly as frequently as I'm tweaking
@@ -17,23 +21,10 @@ WORKDIR /workspaces
 # because later calls of `docker run` are expected to mount the whole config
 # directory (with keymaps, etc.) for building.
 RUN --mount=type=bind,src=config/west.yml,dst=config/west.yml <<-END
-  west init -l /workspaces/config
+  west init -l /app/config
   west update --fetch-opt=--filter=tree:0
   west zephyr-export
 END
-
-# Install keymap-drawer, too!
-# I'm cargo-culting this boilerplate from
-# https://github.com/zmkfirmware/zmk-docker/blob/3.0-branch/Dockerfile
-RUN \
-  apt-get -y update \
-  && apt-get -y install --no-install-recommends \
-  python3-pip \
-  && PIP_BREAK_SYSTEM_PACKAGES=1 pip3 install keymap-drawer \
-  && apt-get remove -y --purge \
-  python3-pip \
-  && apt-get clean \
-  && rm -rf /var/lib/apt/lists/*
 
 # I'm somewhat taken with this idea of being able to call the Dockerfile like a
 # script. Indeed, I think I'd use
@@ -54,14 +45,14 @@ COPY --chmod=755 <<-"END" entrypoint
 
       west build \
         -s zmk/app \
-        -d /workspaces/build \
+        -d $(pwd)/build \
         -b ${board} \
         -- \
-        -DZMK_CONFIG=/workspaces/config \
+        -DZMK_CONFIG=$(pwd)/config \
         -DSHIELD=${shield}
 
-      cp /workspaces/build/zephyr/zmk.uf2 \
-         /workspaces/out/firmware/${shield}-${board}.uf2
+      cp build/zephyr/zmk.uf2 \
+         out/firmware/${shield}-${board}.uf2
       ;;
 
     draw)
@@ -80,4 +71,4 @@ COPY --chmod=755 <<-"END" entrypoint
   esac
 END
 
-ENTRYPOINT ["/bin/bash", "/workspaces/entrypoint"]
+ENTRYPOINT ["/bin/bash", "/app/entrypoint"]
