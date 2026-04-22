@@ -12,6 +12,14 @@ get oriented at first, so here are some links in case you're curious yourself.
 
 ![keyboard][keyboard]
 
+## Local Builds
+
+While I'm forever grateful for ZMK's out-of-the-box support for Github Actions,
+I've moved to an entirely local workflow, with this [shell script][build] using
+a [Docker image][dockerfile] for building the firmware and drawing the keymap.
+The hope is that this will make for a much faster feedback loop when I get into
+a tinkering frenzy &mdash; I can now have new firmware in 15 seconds!
+
 ## Mostly Miryoku
 
 This layout is mostly [Miryoku][miryoku], which I started off
@@ -26,14 +34,6 @@ mousing, and, as a vim user, escape on the home row. They also make all the
 bracket pairs much easier to remember!
 
 ![keymap][keymap]
-
-## Local Builds
-
-While I'm forever grateful for ZMK's out-of-the-box support for Github Actions,
-I've moved to an entirely local workflow, with this [shell script][build] using
-a [Docker image][dockerfile] for building the firmware and drawing the keymap.
-The hope is that this will make for a much faster feedback loop when I get into
-a tinkering frenzy &mdash; I can now have new firmware in 15 seconds!
 
 [ferris-sweep]: https://github.com/davidphilipbarr/Sweep
 [boardsource]: https://boardsource.xyz/products/crab-broom-choc-ferris-sweep
