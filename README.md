@@ -8,9 +8,10 @@ love it!
 ## Local Builds
 
 To build the firmware and draw the keymap, there's a small [shell
-script][build] that uses a [Docker image][dockerfile]. In addition to the speed
-of the local build, I like how they codify the process and keep my filesystem
-clean of dependencies.
+script][build] that uses a [Docker image][dockerfile].
+
+In addition to the speed of the local build, I like how they codify the process
+and keep my filesystem clean of dependencies.
 
 ```sh
 ./build -i  # Build the Docker image (prerequisite)
@@ -18,7 +19,7 @@ clean of dependencies.
 ./build -d  # Draw an SVG of the keymap
 ```
 
-## Keymap: Mostly Miryoku
+## Keymap
 
 This layout is mostly [Miryoku][miryoku], which I started off
 [tweaking][tweaking] in place, then moved here.
