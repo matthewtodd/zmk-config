@@ -41,7 +41,7 @@ a tinkering frenzy &mdash; I can now have new firmware in 15 seconds!
 [cs]: https://github.com/pseudoku/PseudoMakeMeKeyCapProfiles
 [cs-fork]: https://github.com/infused-kim/kb_keycaps_chicago_stenographer
 [jlc3dp]: https://jlc3dp.com/
-[keyboard]: img/keyboard.jpeg
+[keyboard]: img/keyboard.jpg
 [miryoku]: https://github.com/manna-harbour/miryoku
 [tweaking]: https://github.com/manna-harbour/miryoku_zmk/compare/master...matthewtodd:miryoku_zmk:matthewtodd
 [colemak-dh]: https://colemakmods.github.io/mod-dh/
