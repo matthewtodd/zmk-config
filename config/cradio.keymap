@@ -1,4 +1,15 @@
+#define MATTHEWTODD_THUMBCOMBOS
+
 #define ZMK_BASE_LAYER(name, LT, RT, LM, RM, LB, RB, LH, RH) \
+    ZMK_LAYER(                                               \
+        name,                                                \
+        LT RT                                                \
+        LM RM                                                \
+        LB RB                                                \
+        LH RH                                                \
+    )
+
+#define ZMK_OTHER_LAYER(name, LT, RT, LM, RM, LB, RB, LH, RH) \
     ZMK_LAYER(                                               \
         name,                                                \
         LT RT                                                \

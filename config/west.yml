@@ -17,5 +17,15 @@ manifest:
       remote: urob
       path: modules/zmk/helpers
 
+    - name: mechboards-corne-min
+      url: https://github.com/MechboardsLTD/zmk-module
+      revision: corne-min
+      path: modules/vendor/mechboards/corne-min
+
+    - name: mechboards-corne-min-rgbled
+      url: https://github.com/MechboardsLTD/zmk-module
+      revision: corne-min-rgbled
+      path: modules/vendor/mechboards/corne-min-rgbled
+
   self:
     path: config

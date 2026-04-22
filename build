@@ -18,11 +18,15 @@ done
 
 case ${mode} in
   d)
+    docker run --rm "${DOCKER_MOUNTS[@]}" zmk-config draw -k corne_min -d zmk/app/dts/layouts/foostan/corne/6column.dtsi
     docker run --rm "${DOCKER_MOUNTS[@]}" zmk-config draw -k cradio
+    open img/corne_min.svg
     open img/cradio.svg
     ;;
 
   f)
+    docker run --rm "${DOCKER_MOUNTS[@]}" zmk-config build -b corne_min_left -s rgbled_adapter
+    docker run --rm "${DOCKER_MOUNTS[@]}" zmk-config build -b corne_min_right -s rgbled_adapter
     docker run --rm "${DOCKER_MOUNTS[@]}" zmk-config build -b nice_nano_v2 -s cradio_left
     docker run --rm "${DOCKER_MOUNTS[@]}" zmk-config build -b nice_nano_v2 -s cradio_right
     open firmware

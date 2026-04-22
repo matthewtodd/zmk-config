@@ -40,8 +40,11 @@ COPY --chmod=755 <<-"END" entrypoint
       ;;
 
     draw)
-      while getopts "k:" opt; do
+      while getopts "d:k:" opt; do
         case ${opt} in
+          d)
+            extra_args="--dts-layout ${OPTARG}"
+            ;;
           k)
             input=config/${OPTARG}.keymap
             output=out/img/${OPTARG}.svg
@@ -49,8 +52,8 @@ COPY --chmod=755 <<-"END" entrypoint
         esac
       done
 
-      keymap -c config/keymap-drawer.yml parse -z ${input} | \
-      keymap -c config/keymap-drawer.yml draw -o ${output} -
+      keymap -c config/keymap-drawer.yml parse -z ${input} > keymap.yml
+      keymap -c config/keymap-drawer.yml draw -o ${output} ${extra_args} keymap.yml
       ;;
   esac
 END
