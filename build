@@ -10,7 +10,7 @@ DOCKER_MOUNTS=(
 
 mode="f"
 
-while getopts "dfi" opt; do
+while getopts "dfis" opt; do
   case ${opt} in
     *) mode=${opt} ;;
   esac
@@ -28,7 +28,6 @@ case ${mode} in
     open firmware
     ;;
 
-  i)
-    docker build --tag zmk-config .
-    ;;
+  i) docker build --tag zmk-config . ;;
+  s) docker run --rm "${DOCKER_MOUNTS[@]}" --entrypoint /bin/bash -it zmk-config ;;
 esac

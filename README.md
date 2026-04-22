@@ -17,6 +17,7 @@ and keep my filesystem clean of dependencies.
 ./build -i  # Build the Docker image (prerequisite)
 ./build     # Build the firmware
 ./build -d  # Draw an SVG of the keymap
+./build -s  # Shell into the build environment for debugging
 ```
 
 ## Keymap
