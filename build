@@ -7,9 +7,7 @@ function build() {
     --rm \
     --mount type=bind,src=./config,dst=/workspaces/config,readonly \
     --mount type=bind,src=./firmware,dst=/workspaces/firmware,bind-create-src \
-    --env BOARD=${1} \
-    --env SHIELD=${2} \
-    west-build
+    west-build -b ${1} -s ${2}
 }
 
 function draw() {
@@ -17,10 +15,7 @@ function draw() {
     --rm \
     --mount type=bind,src=./config,dst=/workspaces/config,readonly \
     --mount type=bind,src=./images,dst=/workspaces/images,bind-create-src \
-    --env CONFIG=config/keymap-drawer.yml \
-    --env KEYMAP=config/${1}.keymap \
-    --env OUTPUT=images/${1}.svg \
-    keymap
+    keymap -k ${1}
 }
 
 mode="b"

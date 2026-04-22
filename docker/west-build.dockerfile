@@ -22,15 +22,24 @@ RUN --mount=type=bind,src=config/west.yml,dst=config/west.yml <<-END
   west zephyr-export
 END
 
-SHELL ["/bin/sh", "-c"]
-CMD \
+COPY --chmod=755 <<-"END" entrypoint
+  while getopts "b:s:" opt; do
+    case ${opt} in
+      b) board=${OPTARG} ;;
+      s) shield=${OPTARG} ;;
+    esac
+  done
+
   west build \
     -s zmk/app \
     -d /workspaces/build \
-    -b ${BOARD} \
+    -b ${board} \
     -- \
     -DZMK_CONFIG=/workspaces/config \
-    -DSHIELD=${SHIELD} \
-  && \
+    -DSHIELD=${shield}
+
   cp /workspaces/build/zephyr/zmk.uf2 \
-     /workspaces/firmware/${SHIELD}-${BOARD}.uf2
+     /workspaces/firmware/${shield}-${board}.uf2
+END
+
+ENTRYPOINT ["/bin/bash", "/workspaces/entrypoint"]
