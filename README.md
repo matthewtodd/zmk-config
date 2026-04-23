@@ -10,9 +10,6 @@ love it!
 To build the firmware and draw the keymap, there's a small [shell
 script][build] that uses a [Docker image][dockerfile].
 
-In addition to the speed of the local build, I like how they codify the process
-and keep my filesystem clean of dependencies.
-
 ```
 usage: build [-I] [-k <keyboard>] [<command>]
 
