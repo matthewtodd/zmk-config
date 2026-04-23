@@ -40,11 +40,6 @@ zmk-config][urob-zmk-config]. These give me left-handed copy-paste while I'm
 mousing, and, as a vim user, escape on the home row. They also make all the
 bracket pairs much easier to remember!
 
-One current challenge with Focal in vim is j on my right pinky. I have started
-compensating by using arrow keys for all movement (gasp!), but that's wreaking
-havoc on my left thumb. If I can't develop the discipline, I'm considering
-trying [Gallium][gallium] out next.
-
 ![keymap][keymap]
 
 # Parts
@@ -66,7 +61,6 @@ get oriented at first, so here are some links in case you're curious yourself.
 [dockerfile]: Dockerfile
 [ferris-sweep]: https://github.com/davidphilipbarr/Sweep
 [focal]: https://github.com/Keyhabit/Focal-keyboard-layout/
-[gallium]: https://github.com/GalileoBlues/Gallium
 [jlc3dp]: https://jlc3dp.com/
 [keyboard]: img/keyboard.jpg
 [keymap]: img/cradio.svg
