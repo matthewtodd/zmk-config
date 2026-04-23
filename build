@@ -29,15 +29,12 @@ while getopts "Ik:h" opt; do
   case ${opt} in
     I) docker build --tag zmk-config . ;;
     k) keyboard=${OPTARG} ;;
-    h) usage; exit ;;
-    \?) usage; exit 1 ;;
+    h) usage; exit 0 ;;
+   \?) usage; exit 1 ;;
   esac
 done
 
-shift $((OPTIND-1))
-command=${1:-default}
-
-case ${command} in
+case ${!OPTIND:-default} in
   firmware|default)
     case ${keyboard:-default} in
       ferris_sweep|default)
@@ -81,6 +78,7 @@ case ${command} in
     ;;
 
   *)
+    echo "${0}: unrecognized command -- ${!OPTIND}"
     usage
     exit 1
     ;;
