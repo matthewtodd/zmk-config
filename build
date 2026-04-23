@@ -4,14 +4,13 @@ set -euo pipefail
 
 usage() {
   cat <<-END
-usage: build [ -k { corne_min | ferris_sweep } ] [ -f | -d ]
-       build [ -i | -s ]
+usage: build [ -I ] [ -k { corne_min | ferris_sweep } ] [ -f | -d | -i ]
 
     -d             draw keymap
     -f             build firmware
     -k <keyboard>  select keyboard
-    -i             build docker image
-    -s             get an interactive shell in the docker container
+    -I             build docker image
+    -i             get an interactive shell in the docker container
 
 END
 }
@@ -25,17 +24,19 @@ DOCKER_MOUNTS=(
 mode="f"
 keyboards="corne_min ferris_sweep"
 
-while getopts ":dfk:is" opt; do
+while getopts ":Ik:fdi" opt; do
   case ${opt} in
-    d|f|i|s) mode=${opt} ;;
+    I) docker build --tag zmk-config . ;;
 
     k)
       case ${OPTARG} in
-        corne_min|ferris_sweep)
-          keyboards=${OPTARG}
-          ;;
+        corne_min|ferris_sweep) keyboards=${OPTARG} ;;
         *) usage; exit 1 ;;
       esac
+      ;;
+
+    f|d|i)
+      mode=${opt}
       ;;
 
     h) usage; exit ;;
@@ -44,23 +45,7 @@ while getopts ":dfk:is" opt; do
 done
 
 case ${mode} in
-  d)
-    for keyboard in ${keyboards}; do
-      case ${keyboard} in
-        corne_min)
-          docker run --rm "${DOCKER_MOUNTS[@]}" --name draw zmk-config draw -k corne_min -d zmk/app/dts/layouts/foostan/corne/6column.dtsi
-          open img/corne_min.svg
-          ;;
-        ferris_sweep)
-          docker run --rm "${DOCKER_MOUNTS[@]}" --name draw zmk-config draw -k cradio
-          open img/cradio.svg
-          ;;
-      esac
-    done
-    ;;
-
   f)
-
     for keyboard in ${keyboards}; do
       case ${keyboard} in
         corne_min)
@@ -77,6 +62,20 @@ case ${mode} in
     open firmware
     ;;
 
-  i) docker build --tag zmk-config . ;;
-  s) docker run --rm "${DOCKER_MOUNTS[@]}" --name shell --entrypoint /bin/bash -it zmk-config ;;
+  d)
+    for keyboard in ${keyboards}; do
+      case ${keyboard} in
+        corne_min)
+          docker run --rm "${DOCKER_MOUNTS[@]}" --name draw zmk-config draw -k corne_min -d zmk/app/dts/layouts/foostan/corne/6column.dtsi
+          open img/corne_min.svg
+          ;;
+        ferris_sweep)
+          docker run --rm "${DOCKER_MOUNTS[@]}" --name draw zmk-config draw -k cradio
+          open img/cradio.svg
+          ;;
+      esac
+    done
+    ;;
+
+  i) docker run --rm "${DOCKER_MOUNTS[@]}" --name shell --entrypoint /bin/bash -it zmk-config ;;
 esac
