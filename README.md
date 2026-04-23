@@ -13,11 +13,14 @@ script][build] that uses a [Docker image][dockerfile].
 In addition to the speed of the local build, I like how they codify the process
 and keep my filesystem clean of dependencies.
 
-```sh
-./build -i  # Build the Docker image (prerequisite)
-./build     # Build the firmware
-./build -d  # Draw an SVG of the keymap
-./build -s  # Shell into the build environment for debugging
+```
+usage: build [ -f { corne_min | ferris_sweep } ]
+       build [ -i | -d | -s ]
+
+    -d             draw keymaps
+    -f <keyboard>  build keyboard firmware
+    -i             build docker image
+    -s             get an interactive shell in the docker container
 ```
 
 ## Keymap

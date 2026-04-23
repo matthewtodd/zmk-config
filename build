@@ -2,6 +2,19 @@
 
 set -euo pipefail
 
+usage() {
+  cat <<-END
+usage: build [ -f { corne_min | ferris_sweep } ]
+       build [ -i | -d | -s ]
+
+    -d             draw keymaps
+    -f <keyboard>  build keyboard firmware
+    -i             build docker image
+    -s             get an interactive shell in the docker container
+
+END
+}
+
 DOCKER_MOUNTS=(
   --mount type=bind,src=./config,dst=/app/config,readonly
   --mount type=bind,src=./firmware,dst=/app/out/firmware,bind-create-src
@@ -10,9 +23,25 @@ DOCKER_MOUNTS=(
 
 mode="f"
 
-while getopts "dfis" opt; do
+while getopts ":df:is" opt; do
   case ${opt} in
-    *) mode=${opt} ;;
+    f)
+      mode=${opt}
+
+      case ${OPTARG} in
+        corne_min|ferris_sweep)
+          keyboard=${OPTARG}
+          ;;
+        *) usage; exit 1 ;;
+      esac
+      ;;
+
+    d|i|s)
+      mode=${opt}
+      ;;
+
+    h) usage; exit ;;
+    *) usage; exit 1 ;;
   esac
 done
 
@@ -25,10 +54,26 @@ case ${mode} in
     ;;
 
   f)
-    docker run --rm "${DOCKER_MOUNTS[@]}" --name build zmk-config build -b corne_min_left -s rgbled_adapter -a corne_min-left
-    docker run --rm "${DOCKER_MOUNTS[@]}" --name build zmk-config build -b corne_min_right -s rgbled_adapter -a corne_min-right
-    docker run --rm "${DOCKER_MOUNTS[@]}" --name build zmk-config build -b nice_nano_v2 -s cradio_left -a ferris_sweep-left
-    docker run --rm "${DOCKER_MOUNTS[@]}" --name build zmk-config build -b nice_nano_v2 -s cradio_right -a ferris_sweep-right
+    if [ -z ${keyboard+x} ]; then
+      select keyboard in corne_min ferris_sweep; do
+        case "${REPLY}" in
+          1|2) break ;;
+          *) continue ;;
+        esac
+      done
+    fi
+
+    case ${keyboard} in
+      corne_min)
+        docker run --rm "${DOCKER_MOUNTS[@]}" --name build zmk-config build -b corne_min_left -s rgbled_adapter -a corne_min-left
+        docker run --rm "${DOCKER_MOUNTS[@]}" --name build zmk-config build -b corne_min_right -s rgbled_adapter -a corne_min-right
+        ;;
+      ferris_sweep)
+        docker run --rm "${DOCKER_MOUNTS[@]}" --name build zmk-config build -b nice_nano_v2 -s cradio_left -a ferris_sweep-left
+        docker run --rm "${DOCKER_MOUNTS[@]}" --name build zmk-config build -b nice_nano_v2 -s cradio_right -a ferris_sweep-right
+        ;;
+    esac
+
     open firmware
     ;;
 
