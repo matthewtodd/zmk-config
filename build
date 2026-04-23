@@ -4,78 +4,80 @@ set -euo pipefail
 
 usage() {
   cat <<-END
-usage: build [ -I ] [ -k { corne_min | ferris_sweep } ] [ -f | -d | -i ]
+usage: build [-I] [-k <keyboard>] [<command>]
 
-    -d             draw keymap
-    -f             build firmware
-    -k <keyboard>  select keyboard
     -I             build docker image
-    -i             get an interactive shell in the docker container
+    -k <keyboard>  select keyboard
+
+Supported commands are:
+    firmware       build keyboard firmware
+    keymap         draw keyboard keymap
+    shell          start an interactive shell in the docker container
+
+Supported keyboards are:
+    corne_min
+    ferris_sweep
 
 END
 }
 
-DOCKER_MOUNTS=(
+docker_mounts=(
   --mount type=bind,src=./config,dst=/app/config,readonly
   --mount type=bind,src=./firmware,dst=/app/out/firmware,bind-create-src
   --mount type=bind,src=./img,dst=/app/out/img
 )
 
-mode="f"
-keyboards="corne_min ferris_sweep"
-
-while getopts ":Ik:fdi" opt; do
+while getopts "hIk:" opt; do
   case ${opt} in
     I) docker build --tag zmk-config . ;;
-
-    k)
-      case ${OPTARG} in
-        corne_min|ferris_sweep) keyboards=${OPTARG} ;;
-        *) usage; exit 1 ;;
-      esac
-      ;;
-
-    f|d|i)
-      mode=${opt}
-      ;;
+    k) case ${OPTARG} in
+         corne_min|ferris_sweep) keyboard=${OPTARG} ;;
+         *) usage; exit 1 ;;
+       esac
+       ;;
 
     h) usage; exit ;;
-    *) usage; exit 1 ;;
+    \?) usage; exit 1 ;;
   esac
 done
 
-case ${mode} in
-  f)
-    for keyboard in ${keyboards}; do
-      case ${keyboard} in
-        corne_min)
-          docker run --rm "${DOCKER_MOUNTS[@]}" --name build zmk-config build -b corne_min_left -s rgbled_adapter -a corne_min-left
-          docker run --rm "${DOCKER_MOUNTS[@]}" --name build zmk-config build -b corne_min_right -s rgbled_adapter -a corne_min-right
-          ;;
-        ferris_sweep)
-          docker run --rm "${DOCKER_MOUNTS[@]}" --name build zmk-config build -b nice_nano_v2 -s cradio_left -a ferris_sweep-left
-          docker run --rm "${DOCKER_MOUNTS[@]}" --name build zmk-config build -b nice_nano_v2 -s cradio_right -a ferris_sweep-right
-          ;;
-      esac
-    done
+shift $((OPTIND-1))
+
+case ${1:-firmware} in
+  firmware)
+    case ${keyboard:-ferris_sweep} in
+      corne_min)
+        docker run --rm "${docker_mounts[@]}" --name build zmk-config build -b corne_min_left -s rgbled_adapter -a corne_min-left
+        docker run --rm "${docker_mounts[@]}" --name build zmk-config build -b corne_min_right -s rgbled_adapter -a corne_min-right
+        ;;
+      ferris_sweep)
+        docker run --rm "${docker_mounts[@]}" --name build zmk-config build -b nice_nano_v2 -s cradio_left -a ferris_sweep-left
+        docker run --rm "${docker_mounts[@]}" --name build zmk-config build -b nice_nano_v2 -s cradio_right -a ferris_sweep-right
+        ;;
+    esac
 
     open firmware
     ;;
 
-  d)
-    for keyboard in ${keyboards}; do
-      case ${keyboard} in
-        corne_min)
-          docker run --rm "${DOCKER_MOUNTS[@]}" --name draw zmk-config draw -k corne_min -d zmk/app/dts/layouts/foostan/corne/6column.dtsi
-          open img/corne_min.svg
-          ;;
-        ferris_sweep)
-          docker run --rm "${DOCKER_MOUNTS[@]}" --name draw zmk-config draw -k cradio
-          open img/cradio.svg
-          ;;
-      esac
-    done
+  keymap)
+    case ${keyboard:-ferris_sweep} in
+      corne_min)
+        docker run --rm "${docker_mounts[@]}" --name draw zmk-config draw -k corne_min -d zmk/app/dts/layouts/foostan/corne/6column.dtsi
+        open img/corne_min.svg
+        ;;
+      ferris_sweep)
+        docker run --rm "${docker_mounts[@]}" --name draw zmk-config draw -k cradio
+        open img/cradio.svg
+        ;;
+    esac
     ;;
 
-  i) docker run --rm "${DOCKER_MOUNTS[@]}" --name shell --entrypoint /bin/bash -it zmk-config ;;
+  shell)
+    docker run --rm "${docker_mounts[@]}" --name shell --entrypoint /bin/bash -it zmk-config
+    ;;
+
+  *)
+    usage
+    exit 1;;
+
 esac

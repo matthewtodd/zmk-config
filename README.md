@@ -14,13 +14,19 @@ In addition to the speed of the local build, I like how they codify the process
 and keep my filesystem clean of dependencies.
 
 ```
-usage: build [ -I ] [ -k { corne_min | ferris_sweep } ] [ -f | -d | -i ]
+usage: build [-I] [-k <keyboard>] [<command>]
 
-    -d             draw keymap
-    -f             build firmware
-    -k <keyboard>  select keyboard
     -I             build docker image
-    -i             get an interactive shell in the docker container
+    -k <keyboard>  select keyboard
+
+Supported commands are:
+    firmware       build keyboard firmware
+    keymap         draw keyboard keymap
+    shell          start an interactive shell in the docker container
+
+Supported keyboards are:
+    corne_min
+    ferris_sweep
 ```
 
 ## Keymap
