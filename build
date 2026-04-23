@@ -4,18 +4,22 @@ set -euo pipefail
 
 usage() {
   cat <<-END
-usage: build [-I] [-k <keyboard>] [<command>]
+usage: build [-I] firmware [-k <keyboard>]
+       build [-I] keymap [-k <keyboard>]
+       build [-I] shell
 
-  options:
+  global options:
     -I             build docker image
-    -k <keyboard>  select keyboard
-                     ferris_sweep (default)
-                     corne_min
 
   commands:
     firmware       build keyboard firmware (default)
     keymap         draw keyboard keymap
     shell          start an interactive shell in the docker container
+
+  options:
+    -k <keyboard>  select keyboard
+                     ferris_sweep (default)
+                     corne_min
 
 END
 }
@@ -41,17 +45,29 @@ keymap() {
   docker_run keymap -c config/keymap-drawer.yml "$@"
 }
 
-while getopts "Ik:h" opt; do
+while getopts "Ih" opt; do
   case ${opt} in
     I) docker build --tag zmk-config . ;;
-    k) keyboard=${OPTARG} ;;
     h) usage; exit 0 ;;
    \?) usage; exit 1 ;;
   esac
 done
 
-case ${!OPTIND:-default} in
+shift $((OPTIND-1))
+command=${1:-default}
+shift||
+OPTIND=1
+
+case ${command} in
   firmware|default)
+    while getopts "k:h" opt; do
+      case ${opt} in
+        k) keyboard=${OPTARG} ;;
+        h) usage; exit 0 ;;
+       \?) usage; exit 1 ;;
+      esac
+    done
+
     mkdir -p firmware
 
     case ${keyboard:-default} in
@@ -78,6 +94,14 @@ case ${!OPTIND:-default} in
     ;;
 
   keymap)
+    while getopts "k:h" opt; do
+      case ${opt} in
+        k) keyboard=${OPTARG} ;;
+        h) usage; exit 0 ;;
+       \?) usage; exit 1 ;;
+      esac
+    done
+
     case ${keyboard:-default} in
       ferris_sweep|default)
         keymap parse -z config/cradio.keymap | keymap draw - > img/cradio.svg
@@ -100,7 +124,7 @@ case ${!OPTIND:-default} in
     ;;
 
   *)
-    echo "${0}: unrecognized command -- ${!OPTIND}"
+    echo "${0}: unrecognized command -- ${command}"
     usage
     exit 1
     ;;

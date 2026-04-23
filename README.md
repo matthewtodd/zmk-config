@@ -11,18 +11,22 @@ To build the firmware and draw the keymap, there's a small [shell
 script][build] that uses a [Docker image][dockerfile].
 
 ```
-usage: build [-I] [-k <keyboard>] [<command>]
+usage: build [-I] firmware [-k <keyboard>]
+       build [-I] keymap [-k <keyboard>]
+       build [-I] shell
 
-  options:
+  global options:
     -I             build docker image
-    -k <keyboard>  select keyboard
-                     ferris_sweep (default)
-                     corne_min
 
   commands:
     firmware       build keyboard firmware (default)
     keymap         draw keyboard keymap
     shell          start an interactive shell in the docker container
+
+  options:
+    -k <keyboard>  select keyboard
+                     ferris_sweep (default)
+                     corne_min
 ```
 
 ## Keymap
