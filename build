@@ -25,10 +25,10 @@ case ${mode} in
     ;;
 
   f)
-    docker run --rm "${DOCKER_MOUNTS[@]}" zmk-config build -b corne_min_left -s rgbled_adapter
-    docker run --rm "${DOCKER_MOUNTS[@]}" zmk-config build -b corne_min_right -s rgbled_adapter
-    docker run --rm "${DOCKER_MOUNTS[@]}" zmk-config build -b nice_nano_v2 -s cradio_left
-    docker run --rm "${DOCKER_MOUNTS[@]}" zmk-config build -b nice_nano_v2 -s cradio_right
+    docker run --rm "${DOCKER_MOUNTS[@]}" zmk-config build -b corne_min_left -s rgbled_adapter -a corne_min-left
+    docker run --rm "${DOCKER_MOUNTS[@]}" zmk-config build -b corne_min_right -s rgbled_adapter -a corne_min-right
+    docker run --rm "${DOCKER_MOUNTS[@]}" zmk-config build -b nice_nano_v2 -s cradio_left -a ferris_sweep-left
+    docker run --rm "${DOCKER_MOUNTS[@]}" zmk-config build -b nice_nano_v2 -s cradio_right -a ferris_sweep-right
     open firmware
     ;;
 

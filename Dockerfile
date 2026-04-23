@@ -20,8 +20,9 @@ COPY --chmod=755 <<-"END" entrypoint
 
   case ${subcommand} in
     build)
-      while getopts "b:s:" opt; do
+      while getopts "a:b:s:" opt; do
         case ${opt} in
+          a) artifact=${OPTARG} ;;
           b) board=${OPTARG} ;;
           s) shield=${OPTARG} ;;
         esac
@@ -36,7 +37,7 @@ COPY --chmod=755 <<-"END" entrypoint
         -DSHIELD=${shield}
 
       cp build/zephyr/zmk.uf2 \
-         out/firmware/${shield}-${board}.uf2
+         out/firmware/${artifact:-${shield}-${board}}.uf2
       ;;
 
     draw)
