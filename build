@@ -25,32 +25,33 @@ docker_mounts=(
   --mount type=bind,src=./img,dst=/app/out/img
 )
 
-while getopts "hIk:" opt; do
+while getopts "Ik:h" opt; do
   case ${opt} in
     I) docker build --tag zmk-config . ;;
-    k) case ${OPTARG} in
-         corne_min|ferris_sweep) keyboard=${OPTARG} ;;
-         *) usage; exit 1 ;;
-       esac
-       ;;
-
+    k) keyboard=${OPTARG} ;;
     h) usage; exit ;;
     \?) usage; exit 1 ;;
   esac
 done
 
 shift $((OPTIND-1))
+command=${1:-default}
 
-case ${1:-firmware} in
-  firmware)
-    case ${keyboard:-ferris_sweep} in
+case ${command} in
+  firmware|default)
+    case ${keyboard:-default} in
+      ferris_sweep|default)
+        docker run --rm "${docker_mounts[@]}" zmk-config build -b nice_nano_v2 -s cradio_left -a ferris_sweep-left
+        docker run --rm "${docker_mounts[@]}" zmk-config build -b nice_nano_v2 -s cradio_right -a ferris_sweep-right
+        ;;
       corne_min)
         docker run --rm "${docker_mounts[@]}" zmk-config build -b corne_min_left -s rgbled_adapter -a corne_min-left
         docker run --rm "${docker_mounts[@]}" zmk-config build -b corne_min_right -s rgbled_adapter -a corne_min-right
         ;;
-      ferris_sweep)
-        docker run --rm "${docker_mounts[@]}" zmk-config build -b nice_nano_v2 -s cradio_left -a ferris_sweep-left
-        docker run --rm "${docker_mounts[@]}" zmk-config build -b nice_nano_v2 -s cradio_right -a ferris_sweep-right
+      *)
+        echo "${0}: unrecognized keyboard -- ${keyboard}"
+        usage
+        exit 1
         ;;
     esac
 
@@ -58,14 +59,19 @@ case ${1:-firmware} in
     ;;
 
   keymap)
-    case ${keyboard:-ferris_sweep} in
+    case ${keyboard:-default} in
+      ferris_sweep|default)
+        docker run --rm "${docker_mounts[@]}" zmk-config draw -k cradio
+        open img/cradio.svg
+        ;;
       corne_min)
         docker run --rm "${docker_mounts[@]}" zmk-config draw -k corne_min -d zmk/app/dts/layouts/foostan/corne/6column.dtsi
         open img/corne_min.svg
         ;;
-      ferris_sweep)
-        docker run --rm "${docker_mounts[@]}" zmk-config draw -k cradio
-        open img/cradio.svg
+      *)
+        echo "${0}: unrecognized keyboard -- ${keyboard}"
+        usage
+        exit 1
         ;;
     esac
     ;;
@@ -76,6 +82,7 @@ case ${1:-firmware} in
 
   *)
     usage
-    exit 1;;
+    exit 1
+    ;;
 
 esac
