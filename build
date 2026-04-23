@@ -19,11 +19,26 @@ usage: build [-I] [-k <keyboard>] [<command>]
 END
 }
 
-docker_mounts=(
-  --mount type=bind,src=./config,dst=/app/config,readonly
-  --mount type=bind,src=./firmware,dst=/app/out/firmware,bind-create-src
-  --mount type=bind,src=./img,dst=/app/out/img
-)
+docker_run() {
+  build=$(mktemp -d -t zmk-config)
+
+  if [ -z "${1+x}" ]; then
+    local tty="--tty"
+  fi
+
+  docker run --interactive --rm ${tty:-} \
+    --mount type=bind,src=./config,dst=/app/config,readonly \
+    --mount type=bind,src=${build},dst=/app/build \
+    zmk-config "$@"
+}
+
+west() {
+  docker_run west "$@"
+}
+
+keymap() {
+  docker_run keymap -c config/keymap-drawer.yml "$@"
+}
 
 while getopts "Ik:h" opt; do
   case ${opt} in
@@ -36,14 +51,20 @@ done
 
 case ${!OPTIND:-default} in
   firmware|default)
+    mkdir -p firmware
+
     case ${keyboard:-default} in
       ferris_sweep|default)
-        docker run --rm "${docker_mounts[@]}" zmk-config build -b nice_nano_v2 -s cradio_left -a ferris_sweep-left
-        docker run --rm "${docker_mounts[@]}" zmk-config build -b nice_nano_v2 -s cradio_right -a ferris_sweep-right
+        west build -s zmk/app -d /app/build -b nice_nano_v2 -- -DZMK_CONFIG=/app/config -DSHIELD=cradio_left
+        cp ${build}/zephyr/zmk.uf2 firmware/ferris_sweep-left.uf2
+        west build -s zmk/app -d /app/build -b nice_nano_v2 -- -DZMK_CONFIG=/app/config -DSHIELD=cradio_right
+        cp ${build}/zephyr/zmk.uf2 firmware/ferris_sweep-right.uf2
         ;;
       corne_min)
-        docker run --rm "${docker_mounts[@]}" zmk-config build -b corne_min_left -s rgbled_adapter -a corne_min-left
-        docker run --rm "${docker_mounts[@]}" zmk-config build -b corne_min_right -s rgbled_adapter -a corne_min-right
+        west build -s zmk/app -d /app/build -b corne_min_left -- -DZMK_CONFIG=/app/config -DSHIELD=rgbled_adapter
+        cp ${build}/zephyr/zmk.uf2 firmware/corne_min-left.uf2
+        west build -s zmk/app -d /app/build -b corne_min_right -- -DZMK_CONFIG=/app/config -DSHIELD=rgbled_adapter
+        cp ${build}/zephyr/zmk.uf2 firmware/corne_min-right.uf2
         ;;
       *)
         echo "${0}: unrecognized keyboard -- ${keyboard}"
@@ -58,11 +79,11 @@ case ${!OPTIND:-default} in
   keymap)
     case ${keyboard:-default} in
       ferris_sweep|default)
-        docker run --rm "${docker_mounts[@]}" zmk-config draw -k cradio
+        keymap parse -z config/cradio.keymap | keymap draw - > img/cradio.svg
         open img/cradio.svg
         ;;
       corne_min)
-        docker run --rm "${docker_mounts[@]}" zmk-config draw -k corne_min -d zmk/app/dts/layouts/foostan/corne/6column.dtsi
+        keymap parse -z config/corne_min.keymap | keymap draw -d zmk/app/dts/layouts/foostan/corne/6column.dtsi - > img/corne_min.svg
         open img/corne_min.svg
         ;;
       *)
@@ -74,7 +95,7 @@ case ${!OPTIND:-default} in
     ;;
 
   shell)
-    docker run --rm "${docker_mounts[@]}" --name shell --entrypoint /bin/bash --interactive --tty zmk-config
+    docker_run
     ;;
 
   *)
