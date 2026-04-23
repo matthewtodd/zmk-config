@@ -8,11 +8,11 @@ usage: build [-I] [-k <keyboard>] [<command>]
 
     -I             build docker image
     -k <keyboard>  select keyboard
-                     corne_min
                      ferris_sweep (default)
+                     corne_min
 
   command is one of:
-    firmware       build keyboard firmware
+    firmware       build keyboard firmware (default)
     keymap         draw keyboard keymap
     shell          start an interactive shell in the docker container
 
