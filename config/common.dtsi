@@ -31,15 +31,15 @@
 MAKE_HRM(hml, &kp, &kp, KEYS_R THUMBS)
 MAKE_HRM(hmr, &kp, &kp, KEYS_L THUMBS)
 
-#define ZMK_COMBO_8(NAME, TAP, POS, LAYERS, COMBO_MS, IDLE_MS, HOLD, SIDE)     \
-  MAKE_HRM(hm_combo_##NAME, &kp, TAP, SIDE THUMBS)                             \
-  ZMK_COMBO_6(NAME, &hm_combo_##NAME HOLD 0, POS, LAYERS, COMBO_MS, IDLE_MS)
-
 // Combos
 #define COMBO_TERM_FAST 18
 #define COMBO_TERM_SLOW 30
 #define COMBO_IDLE_FAST 150
 #define COMBO_IDLE_SLOW 50
+
+#define ZMK_COMBO_8(NAME, TAP, POS, LAYERS, COMBO_MS, IDLE_MS, HOLD, SIDE)     \
+  MAKE_HRM(hm_combo_##NAME, &kp, TAP, SIDE THUMBS)                             \
+  ZMK_COMBO_6(NAME, &hm_combo_##NAME HOLD 0, POS, LAYERS, COMBO_MS, IDLE_MS)
 
 // Horizontal combos - teft hand
 ZMK_COMBO(mouse,     &tog MOUSE,          LT3 LT2, FOCAL MOUSE, COMBO_TERM_FAST, COMBO_IDLE_FAST)
