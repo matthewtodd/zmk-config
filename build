@@ -72,8 +72,6 @@ case ${command} in
       esac
     done
 
-    mkdir -p firmware
-
     case ${keyboard:-default} in
       ferris_sweep|default)
         west build -s zmk/app -d /app/build -b nice_nano_v2 -- -DZMK_CONFIG=/app/config -DSHIELD=cradio_left
