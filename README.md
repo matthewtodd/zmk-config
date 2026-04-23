@@ -25,8 +25,10 @@ usage: build [-I] firmware [-k <keyboard>]
 
   options:
     -k <keyboard>  select keyboard
-                     ferris_sweep (default)
-                     corne_min
+
+  keyboards:
+    ferris_sweep (default)
+    corne_min
 ```
 
 ## Keymap
