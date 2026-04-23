@@ -13,12 +13,13 @@ script][build] that uses a [Docker image][dockerfile].
 ```
 usage: build [-I] [-k <keyboard>] [<command>]
 
+  options:
     -I             build docker image
     -k <keyboard>  select keyboard
                      ferris_sweep (default)
                      corne_min
 
-  command is one of:
+  commands:
     firmware       build keyboard firmware (default)
     keymap         draw keyboard keymap
     shell          start an interactive shell in the docker container
