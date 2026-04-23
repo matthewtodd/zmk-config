@@ -8,15 +8,13 @@ usage: build [-I] [-k <keyboard>] [<command>]
 
     -I             build docker image
     -k <keyboard>  select keyboard
+                     corne_min
+                     ferris_sweep (default)
 
-Supported commands are:
+  command is one of:
     firmware       build keyboard firmware
     keymap         draw keyboard keymap
     shell          start an interactive shell in the docker container
-
-Supported keyboards are:
-    corne_min
-    ferris_sweep
 
 END
 }
