@@ -33,9 +33,11 @@ docker_run() {
     local tty="--tty"
   fi
 
-  docker run --interactive --rm ${tty:-} \
+  docker run --rm --env build=/app/build --interactive ${tty:-} \
     --mount type=bind,src=./config,dst=/app/config,readonly \
     --mount type=bind,src=${build},dst=/app/build \
+    --mount type=bind,src=./firmware,dst=/app/firmware,bind-create-src \
+    --mount type=bind,src=./img,dst=/app/img \
     zmk-config "$@"
 }
 
@@ -44,7 +46,7 @@ west() {
 }
 
 keymap() {
-  docker_run keymap -c config/keymap-drawer.yml "$@"
+  docker_run keymap "$@"
 }
 
 while getopts "Ih" opt; do
@@ -106,11 +108,13 @@ case ${command} in
 
     case ${keyboard:-default} in
       ferris_sweep|default)
-        keymap parse -z config/cradio.keymap | keymap draw - > img/cradio.svg
+        keymap -c config/keymap-drawer.yml parse -z config/cradio.keymap -o build/cradio.yml
+        keymap -c config/keymap-drawer.yml draw -o img/cradio.svg - < ${build}/cradio.yml
         open img/cradio.svg
         ;;
       corne_min)
-        keymap parse -z config/corne_min.keymap | keymap draw -d zmk/app/dts/layouts/foostan/corne/6column.dtsi - > img/corne_min.svg
+        keymap -c config/keymap-drawer.yml parse -z config/corne_min.keymap -o build/corne_min.yml
+        keymap -c config/keymap-drawer.yml draw -o img/corne_min.svg -d zmk/app/dts/layouts/foostan/corne/6column.dtsi - < ${build}/corne_min.yml
         open img/corne_min.svg
         ;;
       *)
