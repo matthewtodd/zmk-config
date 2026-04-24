@@ -124,6 +124,18 @@ case ${command} in
     ;;
 
   shell)
+    # NOTE(mt): All the unnecessary-looking Docker bind mounts above, the cute
+    # west and keymap wrappers around docker run, the awkward dependency on the
+    # side-effecty $build global variable, and all the seeming duplication of
+    # commands in the case statements, actually work together beautifully:
+    #
+    # Their interrelationships mean that any docker-using commands in this
+    # script can be copy-pasted directly into a docker container shell and run
+    # unmodified!
+    #
+    # I imagine this is going to be super nice for both iterating on new
+    # settings and fixing any problems live, then easily codifying my learnings
+    # back in this script!
     docker_run
     ;;
 
