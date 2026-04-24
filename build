@@ -34,8 +34,8 @@ docker_run() {
   fi
 
   docker run --rm --env build=/app/build --interactive ${tty:-} \
-    --mount type=bind,src=./config,dst=/app/config,readonly \
     --mount type=bind,src=${build},dst=/app/build \
+    --mount type=bind,src=./config,dst=/app/config,readonly \
     --mount type=bind,src=./firmware,dst=/app/firmware,bind-create-src \
     --mount type=bind,src=./img,dst=/app/img \
     zmk-config "$@"
@@ -49,10 +49,9 @@ keymap() {
   docker_run keymap "$@"
 }
 
-while getopts "Ih" opt; do
+while getopts "I" opt; do
   case ${opt} in
     I) docker build --tag zmk-config . ;;
-    h) usage; exit 0 ;;
    \?) usage; exit 1 ;;
   esac
 done
@@ -64,10 +63,9 @@ OPTIND=1
 
 case ${command} in
   firmware|default)
-    while getopts "k:h" opt; do
+    while getopts "k:" opt; do
       case ${opt} in
         k) keyboard=${OPTARG} ;;
-        h) usage; exit 0 ;;
        \?) usage; exit 1 ;;
       esac
     done
@@ -96,10 +94,9 @@ case ${command} in
     ;;
 
   keymap)
-    while getopts "k:h" opt; do
+    while getopts "k:" opt; do
       case ${opt} in
         k) keyboard=${OPTARG} ;;
-        h) usage; exit 0 ;;
        \?) usage; exit 1 ;;
       esac
     done
