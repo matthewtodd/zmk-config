@@ -76,12 +76,14 @@ case ${command} in
         cp ${build}/zephyr/zmk.uf2 firmware/ferris_sweep-left.uf2
         west build -s zmk/app -d /app/build -b nice_nano_v2 -- -DZMK_CONFIG=/app/config -DSHIELD=cradio_right
         cp ${build}/zephyr/zmk.uf2 firmware/ferris_sweep-right.uf2
+        open -R firmware/ferris_sweep-left.uf2
         ;;
       corne_min)
         west build -s zmk/app -d /app/build -b corne_min_left -- -DZMK_CONFIG=/app/config -DSHIELD=rgbled_adapter
         cp ${build}/zephyr/zmk.uf2 firmware/corne_min-left.uf2
         west build -s zmk/app -d /app/build -b corne_min_right -- -DZMK_CONFIG=/app/config -DSHIELD=rgbled_adapter
         cp ${build}/zephyr/zmk.uf2 firmware/corne_min-right.uf2
+        open -R firmware/corne_min-left.uf2
         ;;
       *)
         echo "${0}: unrecognized keyboard -- ${keyboard}"
@@ -90,7 +92,6 @@ case ${command} in
         ;;
     esac
 
-    open firmware
     ;;
 
   keymap)
@@ -103,13 +104,13 @@ case ${command} in
 
     case ${keyboard:-default} in
       ferris_sweep|default)
-        keymap -c config/keymap-drawer.yml parse -z config/cradio.keymap -o build/cradio.yml
-        keymap -c config/keymap-drawer.yml draw -o img/cradio.svg - < ${build}/cradio.yml
+        keymap -c config/keymap-drawer.yml parse -z config/cradio.keymap \
+          | keymap -c config/keymap-drawer.yml draw -o img/cradio.svg -
         open img/cradio.svg
         ;;
       corne_min)
-        keymap -c config/keymap-drawer.yml parse -z config/corne_min.keymap -o build/corne_min.yml
-        keymap -c config/keymap-drawer.yml draw -o img/corne_min.svg -d zmk/app/dts/layouts/foostan/corne/6column.dtsi - < ${build}/corne_min.yml
+        keymap -c config/keymap-drawer.yml parse -z config/corne_min.keymap \
+          | keymap -c config/keymap-drawer.yml draw -d zmk/app/dts/layouts/foostan/corne/6column.dtsi -o img/corne_min.svg -
         open img/corne_min.svg
         ;;
       *)
