@@ -104,13 +104,15 @@ case ${command} in
 
     case ${keyboard:-default} in
       ferris_sweep|default)
-        keymap -c config/keymap-drawer.yml parse -z config/cradio.keymap \
-          | keymap -c config/keymap-drawer.yml draw -o img/cradio.svg -
+        cat config/cradio.keymap \
+          | keymap -c config/keymap-drawer.yml parse -z - \
+          | keymap -c config/keymap-drawer.yml draw -z cradio -o img/cradio.svg -
         open img/cradio.svg
         ;;
       corne_min)
-        keymap -c config/keymap-drawer.yml parse -z config/corne_min.keymap \
-          | keymap -c config/keymap-drawer.yml draw -d zmk/app/dts/layouts/foostan/corne/6column.dtsi -o img/corne_min.svg -
+        cat config/corne_min.keymap \
+          | keymap -c config/keymap-drawer.yml parse -z - \
+          | keymap -c config/keymap-drawer.yml draw -z corne -o img/corne_min.svg -
         open img/corne_min.svg
         ;;
       *)

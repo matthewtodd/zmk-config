@@ -4,6 +4,7 @@ draw_config:
 
 parse_config:
   zmk_additional_includes:
+    - "config"
     - "modules/zmk/helpers/include"
 
   raw_binding_map:
