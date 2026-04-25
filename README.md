@@ -58,16 +58,16 @@ get oriented at first, so here are some links in case you're curious yourself.
 
 [ambients]: https://lowprokb.ca/products/ambients-silent-choc-switches?variant=44873446391972/
 [boardsource]: https://boardsource.xyz/products/crab-broom-choc-ferris-sweep
-[build]: build
+[build]: bin/build
 [colemak-dh]: https://colemakmods.github.io/mod-dh/
 [cs-fork]: https://github.com/infused-kim/kb_keycaps_chicago_stenographer
 [cs]: https://github.com/pseudoku/PseudoMakeMeKeyCapProfiles
-[dockerfile]: Dockerfile
+[dockerfile]: src/Dockerfile
 [ferris-sweep]: https://github.com/davidphilipbarr/Sweep
 [focal]: https://github.com/Keyhabit/Focal-keyboard-layout/
 [jlc3dp]: https://jlc3dp.com/
-[keyboard]: img/keyboard.jpg
-[keymap]: img/cradio.svg
+[keyboard]: share/doc/keyboard.jpg
+[keymap]: share/doc/cradio.svg
 [miryoku]: https://github.com/manna-harbour/miryoku
 [tweaking]: https://github.com/manna-harbour/miryoku_zmk/compare/master...matthewtodd:miryoku_zmk:matthewtodd
 [urob-zmk-config]: https://github.com/urob/zmk-config

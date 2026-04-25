@@ -1,0 +1,137 @@
+#!/bin/bash
+
+set -euo pipefail
+
+usage() {
+  cat <<-END
+usage: build [-I] firmware [-k <keyboard>]
+       build [-I] keymap [-k <keyboard>]
+       build [-I] shell
+
+  global options:
+    -I             build docker image
+
+  commands:
+    firmware       build keyboard firmware (default)
+    keymap         draw keyboard keymap
+    shell          start an interactive shell in the docker container
+
+  options:
+    -k <keyboard>  select keyboard
+
+  keyboards:
+    ferris_sweep (default)
+    corne_min
+
+END
+}
+
+docker_run() {
+  rm -rf ./var/tmp
+
+  if [ -z "${1+x}" ]; then
+    local tty="--tty"
+  fi
+
+  docker run --rm --interactive ${tty:-} \
+    --mount type=bind,src=./etc/keymap-drawer.yml,dst=/etc/keymap-drawer.yml,readonly \
+    --mount type=bind,src=./share/doc,dst=/share/doc \
+    --mount type=bind,src=./src/zmk/config,dst=/src/zmk/config,readonly \
+    --mount type=bind,src=./var/tmp/zmk,dst=/var/tmp/zmk,bind-create-src \
+    zmk-config "$@"
+}
+
+keymap() { docker_run keymap "$@"; }
+west()   { docker_run west   "$@"; }
+
+while getopts "I" opt; do
+  case ${opt} in
+    I) docker build --tag zmk-config --file src/Dockerfile . ;;
+   \?) usage; exit 1 ;;
+  esac
+done
+
+shift $((OPTIND-1))
+command=${1:-default}
+shift||
+OPTIND=1
+
+case ${command} in
+  firmware|default)
+    while getopts "k:" opt; do
+      case ${opt} in
+        k) keyboard=${OPTARG} ;;
+       \?) usage; exit 1 ;;
+      esac
+    done
+
+    case ${keyboard:-default} in
+      ferris_sweep|default)
+        west build -s /src/zmk/zmk/app -d /var/tmp/zmk -b nice_nano_v2 -- -DZMK_CONFIG=/src/zmk/config -DSHIELD=cradio_left
+        cp var/tmp/zmk/zephyr/zmk.uf2 var/ferris_sweep-left.uf2
+        open -R var/ferris_sweep-left.uf2
+        west build -s /src/zmk/zmk/app -d /var/tmp/zmk -b nice_nano_v2 -- -DZMK_CONFIG=/src/zmk/config -DSHIELD=cradio_right
+        cp var/tmp/zmk/zephyr/zmk.uf2 var/ferris_sweep-right.uf2
+        ;;
+      corne_min)
+        west build -s /src/zmk/zmk/app -d /var/tmp/zmk -b corne_min_left -- -DZMK_CONFIG=/src/zmk/config -DSHIELD=rgbled_adapter
+        cp var/tmp/zmk/zephyr/zmk.uf2 var/corne_min-left.uf2
+        open -R var/corne_min-left.uf2
+        west build -s /src/zmk/zmk/app -d /var/tmp/zmk -b corne_min_right -- -DZMK_CONFIG=/src/zmk/config -DSHIELD=rgbled_adapter
+        cp var/tmp/zmk/zephyr/zmk.uf2 var/corne_min-right.uf2
+        ;;
+      *)
+        echo "${0}: unrecognized keyboard -- ${keyboard}"
+        usage
+        exit 1
+        ;;
+    esac
+
+    ;;
+
+  keymap)
+    while getopts "k:" opt; do
+      case ${opt} in
+        k) keyboard=${OPTARG} ;;
+       \?) usage; exit 1 ;;
+      esac
+    done
+
+    case ${keyboard:-default} in
+      ferris_sweep|default)
+        keymap -c /etc/keymap-drawer.yml parse -z /src/zmk/config/cradio.keymap \
+          | keymap -c /etc/keymap-drawer.yml draw -z cradio -o /share/doc/cradio.svg -
+        open share/doc/cradio.svg
+        ;;
+      corne_min)
+        keymap -c /etc/keymap-drawer.yml parse -z /src/zmk/config/corne_min.keymap \
+          | keymap -c /etc/keymap-drawer.yml draw -z corne -o /share/doc/corne_min.svg -
+        open share/doc/corne_min.svg
+        ;;
+      *)
+        echo "${0}: unrecognized keyboard -- ${keyboard}"
+        usage
+        exit 1
+        ;;
+    esac
+    ;;
+
+  shell)
+    docker_run
+    ;;
+
+  test)
+    open() { [ -e "${1}" ] || [ -e "${2}" ] || (echo -e "\033[0;31mopen ${*}\033[0m" && exit 1); }
+    export -f open
+    set -x
+    ${0} firmware
+    ${0} keymap
+    ;;
+
+  *)
+    echo "${0}: unrecognized command -- ${command}"
+    usage
+    exit 1
+    ;;
+
+esac

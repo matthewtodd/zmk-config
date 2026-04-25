@@ -6,10 +6,10 @@ RUN <<-END
   pip install keymap-drawer --break-system-packages
 END
 
-WORKDIR /app
+WORKDIR /src/zmk
 
-RUN --mount=type=bind,src=config/west.yml,dst=config/west.yml <<-END
-  west init -l /app/config
+RUN --mount=type=bind,src=src/zmk/config/west.yml,dst=/src/zmk/config/west.yml <<-END
+  west init -l /src/zmk/config
   west update --fetch-opt=--filter=tree:0
   west zephyr-export
 END
