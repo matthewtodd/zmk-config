@@ -49,10 +49,8 @@ west()   { docker_run west   "$@"; }
 while getopts "I" opt; do
   case ${opt} in
     I)
-      docker build --tag zmk-config --file src/Dockerfile .
-      docker volume rm zmk-config-root-cmake
-      docker volume rm zmk-config-src-zmk
-      west init -l /src/zmk/config
+      docker build --tag zmk-config --file src/docker/Dockerfile .
+      west init -l /src/zmk/config ||
       west update --fetch-opt=--filter=tree:0
       west zephyr-export
       ;;
