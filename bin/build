@@ -33,7 +33,9 @@ docker_run() {
     local tty="--tty"
   fi
 
-  docker run --rm --interactive ${tty:-} \
+  docker run --rm --interactive ${tty:-} --workdir /src/zmk \
+    --volume zmk-config-root-cmake:/root/.cmake \
+    --volume zmk-config-src-zmk:/src/zmk \
     --mount type=bind,src=./etc/keymap-drawer.yml,dst=/etc/keymap-drawer.yml,readonly \
     --mount type=bind,src=./share/doc,dst=/share/doc \
     --mount type=bind,src=./src/zmk/config,dst=/src/zmk/config,readonly \
@@ -46,8 +48,20 @@ west()   { docker_run west   "$@"; }
 
 while getopts "I" opt; do
   case ${opt} in
-    I) docker build --tag zmk-config --file src/Dockerfile . ;;
-   \?) usage; exit 1 ;;
+    I)
+      docker build --tag zmk-config --file src/Dockerfile .
+      docker volume rm zmk-config-root-cmake
+      docker volume rm zmk-config-src-zmk
+      west init -l /src/zmk/config
+      west update --fetch-opt=--filter=tree:0
+      west zephyr-export
+      ;;
+
+   \?)
+     usage
+     exit 1
+     ;;
+
   esac
 done
 
