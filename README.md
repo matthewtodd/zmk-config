@@ -62,7 +62,7 @@ get oriented at first, so here are some links in case you're curious yourself.
 [colemak-dh]: https://colemakmods.github.io/mod-dh/
 [cs-fork]: https://github.com/infused-kim/kb_keycaps_chicago_stenographer
 [cs]: https://github.com/pseudoku/PseudoMakeMeKeyCapProfiles
-[dockerfile]: src/Dockerfile
+[dockerfile]: src/docker/Dockerfile
 [ferris-sweep]: https://github.com/davidphilipbarr/Sweep
 [focal]: https://github.com/Keyhabit/Focal-keyboard-layout/
 [jlc3dp]: https://jlc3dp.com/
