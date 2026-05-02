@@ -53,7 +53,7 @@ done
 
 shift $((OPTIND-1))
 command=${1:-default}
-shift||
+[[ $command != "default" ]] && shift
 OPTIND=1
 
 case ${command} in
