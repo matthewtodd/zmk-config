@@ -46,7 +46,7 @@ west()   { docker_run west   "$@"; }
 
 while getopts "I" opt; do
   case ${opt} in
-    I) docker build --tag zmk-config --file src/docker/Dockerfile . ;;
+    I) docker build --tag zmk-config --file opt/Dockerfile . ;;
    \?) usage; exit 1 ;;
   esac
 done
