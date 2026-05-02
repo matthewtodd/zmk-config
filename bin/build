@@ -21,6 +21,7 @@ usage: build [-I] firmware [-k <keyboard>]
 
   keyboards:
     ferris_sweep (default)
+    ferris_sweep_wired
     corne_min
 
 END
@@ -36,12 +37,15 @@ docker_run() {
   docker run --rm --interactive ${tty:-} --workdir /src/zmk \
     --mount type=bind,src=./etc/keymap-drawer.yml,dst=/etc/keymap-drawer.yml,readonly \
     --mount type=bind,src=./share/doc,dst=/share/doc \
+    --mount type=bind,src=./src/qmk,dst=/src/qmk,readonly \
     --mount type=bind,src=./src/zmk/config,dst=/src/zmk/config,readonly \
+    --mount type=bind,src=./var/tmp/qmk,dst=/src/qmk_firmware/.build,bind-create-src \
     --mount type=bind,src=./var/tmp/zmk,dst=/var/tmp/zmk,bind-create-src \
     zmk-config "$@"
 }
 
 keymap() { docker_run keymap "$@"; }
+qmk()    { docker_run qmk    "$@"; }
 west()   { docker_run west   "$@"; }
 
 while getopts "I" opt; do
@@ -73,6 +77,11 @@ case ${command} in
         cp var/tmp/zmk/zephyr/zmk.uf2 var/ferris_sweep-right.uf2
         open -R var/ferris_sweep-left.uf2
         ;;
+      ferris_sweep_wired)
+        qmk compile -kb ferris/sweep -km matthewtodd -j 12
+        cp var/tmp/qmk/ferris_sweep_matthewtodd.uf2 var/ferris_sweep-wired.uf2
+        open -R var/ferris_sweep-wired.uf2
+        ;;
       corne_min)
         west build -s /src/zmk/zmk/app -d /var/tmp/zmk -b corne_min_left -- -DZMK_CONFIG=/src/zmk/config -DSHIELD=rgbled_adapter
         cp var/tmp/zmk/zephyr/zmk.uf2 var/corne_min-left.uf2
@@ -102,6 +111,13 @@ case ${command} in
         keymap -c /etc/keymap-drawer.yml parse -z /src/zmk/config/cradio.keymap \
           | keymap -c /etc/keymap-drawer.yml draw -z cradio -o /share/doc/cradio.svg -
         open share/doc/cradio.svg
+        ;;
+      ferris_sweep_wired)
+        qmk c2json -kb ferris/sweep -km matthewtodd \
+          | sed -e s/NAV/1/g -e s/SYM/4/g -e s/NUM/5/g \
+          | keymap -c /etc/keymap-drawer.yml parse -l Focal Nav Mouse Media Num Sym -q - \
+          | keymap -c /etc/keymap-drawer.yml draw -o /share/doc/ferris_sweep_wired.svg -
+        open share/doc/ferris_sweep_wired.svg
         ;;
       corne_min)
         keymap -c /etc/keymap-drawer.yml parse -z /src/zmk/config/corne_min.keymap \

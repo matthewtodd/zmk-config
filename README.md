@@ -28,6 +28,7 @@ usage: build [-I] firmware [-k <keyboard>]
 
   keyboards:
     ferris_sweep (default)
+    ferris_sweep_wired
     corne_min
 ```
 

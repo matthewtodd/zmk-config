@@ -115,3 +115,79 @@ parse_config:
 
     C_AC_DESKTOP_SHOW_ALL_APPLICATIONS: $$mdi:view-grid-outline$$
     C_AC_DESKTOP_SHOW_ALL_WINDOWS: $$mdi:dock-window$$
+
+  qmk_keycode_map:
+    "NO": ""
+
+    EXLM: "!"
+    AT: "@"
+    HASH: "#"
+    DLR: "$"
+    PERC: "%"
+    CIRC: "^"
+    AMPR: "&"
+    ASTR: "*"
+    LPRN: "("
+    RPRN: ")"
+    EQL: "="
+    PLUS: "+"
+    MINS: "-"
+    UNDS: "_"
+    SLSH: "/"
+    BSLS: "\\"
+    PIPE: "|"
+    SCLN: ";"
+    COLN: ":"
+    QUOT: "'"
+    COMM: ","
+    DOT: "."
+    LBRC: "["
+    LCBR: "{"
+    RBRC: "]"
+    RCBR: "}"
+    GRV: "`"
+    TILD: "~"
+
+    LCTL: $$mdi:apple-keyboard-control$$
+    LALT: $$mdi:apple-keyboard-option$$
+    LGUI: $$mdi:apple-keyboard-command$$
+    LSFT: $$mdi:apple-keyboard-shift$$
+
+    RCTL: $$mdi:apple-keyboard-control$$
+    RALT: $$mdi:apple-keyboard-option$$
+    RGUI: $$mdi:apple-keyboard-command$$
+    RSFT: $$mdi:apple-keyboard-shift$$
+
+    ESC: $$mdi:keyboard-esc$$
+    SPC: $$mdi:keyboard-space$$
+    TAB: $$mdi:keyboard-tab$$
+    ENT: $$mdi:keyboard-return$$
+    BSPC: $$mdi:backspace-outline$$
+    DEL: $$mdi:backspace-reverse-outline$$
+
+    CW_TOGG: "Caps"
+    LEFT: "⏴"
+    DOWN: "⏷"
+    UP: "⏶"
+    RGHT: "⏵"
+
+    MS_LEFT: $$mdi:arrow-left-thick$$
+    MS_DOWN: $$mdi:arrow-down-thick$$
+    MS_UP: $$mdi:arrow-up-thick$$
+    MS_RGHT: $$mdi:arrow-right-thick$$
+    MS_WHLL: $$mdi:arrow-right-bold-outline$$
+    MS_WHLD: $$mdi:arrow-up-bold-outline$$
+    MS_WHLU: $$mdi:arrow-down-bold-outline$$
+    MS_WHLR: $$mdi:arrow-left-bold-outline$$
+    MS_BTN1: Left
+    MS_BTN2: Right
+
+    MUTE: $$mdi:volume-off$$
+    VOLU: $$mdi:volume-high$$
+    VOLD: $$mdi:volume-low$$
+    MNXT: $$mdi:skip-next$$
+    MPRV: $$mdi:skip-previous$$
+    MPLY: $$mdi:play-pause$$
+
+    BRMD: $$mdi:lightbulb-outline$$
+    BRMU: $$mdi:lightbulb-on-outline$$

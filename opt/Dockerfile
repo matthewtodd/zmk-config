@@ -35,3 +35,11 @@ RUN \
   west update --fetch-opt=--filter=tree:0 --auto-cache /var/cache/west
   west zephyr-export
 END
+
+ADD --keep-git-dir https://github.com/qmk/qmk_firmware.git?tag=0.32.12 /src/qmk_firmware
+ADD --unpack=true https://github.com/qmk/qmk_toolchains/releases/download/v15.2.0-1/qmk_toolchains-gcc15.2.0-host_linuxARM64.tar.zst /opt/qmk
+
+ENV PATH=/opt/qmk/qmk_toolchains_linuxARM64/bin:$PATH \
+    QMK_DISTRIB_DIR=/opt/qmk \
+    QMK_HOME=/src/qmk_firmware \
+    QMK_USERSPACE=/src/qmk \

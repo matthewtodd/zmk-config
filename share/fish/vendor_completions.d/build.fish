@@ -1,5 +1,5 @@
 set -l commands firmware keymap shell
-set -l keyboards ferris_sweep corne_min
+set -l keyboards ferris_sweep ferris_sweep_wired corne_min
 
 complete -c build -f
 complete -c build -n "not __fish_seen_subcommand_from $commands" -s I -d "Build docker image"

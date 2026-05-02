@@ -25,3 +25,15 @@ gcc
 
 libsdl2-dev
 libmagic1
+
+# https://raw.githubusercontent.com/qmk/qmk_firmware/refs/heads/master/util/env-bootstrap.sh
+zstd
+build-essential
+clang-format
+diffutils
+wget
+unzip
+zip
+libhidapi-hidraw0
+dos2unix
+git
