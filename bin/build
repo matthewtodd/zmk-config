@@ -69,16 +69,16 @@ case ${command} in
       ferris_sweep|default)
         west build -s /src/zmk/zmk/app -d /var/tmp/zmk -b nice_nano_v2 -- -DZMK_CONFIG=/src/zmk/config -DSHIELD=cradio_left
         cp var/tmp/zmk/zephyr/zmk.uf2 var/ferris_sweep-left.uf2
-        open -R var/ferris_sweep-left.uf2
         west build -s /src/zmk/zmk/app -d /var/tmp/zmk -b nice_nano_v2 -- -DZMK_CONFIG=/src/zmk/config -DSHIELD=cradio_right
         cp var/tmp/zmk/zephyr/zmk.uf2 var/ferris_sweep-right.uf2
+        open -R var/ferris_sweep-left.uf2
         ;;
       corne_min)
         west build -s /src/zmk/zmk/app -d /var/tmp/zmk -b corne_min_left -- -DZMK_CONFIG=/src/zmk/config -DSHIELD=rgbled_adapter
         cp var/tmp/zmk/zephyr/zmk.uf2 var/corne_min-left.uf2
-        open -R var/corne_min-left.uf2
         west build -s /src/zmk/zmk/app -d /var/tmp/zmk -b corne_min_right -- -DZMK_CONFIG=/src/zmk/config -DSHIELD=rgbled_adapter
         cp var/tmp/zmk/zephyr/zmk.uf2 var/corne_min-right.uf2
+        open -R var/corne_min-left.uf2
         ;;
       *)
         echo "${0}: unrecognized keyboard -- ${keyboard}"
