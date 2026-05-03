@@ -1,5 +1,11 @@
 FROM ubuntu:noble-20250925
 
+ARG ZEPHYR_VERSION=3.5.0 \
+    ZEPHYR_SDK_VERSION=0.16.3 \
+    QMK_FIRMWARE_VERSION=0.32.12 \
+    QMK_TOOLCHAINS_VERSION=15.2.0 \
+    QMK_TOOLCHAINS_SUBVERSION=1
+
 RUN \
   --mount=type=cache,target=/var/cache/apt,sharing=locked \
   --mount=type=cache,target=/var/lib/apt,sharing=locked \
@@ -15,15 +21,15 @@ RUN \
   --mount=type=bind,src=opt/requirements.txt,dst=/opt/requirements.txt <<-END
   pip3 install \
     --break-system-packages \
-    -r https://raw.githubusercontent.com/zephyrproject-rtos/zephyr/v3.5.0/scripts/requirements-base.txt \
+    -r https://raw.githubusercontent.com/zephyrproject-rtos/zephyr/v${ZEPHYR_VERSION}/scripts/requirements-base.txt \
     -r /opt/requirements.txt
 END
 
-ADD --unpack=true https://github.com/zephyrproject-rtos/sdk-ng/releases/download/v0.16.3/zephyr-sdk-0.16.3_linux-aarch64_minimal.tar.xz /opt
-ADD --unpack=true https://github.com/zephyrproject-rtos/sdk-ng/releases/download/v0.16.3/toolchain_linux-aarch64_arm-zephyr-eabi.tar.xz /opt/zephyr-sdk-0.16.3
+ADD --unpack=true https://github.com/zephyrproject-rtos/sdk-ng/releases/download/v${ZEPHYR_SDK_VERSION}/zephyr-sdk-${ZEPHYR_SDK_VERSION}_linux-aarch64_minimal.tar.xz /opt
+ADD --unpack=true https://github.com/zephyrproject-rtos/sdk-ng/releases/download/v${ZEPHYR_SDK_VERSION}/toolchain_linux-aarch64_arm-zephyr-eabi.tar.xz /opt/zephyr-sdk-${ZEPHYR_SDK_VERSION}
 
 RUN <<-END
-  cd /opt/zephyr-sdk-0.16.3
+  cd /opt/zephyr-sdk-${ZEPHYR_SDK_VERSION}
   ./setup.sh -h -c -t arm-zephyr-eabi
 END
 
@@ -36,10 +42,10 @@ RUN \
   west zephyr-export
 END
 
-ADD --keep-git-dir https://github.com/qmk/qmk_firmware.git?tag=0.32.12 /src/qmk_firmware
-ADD --unpack=true https://github.com/qmk/qmk_toolchains/releases/download/v15.2.0-1/qmk_toolchains-gcc15.2.0-host_linuxARM64.tar.zst /opt/qmk
+ADD --keep-git-dir https://github.com/qmk/qmk_firmware.git?tag=${QMK_FIRMWARE_VERSION} /src/qmk_firmware
+ADD --unpack=true https://github.com/qmk/qmk_toolchains/releases/download/v${QMK_TOOLCHAINS_VERSION}-${QMK_TOOLCHAINS_SUBVERSION}/qmk_toolchains-gcc${QMK_TOOLCHAINS_VERSION}-host_linuxARM64.tar.zst /opt/qmk
 
 ENV PATH=/opt/qmk/qmk_toolchains_linuxARM64/bin:$PATH \
     QMK_DISTRIB_DIR=/opt/qmk \
     QMK_HOME=/src/qmk_firmware \
-    QMK_USERSPACE=/src/qmk \
+    QMK_USERSPACE=/src/qmk
