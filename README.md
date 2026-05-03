@@ -57,10 +57,13 @@ get oriented at first, so here are some links in case you're curious yourself.
 - The keycaps are [Chicago Stenographer][cs] (via [this fork][cs-fork]),
   3D-printed at [jlc3dp][jlc3dp].
 - This [travel case][case] works really well.
-- After seeing the [mikefive][mikefive] and [mikecinq][mikecinq], I've been
-  curious about those super-low profile switches. I've preordered a [Corne Min
-  prototype][corne_min_prototype] from Mechboards and can't wait for it to get
-  here!
+
+# Future
+
+After seeing the [mikefive][mikefive] and [mikecinq][mikecinq], I've been
+curious about those super-low profile switches. I've preordered a [Corne Min
+prototype][corne_min_prototype] from Mechboards and can't wait for it to get
+here!
 
 [ambients]: https://lowprokb.ca/products/ambients-silent-choc-switches?variant=44873446391972/
 [boardsource]: https://boardsource.xyz/products/crab-broom-choc-ferris-sweep
