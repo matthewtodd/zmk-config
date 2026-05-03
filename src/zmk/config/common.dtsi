@@ -7,11 +7,10 @@
 // Layer names
 #define FOCAL 0
 #define NAV 1
-#define MOUSE 2
-#define MEDIA 3
-#define NUM 4
-#define SYM 5
-#define FUN 6
+#define MEDIA 2
+#define NUM 3
+#define SYM 4
+#define FUN 5
 
 // Defaults
 #define QUICK_TAP_MS 175
@@ -42,11 +41,10 @@ MAKE_HRM(hmr, &kp, &kp, KEYS_L THUMBS)
   ZMK_COMBO_6(NAME, &hm_combo_##NAME HOLD 0, POS, LAYERS, COMBO_MS, IDLE_MS)
 
 // Horizontal combos - left hand
-ZMK_COMBO(mouse,     &tog MOUSE,          LT3 LT2, FOCAL MOUSE, COMBO_TERM_FAST, COMBO_IDLE_FAST)
-ZMK_COMBO(media,     &mo MEDIA,           LT2 LT1, FOCAL,       COMBO_TERM_FAST, COMBO_IDLE_FAST)
-ZMK_COMBO(esc,       &hml LG(LSHFT) ESC,  LM2 LM1, FOCAL,       COMBO_TERM_FAST, COMBO_IDLE_FAST)
-ZMK_COMBO(copy,      &kp LG(C),           LB3 LB2, FOCAL MOUSE, COMBO_TERM_FAST, COMBO_IDLE_FAST)
-ZMK_COMBO(paste,     &kp LG(V),           LB2 LB1, FOCAL MOUSE, COMBO_TERM_FAST, COMBO_IDLE_FAST)
+ZMK_COMBO(media,     &mo MEDIA,           LT2 LT1, FOCAL, COMBO_TERM_FAST, COMBO_IDLE_FAST)
+ZMK_COMBO(esc,       &hml LG(LSHFT) ESC,  LM2 LM1, FOCAL, COMBO_TERM_FAST, COMBO_IDLE_FAST)
+ZMK_COMBO(copy,      &kp LG(C),           LB3 LB2, FOCAL, COMBO_TERM_FAST, COMBO_IDLE_FAST)
+ZMK_COMBO(paste,     &kp LG(V),           LB2 LB1, FOCAL, COMBO_TERM_FAST, COMBO_IDLE_FAST)
 
 // Horizontal combos - right hand
 ZMK_COMBO(bspc,      &kp BSPC,            RT1 RT2, FOCAL, COMBO_TERM_FAST, COMBO_IDLE_FAST)
@@ -66,19 +64,6 @@ ZMK_MOD_MORPH(rpar_morph, mods = <MOD_LSFT>; bindings = <&kp RPAR>, <&kp GT>;)
 // Define shorter / mnemonic names
 #define U_BRI_DN F14
 #define U_BRI_UP F15
-#define U_DESK F11
-#define U_LPAD C_AC_DESKTOP_SHOW_ALL_APPLICATIONS
-#define U_MCTRL C_AC_DESKTOP_SHOW_ALL_WINDOWS
-#define U_MC_L &mkp LCLK
-#define U_MC_R &mkp RCLK
-#define U_MS_D &mmv MOVE_DOWN
-#define U_MS_L &mmv MOVE_LEFT
-#define U_MS_R &mmv MOVE_RIGHT
-#define U_MS_U &mmv MOVE_UP
-#define U_WH_D &msc SCRL_DOWN
-#define U_WH_L &msc SCRL_LEFT
-#define U_WH_R &msc SCRL_RIGHT
-#define U_WH_U &msc SCRL_UP
 
 // Keymap
 ZMK_BASE_LAYER(Focal,
@@ -110,22 +95,6 @@ ZMK_OTHER_LAYER(Nav,
 //╰─────────────┴─────────────┴─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┴─────────────┴─────────────╯
 //                                          │             │             │   │             │             │
                                               &none         &none       ,     &none         &none
-//                                          ╰─────────────┴─────────────╯   ╰─────────────┴─────────────╯
-)
-
-ZMK_OTHER_LAYER(Mouse,
-//╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
-//│             │             │             │             │             │   │             │             │             │             │             │
-    &none         &none         &none         &none         &none       ,     &none         &kp U_MCTRL   &kp U_DESK    &kp U_LPAD    &none       ,
-//├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-//│             │             │             │             │             │   │             │             │             │             │             │
-    &kp LCTRL     &kp LALT      &kp LGUI      &kp LSHFT     &none       ,     &none         U_MS_L        U_MS_D        U_MS_U        U_MS_R      ,
-//├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-//│             │             │             │             │             │   │             │             │             │             │             │
-    &none         &none         &none         &none         &none       ,     &none         U_WH_R        U_WH_U        U_WH_D        U_WH_L      ,
-//╰─────────────┴─────────────┴─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┴─────────────┴─────────────╯
-//                                          │             │             │   │             │             │
-                                              &none         &none       ,     U_MC_R        U_MC_L
 //                                          ╰─────────────┴─────────────╯   ╰─────────────┴─────────────╯
 )
 

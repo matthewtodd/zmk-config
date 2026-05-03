@@ -17,9 +17,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #pragma once
 
-// https://docs.qmk.fm/features/mouse_keys#inertia-mode
-#define MOUSEKEY_INERTIA
-
 // Pick good defaults for enabling homerow modifiers
 // https://docs.qmk.fm/tap_hold
 #define TAPPING_TERM 200
