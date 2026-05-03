@@ -10,7 +10,6 @@
 #define MEDIA 2
 #define NUM 3
 #define SYM 4
-#define FUN 5
 
 // Defaults
 #define QUICK_TAP_MS 175
@@ -54,7 +53,7 @@ ZMK_COMBO(rpar,      &rpar_morph,         RM2 RM3, FOCAL, COMBO_TERM_FAST, COMBO
 ZMK_COMBO(lbkt,      &kp LBKT,            RB1 RB2, FOCAL, COMBO_TERM_FAST, COMBO_IDLE_FAST)
 ZMK_COMBO(rbkt,      &kp RBKT,            RB2 RB3, FOCAL, COMBO_TERM_FAST, COMBO_IDLE_FAST)
 #ifdef MATTHEWTODD_THUMBCOMBOS
-ZMK_COMBO(fun_del,   &lt FUN DEL,         RH0 RH1, FOCAL, COMBO_TERM_FAST, COMBO_IDLE_FAST)
+ZMK_COMBO(fun_del,   &kp DEL,             RH0 RH1, FOCAL, COMBO_TERM_FAST, COMBO_IDLE_FAST)
 #endif
 
 // Morphs
@@ -143,21 +142,5 @@ ZMK_OTHER_LAYER(Sym,
 //╰─────────────┴─────────────┴─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┴─────────────┴─────────────╯
 //                                          │             │             │   │             │             │
                                               &kp RPAR      &kp UNDER   ,     &none         &none
-//                                          ╰─────────────┴─────────────╯   ╰─────────────┴─────────────╯
-)
-
-ZMK_OTHER_LAYER(Fun,
-//╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
-//│             │             │             │             │             │   │             │             │             │             │             │
-    &kp F12       &kp F7        &kp F8        &kp F9        &none       ,     &none         &none         &none         &none         &none       ,
-//├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-//│             │             │             │             │             │   │             │             │             │             │             │
-    &kp F11       &kp F4        &kp F5        &kp F6        &none       ,     &none         &kp RSHFT     &kp RGUI      &kp RALT      &kp RCTRL   ,
-//├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-//│             │             │             │             │             │   │             │             │             │             │             │
-    &kp F10       &kp F1        &kp F2        &kp F3        &none       ,     &none         &none         &none         &none         &none       ,
-//╰─────────────┴─────────────┴─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┴─────────────┴─────────────╯
-//                                          │             │             │   │             │             │
-                                              &none         &none       ,     &none         &none
 //                                          ╰─────────────┴─────────────╯   ╰─────────────┴─────────────╯
 )
