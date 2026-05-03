@@ -53,9 +53,6 @@ ZMK_COMBO(lpar,      &lpar_morph,         RM1 RM2, FOCAL, COMBO_TERM_FAST, COMBO
 ZMK_COMBO(rpar,      &rpar_morph,         RM2 RM3, FOCAL, COMBO_TERM_FAST, COMBO_IDLE_FAST, LG(LALT), KEYS_L)
 ZMK_COMBO(lbkt,      &kp LBKT,            RB1 RB2, FOCAL, COMBO_TERM_FAST, COMBO_IDLE_FAST)
 ZMK_COMBO(rbkt,      &kp RBKT,            RB2 RB3, FOCAL, COMBO_TERM_FAST, COMBO_IDLE_FAST)
-#ifdef MATTHEWTODD_THUMBCOMBOS
-ZMK_COMBO(fun_del,   &kp DEL,             RH0 RH1, FOCAL, COMBO_TERM_FAST, COMBO_IDLE_FAST)
-#endif
 
 // Morphs
 ZMK_MOD_MORPH(lpar_morph, mods = <MOD_LSFT>; bindings = <&kp LPAR>, <&kp LT>;)
