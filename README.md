@@ -1,7 +1,7 @@
 # ⌨️ Keyboards
 
-I've been using wired and wireless builds of this [Ferris Sweep][ferris-sweep]
-keyboard since Summer 2024. I love them!
+I've been using this [Ferris Sweep][ferris-sweep] keyboard since Summer 2024,
+in both wired and wireless flavors. I love it!
 
 ![keyboard][keyboard]
 
