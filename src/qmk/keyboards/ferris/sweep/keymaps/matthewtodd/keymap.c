@@ -14,7 +14,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         LCTL_T(KC_S), LALT_T(KC_R), LGUI_T(KC_N), LSFT_T(KC_T), KC_B, KC_Y,
         RSFT_T(KC_C), RGUI_T(KC_A), RALT_T(KC_E), RCTL_T(KC_I), KC_Z, KC_X,
         KC_M, KC_D, KC_P, KC_QUOT, KC_W, KC_COMM, KC_DOT, KC_SLSH,
-        LT(NAV, KC_SPC), KC_TAB, LT(SYM, KC_ENT), LT(NUM, KC_BSPC)),
+        LT(NAV, KC_SPC), LT(MEDIA, KC_TAB), LT(SYM, KC_ENT), LT(NUM, KC_BSPC)),
     [NAV] = LAYOUT_split_3x5_2(
         XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
         XXXXXXX, XXXXXXX, KC_LCTL, KC_LALT, KC_LGUI, KC_LSFT, XXXXXXX, CW_TOGG,
@@ -146,7 +146,6 @@ tap_dance_action_t tap_dance_actions[] = {
 };
 
 enum combos {
-  HG_MEDIA,
   NT_ESC,
   XM_COPY,
   MD_PASTE,
@@ -160,7 +159,6 @@ enum combos {
   CD_RBRC,
 };
 
-const uint16_t PROGMEM media_combo[] = {KC_H, KC_G, COMBO_END};
 const uint16_t PROGMEM esc_combo[] = {LGUI_T(KC_N), LSFT_T(KC_T), COMBO_END};
 const uint16_t PROGMEM copy_combo[] = {KC_X, KC_M, COMBO_END};
 const uint16_t PROGMEM paste_combo[] = {KC_M, KC_D, COMBO_END};
@@ -174,7 +172,6 @@ const uint16_t PROGMEM lbrc_combo[] = {KC_W, KC_COMM, COMBO_END};
 const uint16_t PROGMEM rbrc_combo[] = {KC_COMM, KC_DOT, COMBO_END};
 
 combo_t key_combos[] = {
-    [HG_MEDIA] = COMBO(media_combo, MO(MEDIA)),
     [NT_ESC] = COMBO(esc_combo, LSG_T(KC_ESC)),
     [XM_COPY] = COMBO(copy_combo, LGUI(KC_C)),
     [MD_PASTE] = COMBO(paste_combo, LGUI(KC_V)),
