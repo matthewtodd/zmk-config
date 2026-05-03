@@ -58,7 +58,14 @@ get oriented at first, so here are some links in case you're curious yourself.
   3D-printed at [jlc3dp][jlc3dp].
 - This [travel case][case] works really well.
 
-# Directory Structure
+# Future
+
+After seeing the [mikefive][mikefive] and [mikecinq][mikecinq], I've been
+curious about those super-low profile switches. I've preordered a [Corne Min
+prototype][corne_min_prototype] from Mechboards and can't wait for it to get
+here!
+
+# Directory Layout
 
 I've gone a little nuts here, far afield from the typical `zmk-config` or
 `qmk_userspace` repository. Part of this is for fun, and part is because I'm
@@ -113,13 +120,6 @@ here:
 
 18 directories, 22 files
 ```
-
-# Future
-
-After seeing the [mikefive][mikefive] and [mikecinq][mikecinq], I've been
-curious about those super-low profile switches. I've preordered a [Corne Min
-prototype][corne_min_prototype] from Mechboards and can't wait for it to get
-here!
 
 [ambients]: https://lowprokb.ca/products/ambients-silent-choc-switches?variant=44873446391972/
 [boardsource]: https://boardsource.xyz/products/crab-broom-choc-ferris-sweep
