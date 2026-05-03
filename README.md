@@ -97,7 +97,7 @@ here:
 │       ├── vendor_completions.d
 │       │   └── build.fish
 │       └── vendor_conf.d
-│           └── zmk-config-activate.fish
+│           └── keyboards-activate.fish
 └── src
     ├── qmk
     │   ├── keyboards
