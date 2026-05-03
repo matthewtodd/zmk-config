@@ -58,6 +58,62 @@ get oriented at first, so here are some links in case you're curious yourself.
   3D-printed at [jlc3dp][jlc3dp].
 - This [travel case][case] works really well.
 
+# Directory Structure
+
+I've gone a little nuts here, far afield from the typical `zmk-config` or
+`qmk_userspace` repository. Part of this is for fun, and part is because I'm
+thinking about starting to make keyboards someday, and it's fun to think about
+all the ergogen or kicad or whatever files just slotting in here neatly, along
+with their attendant tooling living in the docker image.
+
+But it's not too weird. If you squint, things should look a little familiar
+here:
+
+```
+.
+├── bin
+│   └── build
+├── etc
+│   └── keymap-drawer.yml
+├── opt
+│   ├── Dockerfile
+│   ├── packages.txt
+│   └── requirements.txt
+├── README.md
+├── share
+│   ├── doc
+│   │   ├── corne_min.svg
+│   │   ├── ferris_sweep_wired.svg
+│   │   ├── ferris_sweep.svg
+│   │   └── keyboard.jpg
+│   └── fish
+│       ├── vendor_completions.d
+│       │   └── build.fish
+│       └── vendor_conf.d
+│           └── zmk-config-activate.fish
+└── src
+    ├── qmk
+    │   ├── keyboards
+    │   │   └── ferris
+    │   │       └── sweep
+    │   │           └── keymaps
+    │   │               └── matthewtodd
+    │   │                   ├── config.h
+    │   │                   ├── keymap.c
+    │   │                   └── rules.mk
+    │   └── qmk.json
+    └── zmk
+        └── config
+            ├── common.dtsi
+            ├── corne_min.conf
+            ├── corne_min.keymap
+            ├── cradio.conf
+            ├── cradio.keymap
+            └── west.yml
+
+18 directories, 22 files
+```
+
 # Future
 
 After seeing the [mikefive][mikefive] and [mikecinq][mikecinq], I've been
