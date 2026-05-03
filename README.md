@@ -1,4 +1,4 @@
-# ⌨️ ZMK Config
+# ⌨️ Keyboards
 
 I've been using this [Ferris Sweep][ferris-sweep] keyboard since Summer 2024. I
 love it!
