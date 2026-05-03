@@ -44,6 +44,7 @@ ZMK_COMBO(media,     &mo MEDIA,           LT2 LT1, FOCAL, COMBO_TERM_FAST, COMBO
 ZMK_COMBO(esc,       &hml LG(LSHFT) ESC,  LM2 LM1, FOCAL, COMBO_TERM_FAST, COMBO_IDLE_FAST)
 ZMK_COMBO(copy,      &kp LG(C),           LB3 LB2, FOCAL, COMBO_TERM_FAST, COMBO_IDLE_FAST)
 ZMK_COMBO(paste,     &kp LG(V),           LB2 LB1, FOCAL, COMBO_TERM_FAST, COMBO_IDLE_FAST)
+ZMK_COMBO(cut,       &kp LG(X),           LB3 LB1, FOCAL, COMBO_TERM_FAST, COMBO_IDLE_FAST)
 
 // Horizontal combos - right hand
 ZMK_COMBO(bspc,      &kp BSPC,            RT1 RT2, FOCAL, COMBO_TERM_FAST, COMBO_IDLE_FAST)

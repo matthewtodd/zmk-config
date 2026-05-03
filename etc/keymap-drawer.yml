@@ -31,8 +31,8 @@ parse_config:
     "&rpar_morph": ")"
 
   zmk_combos:
-    combo_caps: { key: "Caps" }
     combo_esc: { key: "$$mdi:keyboard-esc$$" }
+    combo_cut: { align: "bottom" }
     combo_lpar: { key: "(" }
     combo_rpar: { key: ")" }
 

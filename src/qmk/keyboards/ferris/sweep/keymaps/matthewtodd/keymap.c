@@ -150,6 +150,7 @@ enum combos {
   NT_ESC,
   XM_COPY,
   MD_PASTE,
+  XD_CUT,
 
   FO_BSPC,
   OU_DEL,
@@ -163,6 +164,7 @@ const uint16_t PROGMEM media_combo[] = {KC_H, KC_G, COMBO_END};
 const uint16_t PROGMEM esc_combo[] = {LGUI_T(KC_N), LSFT_T(KC_T), COMBO_END};
 const uint16_t PROGMEM copy_combo[] = {KC_X, KC_M, COMBO_END};
 const uint16_t PROGMEM paste_combo[] = {KC_M, KC_D, COMBO_END};
+const uint16_t PROGMEM cut_combo[] = {KC_X, KC_D, COMBO_END};
 
 const uint16_t PROGMEM bspc_combo[] = {KC_F, KC_O, COMBO_END};
 const uint16_t PROGMEM del_combo[] = {KC_O, KC_U, COMBO_END};
@@ -176,6 +178,7 @@ combo_t key_combos[] = {
     [NT_ESC] = COMBO(esc_combo, LSG_T(KC_ESC)),
     [XM_COPY] = COMBO(copy_combo, LGUI(KC_C)),
     [MD_PASTE] = COMBO(paste_combo, LGUI(KC_V)),
+    [XD_CUT] = COMBO(cut_combo, LGUI(KC_X)),
 
     [FO_BSPC] = COMBO(bspc_combo, KC_BSPC),
     [OU_DEL] = COMBO(del_combo, KC_DEL),
