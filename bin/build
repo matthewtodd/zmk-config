@@ -109,8 +109,8 @@ case ${command} in
     case ${keyboard:-default} in
       ferris_sweep|default)
         keymap -c /etc/keymap-drawer.yml parse -z /src/zmk/config/cradio.keymap \
-          | keymap -c /etc/keymap-drawer.yml draw -z cradio -o /share/doc/cradio.svg -
-        open share/doc/cradio.svg
+          | keymap -c /etc/keymap-drawer.yml draw -z cradio -o /share/doc/ferris_sweep.svg -
+        open share/doc/ferris_sweep.svg
         ;;
       ferris_sweep_wired)
         qmk c2json -kb ferris/sweep -km matthewtodd \

@@ -68,7 +68,7 @@ get oriented at first, so here are some links in case you're curious yourself.
 [focal]: https://github.com/Keyhabit/Focal-keyboard-layout/
 [jlc3dp]: https://jlc3dp.com/
 [keyboard]: share/doc/keyboard.jpg
-[keymap]: share/doc/cradio.svg
+[keymap]: share/doc/ferris_sweep.svg
 [miryoku]: https://github.com/manna-harbour/miryoku
 [tweaking]: https://github.com/manna-harbour/miryoku_zmk/compare/master...matthewtodd:miryoku_zmk:matthewtodd
 [urob-zmk-config]: https://github.com/urob/zmk-config
