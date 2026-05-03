@@ -41,7 +41,7 @@ docker_run() {
     --mount type=bind,src=./src/zmk/config,dst=/src/zmk/config,readonly \
     --mount type=bind,src=./var/tmp/qmk,dst=/src/qmk_firmware/.build,bind-create-src \
     --mount type=bind,src=./var/tmp/zmk,dst=/var/tmp/zmk,bind-create-src \
-    zmk-config "$@"
+    keyboards "$@"
 }
 
 keymap() { docker_run keymap "$@"; }
@@ -50,7 +50,7 @@ west()   { docker_run west   "$@"; }
 
 while getopts "I" opt; do
   case ${opt} in
-    I) docker build --tag zmk-config --file opt/Dockerfile . ;;
+    I) docker build --tag keyboards --file opt/Dockerfile . ;;
    \?) usage; exit 1 ;;
   esac
 done
