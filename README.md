@@ -56,10 +56,12 @@ get oriented at first, so here are some links in case you're curious yourself.
 - The switches are [Ambients nocturnals][ambients].
 - The keycaps are [Chicago Stenographer][cs] (via [this fork][cs-fork]),
   3D-printed at [jlc3dp][jlc3dp].
+- I found this [travel case][case] that works really well.
 
 [ambients]: https://lowprokb.ca/products/ambients-silent-choc-switches?variant=44873446391972/
 [boardsource]: https://boardsource.xyz/products/crab-broom-choc-ferris-sweep
 [build]: bin/build
+[case]: https://lowprokb.ca/collections/parts/products/travel-case-for-small-keyboards
 [colemak-dh]: https://colemakmods.github.io/mod-dh/
 [cs-fork]: https://github.com/infused-kim/kb_keycaps_chicago_stenographer
 [cs]: https://github.com/pseudoku/PseudoMakeMeKeyCapProfiles
