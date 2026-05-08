@@ -2,6 +2,9 @@
 
 set -euo pipefail
 
+# This script keeps the usage and file tree sections of the README up to date.
+# git config core.hooksPath share/git/hooks
+
 MARKIN=$(cat <<'END'
 #!/usr/bin/awk -f
 ##
@@ -102,8 +105,6 @@ BEGIN {
 END
 )
 
-# This keeps the usage and file tree sections of the README up to date.
-# git config core.hooksPath share/git/hooks
 tmp=$(mktemp)
 awk "${MARKIN}" README.md > ${tmp}
 mv ${tmp} README.md
