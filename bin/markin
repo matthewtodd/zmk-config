@@ -1,0 +1,96 @@
+#!/usr/bin/awk -f
+##
+##  markin - interpolate shell script into Markdown files
+##
+##  Author:    Kevin Ernst <ernstki -at- mail.uc.edu>
+##  Date:      12 March 2022
+##  Homepage:  https://github.com/ernstki/markin
+##  License:   MIT
+##
+BEGIN {
+    # expect no more than this many lines between <!-- {{{markin …}}} --> and
+    # <!-- {{{end}}} -->; catches runaway loops when end marker is missing
+    INTERP_LINES_MAX = 100
+}
+
+# <!-- {{{markin
+/^ *<!-- *{+markin */ {
+    c = INTERP_LINES_MAX
+    i = 0
+
+    print; getline
+
+    # }}} -->
+    while (!/^ *}+ *--> *$/) {
+        print
+
+        # FIXME: write to a temp file instead, since this won't be able to
+        # handle embedded single quotes; see #1
+        cmd = "$SHELL -c '" $0 "'"
+
+        # FIXME: check return code from running `cm` and (optionally?) bail;
+        # probably want to run `$SHELL -e` so it bails after the first error
+        while (cmd | getline) {
+            output[i++] = $0
+        }
+
+        close(cmd)
+        # “…[W]hen a file or pipe is opened for output, awk remembers the file
+        #  name or command associated with it, and subsequent writes to the same
+        #  file or command are appended to the previous writes. The file or pipe
+        #  stays open until awk exits.
+        #
+        #  This implies that special steps are necessary in order to read the
+        #  same file again from the beginning, or to rerun a shell command
+        #  (rather than reading more output from the same command). The close()
+        #  function makes these things possible[.]”
+        #
+        #  -- https://www.gnu.org/software/gawk/manual/html_node/Close-Files-And-Pipes.html
+
+        c -= 1
+        if (c == 0) {
+            print "ERROR: Runaway loop looking for '}}}-->'." > "/dev/stderr"
+            exit 1
+        } 
+
+        getline
+
+    }  # while not '}}}'
+
+}  # within '<!-- {{{markin …}}} -->' (the shell command(s) to run)
+
+# }}} -->
+/^ *}+ *--> *$/ {
+    c = INTERP_LINES_MAX
+
+    print; getline
+
+    # <!-- {{{end}}} -->
+    while (!/^ *<!-- *{+end}+ *--> *$/) {
+        c -= 1
+
+        if (c == 0) {
+            print "ERROR: Runaway loop looking for '<!--{{{end}}}-->'." > "/dev/stderr"
+            exit 1
+        }
+
+        # just consume these lines; they'll be replaced with the new output
+        getline
+    }
+
+    # the order of `for (l in output)` is not defined by POSIX, so…
+    for (i = 0; i < length(output); i++) {
+        print output[i]
+    }
+
+    # clear output array for next block
+    delete output
+
+}  # between '}}} -->' and '<!-- {{{end}}} -->' (insert the actual output)
+
+{
+    # otherwise
+    print
+}
+
+# markin

@@ -1,0 +1,10 @@
+#!/bin/bash
+
+set -euo pipefail
+
+# This keeps the usage and file tree sections of the README up to date.
+# git config core.hooksPath share/git/hooks
+tmp=$(mktemp)
+bin/markin README.md > ${tmp}
+mv ${tmp} README.md
+git add README.md

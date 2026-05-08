@@ -10,27 +10,30 @@ in both wired and wireless flavors. I love it!
 To build the firmware and draw the keymap, there's a small [shell
 script][build] that uses a [Docker image][dockerfile].
 
-```
-usage: build [-I] firmware [-k <keyboard>]
-       build [-I] keymap [-k <keyboard>]
-       build [-I] shell
-
-  global options:
-    -I             build docker image
-
-  commands:
-    firmware       build keyboard firmware (default)
-    keymap         draw keyboard keymap
-    shell          start an interactive shell in the docker container
-
-  options:
-    -k <keyboard>  select keyboard
-
-  keyboards:
-    ferris_sweep (default)
-    ferris_sweep_wired
-    corne_min
-```
+<!-- {{{markin
+build -h 2>/dev/null | sed -e "s/^/    /"
+}}}-->
+    usage: build [-I] firmware [-k <keyboard>]
+           build [-I] keymap [-k <keyboard>]
+           build [-I] shell
+    
+      global options:
+        -I             build docker image
+    
+      commands:
+        firmware       build keyboard firmware (default)
+        keymap         draw keyboard keymap
+        shell          start an interactive shell in the docker container
+    
+      options:
+        -k <keyboard>  select keyboard
+    
+      keyboards:
+        ferris_sweep (default)
+        ferris_sweep_wired
+        corne_min
+    
+<!-- {{{end}}} -->
 
 ## Keymap
 
@@ -76,50 +79,56 @@ with their attendant tooling living in the docker image.
 But it's not too weird. If you squint, things should look a little familiar
 here:
 
-```
-.
-├── bin
-│   └── build
-├── etc
-│   └── keymap-drawer.yml
-├── opt
-│   ├── Dockerfile
-│   ├── packages.txt
-│   └── requirements.txt
-├── README.md
-├── share
-│   ├── doc
-│   │   ├── corne_min.svg
-│   │   ├── ferris_sweep_wired.svg
-│   │   ├── ferris_sweep.svg
-│   │   └── keyboard.jpg
-│   └── fish
-│       ├── vendor_completions.d
-│       │   └── build.fish
-│       └── vendor_conf.d
-│           └── keyboards-activate.fish
-└── src
-    ├── qmk
-    │   ├── keyboards
-    │   │   └── ferris
-    │   │       └── sweep
-    │   │           └── keymaps
-    │   │               └── matthewtodd
-    │   │                   ├── config.h
-    │   │                   ├── keymap.c
-    │   │                   └── rules.mk
-    │   └── qmk.json
-    └── zmk
-        └── config
-            ├── common.dtsi
-            ├── corne_min.conf
-            ├── corne_min.keymap
-            ├── cradio.conf
-            ├── cradio.keymap
-            └── west.yml
-
-18 directories, 22 files
-```
+<!-- {{{markin
+tree -I var | sed -e "s/^/    /"
+}}}-->
+    .
+    ├── bin
+    │   ├── build
+    │   └── markin
+    ├── etc
+    │   └── keymap-drawer.yml
+    ├── opt
+    │   ├── Dockerfile
+    │   ├── packages.txt
+    │   └── requirements.txt
+    ├── README.md
+    ├── share
+    │   ├── doc
+    │   │   ├── corne_min.svg
+    │   │   ├── ferris_sweep_wired.svg
+    │   │   ├── ferris_sweep.svg
+    │   │   └── keyboard.jpg
+    │   ├── fish
+    │   │   ├── vendor_completions.d
+    │   │   │   └── build.fish
+    │   │   └── vendor_conf.d
+    │   │       └── keyboards-activate.fish
+    │   └── git
+    │       └── hooks
+    │           └── pre-commit
+    └── src
+        ├── qmk
+        │   ├── keyboards
+        │   │   └── ferris
+        │   │       └── sweep
+        │   │           └── keymaps
+        │   │               └── matthewtodd
+        │   │                   ├── config.h
+        │   │                   ├── keymap.c
+        │   │                   └── rules.mk
+        │   └── qmk.json
+        └── zmk
+            └── config
+                ├── common.dtsi
+                ├── corne_min.conf
+                ├── corne_min.keymap
+                ├── cradio.conf
+                ├── cradio.keymap
+                └── west.yml
+    
+    20 directories, 24 files
+<!-- {{{end}}} -->
 
 [ambients]: https://lowprokb.ca/products/ambients-silent-choc-switches?variant=44873446391972/
 [boardsource]: https://boardsource.xyz/products/crab-broom-choc-ferris-sweep
