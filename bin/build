@@ -114,8 +114,8 @@ case ${command} in
         ;;
       ferris_sweep_wired)
         qmk c2json -kb ferris/sweep -km matthewtodd \
-          | sed -e s/NAV/1/g -e s/MEDIA/2/g -e s/SYM/3/g -e s/NUM/4/g \
-          | keymap -c /etc/keymap-drawer.yml parse -l Focal Nav Media Num Sym -q - \
+          | sed -e s/NAV/1/g -e s/MEDIA/2/g -e s/NUM/3/g \
+          | keymap -c /etc/keymap-drawer.yml parse -l Focal Nav Media Num -q - \
           | keymap -c /etc/keymap-drawer.yml draw -o /share/doc/ferris_sweep_wired.svg -
         open share/doc/ferris_sweep_wired.svg
         ;;
