@@ -84,8 +84,7 @@ tree -I var | sed -e "s/^/    /"
 }}}-->
     .
     ├── bin
-    │   ├── build
-    │   └── markin
+    │   └── build
     ├── etc
     │   └── keymap-drawer.yml
     ├── opt
@@ -127,7 +126,7 @@ tree -I var | sed -e "s/^/    /"
                 ├── cradio.keymap
                 └── west.yml
     
-    20 directories, 24 files
+    20 directories, 23 files
 <!-- {{{end}}} -->
 
 [ambients]: https://lowprokb.ca/products/ambients-silent-choc-switches?variant=44873446391972/
