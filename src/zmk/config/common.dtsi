@@ -38,6 +38,7 @@ MAKE_HRM(hmr, &kp, &kp, KEYS_L THUMBS)
   ZMK_COMBO_6(NAME, &hm_combo_##NAME HOLD 0, POS, LAYERS, COMBO_MS, IDLE_MS)
 
 // Horizontal combos - left hand
+ZMK_COMBO(colon,     &kp COLON,           LT2 LT1, FOCAL, COMBO_TERM_FAST, COMBO_IDLE_FAST)
 ZMK_COMBO(esc,       &hml LG(LSHFT) ESC,  LM2 LM1, FOCAL, COMBO_TERM_FAST, COMBO_IDLE_FAST)
 ZMK_COMBO(copy,      &kp LG(C),           LB3 LB2, FOCAL, COMBO_TERM_FAST, COMBO_IDLE_FAST)
 ZMK_COMBO(paste,     &kp LG(V),           LB2 LB1, FOCAL, COMBO_TERM_FAST, COMBO_IDLE_FAST)

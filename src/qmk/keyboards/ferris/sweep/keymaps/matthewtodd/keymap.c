@@ -132,6 +132,7 @@ tap_dance_action_t tap_dance_actions[] = {
 };
 
 enum combos {
+  GH_COLON,
   NT_ESC,
   XM_COPY,
   MD_PASTE,
@@ -145,6 +146,7 @@ enum combos {
   CD_RBRC,
 };
 
+const uint16_t PROGMEM colon_combo[] = {KC_G, KC_H, COMBO_END};
 const uint16_t PROGMEM esc_combo[] = {LGUI_T(KC_N), LSFT_T(KC_T), COMBO_END};
 const uint16_t PROGMEM copy_combo[] = {KC_X, KC_M, COMBO_END};
 const uint16_t PROGMEM paste_combo[] = {KC_M, KC_D, COMBO_END};
@@ -158,6 +160,7 @@ const uint16_t PROGMEM lbrc_combo[] = {KC_W, KC_COMM, COMBO_END};
 const uint16_t PROGMEM rbrc_combo[] = {KC_COMM, KC_DOT, COMBO_END};
 
 combo_t key_combos[] = {
+    [GH_COLON] = COMBO(colon_combo, LSFT(KC_SCLN)),
     [NT_ESC] = COMBO(esc_combo, LSG_T(KC_ESC)),
     [XM_COPY] = COMBO(copy_combo, LGUI(KC_C)),
     [MD_PASTE] = COMBO(paste_combo, LGUI(KC_V)),

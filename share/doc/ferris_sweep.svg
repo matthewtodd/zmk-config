@@ -349,44 +349,48 @@ path.combo { stroke: #7f7f7f; }
 <text x="0" y="24" class="key hold layer-activator">Num</text>
 </a></g>
 <g class="combo combopos-0">
+<rect rx="6" ry="6" x="154" y="23" width="28" height="26" class="combo"/>
+<text x="168" y="36" class="combo tap">:</text>
+</g>
+<g class="combo combopos-1">
 <rect rx="6" ry="6" x="154" y="79" width="28" height="26" class="combo"/>
 <use href="#mdi:keyboard-esc" xlink:href="#mdi:keyboard-esc" x="161" y="85" height="14" width="14.0" class="combo tap glyph mdi:keyboard-esc"/>
 </g>
-<g class="combo combopos-1">
+<g class="combo combopos-2">
 <rect rx="6" ry="6" x="98" y="136" width="28" height="26" class="combo"/>
 <text x="112" y="149" class="combo tap">Copy</text>
 </g>
-<g class="combo combopos-2">
+<g class="combo combopos-3">
 <rect rx="6" ry="6" x="154" y="135" width="28" height="26" class="combo"/>
 <text x="168" y="148" class="combo tap">Paste</text>
 </g>
-<g class="combo combopos-3">
+<g class="combo combopos-4">
 <path d="M140,187 h-50 a6.0,6.0 0 0 1 -6.0,-6.0 v-4" class="combo"/>
 <path d="M140,187 h50 a6.0,6.0 0 0 0 6.0,-6.0 v-6" class="combo"/>
 <rect rx="6" ry="6" x="126" y="174" width="28" height="26" class="combo"/>
 <text x="140" y="187" class="combo tap">Cut</text>
 </g>
-<g class="combo combopos-4">
+<g class="combo combopos-5">
 <rect rx="6" ry="6" x="490" y="23" width="28" height="26" class="combo"/>
 <use href="#mdi:backspace-outline" xlink:href="#mdi:backspace-outline" x="497" y="29" height="14" width="14.0" class="combo tap glyph mdi:backspace-outline"/>
 </g>
-<g class="combo combopos-5">
+<g class="combo combopos-6">
 <rect rx="6" ry="6" x="546" y="24" width="28" height="26" class="combo"/>
 <use href="#mdi:backspace-reverse-outline" xlink:href="#mdi:backspace-reverse-outline" x="553" y="30" height="14" width="14.0" class="combo tap glyph mdi:backspace-reverse-outline"/>
 </g>
-<g class="combo combopos-6">
+<g class="combo combopos-7">
 <rect rx="6" ry="6" x="490" y="79" width="28" height="26" class="combo"/>
 <text x="504" y="92" class="combo tap">(</text>
 </g>
-<g class="combo combopos-7">
+<g class="combo combopos-8">
 <rect rx="6" ry="6" x="546" y="80" width="28" height="26" class="combo"/>
 <text x="560" y="93" class="combo tap">)</text>
 </g>
-<g class="combo combopos-8">
+<g class="combo combopos-9">
 <rect rx="6" ry="6" x="490" y="135" width="28" height="26" class="combo"/>
 <text x="504" y="148" class="combo tap">[</text>
 </g>
-<g class="combo combopos-9">
+<g class="combo combopos-10">
 <rect rx="6" ry="6" x="546" y="136" width="28" height="26" class="combo"/>
 <text x="560" y="149" class="combo tap">]</text>
 </g>
