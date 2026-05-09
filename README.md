@@ -37,8 +37,8 @@ build -h 2>/dev/null | sed -e "s/^/    /"
 
 ## Keymap
 
-This layout is mostly [Miryoku][miryoku], which I started off
-[tweaking][tweaking] in place, then moved here.
+This layout is largely [Miryoku][miryoku], though I've collapsed many layers
+together and discarded features I wasn't using.
 
 I've switched from [Colemak-DH][colemak-dh] to [Focal][focal], which I found in
 [Pascal Getreuer's guide][which-alt], and I'm liking it so far.
@@ -146,6 +146,5 @@ tree -I var | sed -e "s/^/    /"
 [mikecinq]: https://kbd.news/Mikecinq-2686.html
 [mikefive]: https://kbd.news/Mikefive-a-Kailh-PG1316S-keyboard-2366.html
 [miryoku]: https://github.com/manna-harbour/miryoku
-[tweaking]: https://github.com/manna-harbour/miryoku_zmk/compare/master...matthewtodd:miryoku_zmk:matthewtodd
 [urob-zmk-config]: https://github.com/urob/zmk-config
 [which-alt]: https://getreuer.info/posts/keyboards/alt-layouts/index.html#which-alt-keyboard-layout-should-i-learn
