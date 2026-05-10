@@ -80,7 +80,7 @@ But it's not too weird. If you squint, things should look a little familiar
 here:
 
 <!-- {{{markin
-tree -I var | sed -e "s/^/    /"
+tree -I var --dirsfirst | sed -e "s/^/    /"
 }}}-->
     .
     ├── bin
@@ -91,7 +91,6 @@ tree -I var | sed -e "s/^/    /"
     │   ├── Dockerfile
     │   ├── packages.txt
     │   └── requirements.txt
-    ├── README.md
     ├── share
     │   ├── doc
     │   │   ├── corne_min.svg
@@ -106,25 +105,26 @@ tree -I var | sed -e "s/^/    /"
     │   └── git
     │       └── hooks
     │           └── pre-commit
-    └── src
-        ├── qmk
-        │   ├── keyboards
-        │   │   └── ferris
-        │   │       └── sweep
-        │   │           └── keymaps
-        │   │               └── matthewtodd
-        │   │                   ├── config.h
-        │   │                   ├── keymap.c
-        │   │                   └── rules.mk
-        │   └── qmk.json
-        └── zmk
-            └── config
-                ├── common.dtsi
-                ├── corne_min.conf
-                ├── corne_min.keymap
-                ├── cradio.conf
-                ├── cradio.keymap
-                └── west.yml
+    ├── src
+    │   ├── qmk
+    │   │   ├── keyboards
+    │   │   │   └── ferris
+    │   │   │       └── sweep
+    │   │   │           └── keymaps
+    │   │   │               └── matthewtodd
+    │   │   │                   ├── config.h
+    │   │   │                   ├── keymap.c
+    │   │   │                   └── rules.mk
+    │   │   └── qmk.json
+    │   └── zmk
+    │       └── config
+    │           ├── common.dtsi
+    │           ├── corne_min.conf
+    │           ├── corne_min.keymap
+    │           ├── cradio.conf
+    │           ├── cradio.keymap
+    │           └── west.yml
+    └── README.md
     
     20 directories, 23 files
 <!-- {{{end}}} -->
