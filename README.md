@@ -5,6 +5,21 @@ in both wired and wireless flavors. I love it!
 
 ![keyboard][keyboard]
 
+## Keymap
+
+This layout is largely [Miryoku][miryoku], though I've collapsed many layers
+together and discarded features I wasn't using.
+
+I've switched from [Colemak-DH][colemak-dh] to [Focal][focal], which I found in
+[Pascal Getreuer's guide][which-alt], and I'm liking it so far.
+
+I've also added some horizontal combos inspired by [urob's
+zmk-config][urob-zmk-config]. These give me left-handed copy-paste while I'm
+mousing, and, as a vim user, escape on the home row. They also make all the
+bracket pairs much easier to remember!
+
+![keymap][keymap]
+
 ## Local Builds
 
 To build the firmware and draw the keymap, there's a small [shell
@@ -34,39 +49,6 @@ build -h 2>/dev/null | sed -e "s/^/    /"
         corne_min
     
 <!-- {{{end}}} -->
-
-## Keymap
-
-This layout is largely [Miryoku][miryoku], though I've collapsed many layers
-together and discarded features I wasn't using.
-
-I've switched from [Colemak-DH][colemak-dh] to [Focal][focal], which I found in
-[Pascal Getreuer's guide][which-alt], and I'm liking it so far.
-
-I've also added some horizontal combos inspired by [urob's
-zmk-config][urob-zmk-config]. These give me left-handed copy-paste while I'm
-mousing, and, as a vim user, escape on the home row. They also make all the
-bracket pairs much easier to remember!
-
-![keymap][keymap]
-
-## Links
-
-This is really my first foray into weird keyboards, and it was a little hard to
-get oriented at first, so here are some links in case you're curious yourself.
-
-- The board and case are from [Boardsource][boardsource].
-- The switches are [Ambients nocturnals][ambients].
-- The keycaps are [Chicago Stenographer][cs] (via [this fork][cs-fork]),
-  3D-printed at [jlc3dp][jlc3dp].
-- This [travel case][case] works really well.
-
-## Future
-
-After seeing the [mikefive][mikefive] and [mikecinq][mikecinq], I've been
-curious about those super-low profile switches. I've preordered a [Corne Min
-prototype][corne_min_prototype] from Mechboards and can't wait for it to get
-here!
 
 ## Directory Layout
 
@@ -128,6 +110,17 @@ tree -I var --dirsfirst | sed -e "s/^/    /"
     
     20 directories, 23 files
 <!-- {{{end}}} -->
+
+## Links
+
+This is really my first foray into weird keyboards, and it was a little hard to
+get oriented at first, so here are some links in case you're curious yourself.
+
+- The board and case are from [Boardsource][boardsource].
+- The switches are [Ambients nocturnals][ambients].
+- The keycaps are [Chicago Stenographer][cs] (via [this fork][cs-fork]),
+  3D-printed at [jlc3dp][jlc3dp].
+- This [travel case][case] works really well.
 
 [ambients]: https://lowprokb.ca/products/ambients-silent-choc-switches?variant=44873446391972/
 [boardsource]: https://boardsource.xyz/products/crab-broom-choc-ferris-sweep
