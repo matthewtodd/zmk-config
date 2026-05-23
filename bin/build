@@ -99,9 +99,10 @@ case ${command} in
     ;;
 
   keymap)
-    while getopts "k:" opt; do
+    while getopts "k:o" opt; do
       case ${opt} in
         k) keyboard=${OPTARG} ;;
+        o) open=true ;;
        \?) usage; exit 1 ;;
       esac
     done
@@ -110,19 +111,19 @@ case ${command} in
       ferris_sweep|default)
         keymap -c /etc/keymap-drawer.yml parse -z /src/zmk/config/cradio.keymap \
           | keymap -c /etc/keymap-drawer.yml draw -z cradio -o /share/doc/ferris_sweep.svg -
-        open share/doc/ferris_sweep.svg
+        [[ -n ${open+x} ]] && open share/doc/ferris_sweep.svg
         ;;
       ferris_sweep_wired)
         qmk c2json -kb ferris/sweep -km matthewtodd \
           | sed -e s/NAV/1/g -e s/NUM/2/g -e s/SYM/3/g \
           | keymap -c /etc/keymap-drawer.yml parse -l Focal Nav Num Sym -q - \
           | keymap -c /etc/keymap-drawer.yml draw -o /share/doc/ferris_sweep_wired.svg -
-        open share/doc/ferris_sweep_wired.svg
+        [[ -n ${open+x} ]] && open share/doc/ferris_sweep_wired.svg
         ;;
       corne_min)
         keymap -c /etc/keymap-drawer.yml parse -z /src/zmk/config/corne_min.keymap \
           | keymap -c /etc/keymap-drawer.yml draw -z corne -o /share/doc/corne_min.svg -
-        open share/doc/corne_min.svg
+        [ -n ${open+x} ] && open share/doc/corne_min.svg
         ;;
       *)
         echo "${0}: unrecognized keyboard -- ${keyboard}"
@@ -141,7 +142,7 @@ case ${command} in
     export -f open
     set -x
     ${0} firmware
-    ${0} keymap
+    ${0} keymap -o
     ;;
 
   *)
