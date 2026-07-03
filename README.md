@@ -29,7 +29,7 @@ script][build] that uses a [Docker image][dockerfile].
 build -h 2>/dev/null | sed -e "s/^/    /"
 }}}-->
     usage: build [-I] firmware [-k <keyboard>]
-           build [-I] keymap [-k <keyboard>]
+           build [-I] keymap [-k <keyboard>] [-o]
            build [-I] shell
     
       global options:
@@ -42,6 +42,7 @@ build -h 2>/dev/null | sed -e "s/^/    /"
     
       options:
         -k <keyboard>  select keyboard
+        -o             open built artifact
     
       keyboards:
         ferris_sweep (default)

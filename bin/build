@@ -5,7 +5,7 @@ set -euo pipefail
 usage() {
   cat <<-END
 usage: build [-I] firmware [-k <keyboard>]
-       build [-I] keymap [-k <keyboard>]
+       build [-I] keymap [-k <keyboard>] [-o]
        build [-I] shell
 
   global options:
@@ -18,6 +18,7 @@ usage: build [-I] firmware [-k <keyboard>]
 
   options:
     -k <keyboard>  select keyboard
+    -o             open built artifact
 
   keyboards:
     ferris_sweep (default)
@@ -123,7 +124,7 @@ case ${command} in
       corne_min)
         keymap -c /etc/keymap-drawer.yml parse -z /src/zmk/config/corne_min.keymap \
           | keymap -c /etc/keymap-drawer.yml draw -z corne -o /share/doc/corne_min.svg -
-        [ -n ${open+x} ] && open share/doc/corne_min.svg
+        [[ -n ${open+x} ]] && open share/doc/corne_min.svg
         ;;
       *)
         echo "${0}: unrecognized keyboard -- ${keyboard}"
