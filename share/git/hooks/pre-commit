@@ -110,9 +110,9 @@ awk "${MARKIN}" README.md > ${tmp}
 mv ${tmp} README.md
 git add README.md
 
-find src/zmk -newer share/doc/corne_min.svg          -exec build keymap -k corne_min \;
-find src/zmk -newer share/doc/ferris_sweep.svg       -exec build keymap -k ferris_sweep \;
-find src/qmk -newer share/doc/ferris_sweep_wired.svg -exec build keymap -k ferris_sweep_wired \;
+find src/zmk -newer share/doc/corne_min.svg          -exec build keymap -k corne_min -- {} +
+find src/zmk -newer share/doc/ferris_sweep.svg       -exec build keymap -k ferris_sweep -- {} +
+find src/qmk -newer share/doc/ferris_sweep_wired.svg -exec build keymap -k ferris_sweep_wired -- {} +
 
 git add share/doc/corne_min.svg
 git add share/doc/ferris_sweep.svg
