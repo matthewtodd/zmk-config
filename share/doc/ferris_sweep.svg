@@ -413,11 +413,11 @@ path.combo { stroke: #7f7f7f; }
 </g>
 <g transform="translate(532, 28)" class="key keypos-7">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
-<use href="#mdi:volume-low" xlink:href="#mdi:volume-low" x="-7" y="-7" height="14" width="14.0" class="key tap glyph mdi:volume-low"/>
+<use href="#mdi:lightbulb-outline" xlink:href="#mdi:lightbulb-outline" x="-7" y="-7" height="14" width="14.0" class="key tap glyph mdi:lightbulb-outline"/>
 </g>
 <g transform="translate(588, 46)" class="key keypos-8">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
-<use href="#mdi:volume-high" xlink:href="#mdi:volume-high" x="-7" y="-7" height="14" width="14.0" class="key tap glyph mdi:volume-high"/>
+<use href="#mdi:lightbulb-on-outline" xlink:href="#mdi:lightbulb-on-outline" x="-7" y="-7" height="14" width="14.0" class="key tap glyph mdi:lightbulb-on-outline"/>
 </g>
 <g transform="translate(644, 81)" class="key keypos-9">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
@@ -490,11 +490,11 @@ path.combo { stroke: #7f7f7f; }
 </g>
 <g transform="translate(532, 140)" class="key keypos-27">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
-<use href="#mdi:lightbulb-outline" xlink:href="#mdi:lightbulb-outline" x="-7" y="-7" height="14" width="14.0" class="key tap glyph mdi:lightbulb-outline"/>
+<use href="#mdi:volume-low" xlink:href="#mdi:volume-low" x="-7" y="-7" height="14" width="14.0" class="key tap glyph mdi:volume-low"/>
 </g>
 <g transform="translate(588, 158)" class="key keypos-28">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
-<use href="#mdi:lightbulb-on-outline" xlink:href="#mdi:lightbulb-on-outline" x="-7" y="-7" height="14" width="14.0" class="key tap glyph mdi:lightbulb-on-outline"/>
+<use href="#mdi:volume-high" xlink:href="#mdi:volume-high" x="-7" y="-7" height="14" width="14.0" class="key tap glyph mdi:volume-high"/>
 </g>
 <g transform="translate(644, 193)" class="key keypos-29">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>

@@ -81,13 +81,13 @@ ZMK_BASE_LAYER(Focal,
 ZMK_OTHER_LAYER(Nav,
 //╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
 //│             │             │             │             │             │   │             │             │             │             │             │
-    &none         &none         &none         &bt BT_CLR    &none       ,     &none         &none         &kp C_VOL_DN  &kp C_VOL_UP  &none       ,
+    &none         &none         &none         &bt BT_CLR    &none       ,     &none         &none         &kp U_BRI_DN  &kp U_BRI_UP  &none       ,
 //├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
 //│             │             │             │             │             │   │             │             │             │             │             │
     &kp LCTRL     &kp LALT      &kp LGUI      &kp LSHFT     &none       ,     &caps_word    &kp LEFT      &kp DOWN      &kp UP        &kp RIGHT   ,
 //├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
 //│             │             │             │             │             │   │             │             │             │             │             │
-    &none         &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &none       ,     &none         &none         &kp U_BRI_DN  &kp U_BRI_UP  &none       ,
+    &none         &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &none       ,     &none         &none         &kp C_VOL_DN  &kp C_VOL_UP  &none       ,
 //╰─────────────┴─────────────┴─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┴─────────────┴─────────────╯
 //                                          │             │             │   │             │             │
                                               &none         &none       ,     &none         &none
